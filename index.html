@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Navbar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <h2><i class="fa-solid fa-building-shield"></i> RealEstate</h2>
+        </div>
+
+
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="properties.html" class="nav-link"><i class="fa-solid fa-house-chimney-window"></i>
+                        Properties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="agent.html" class="nav-link"><i class="fa-solid fa-user-tie"></i> Agents</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> My Account</a>
+                <a href="register.html" class="btn-signup"><i class="fa-solid fa-arrow-right-to-bracket"></i> Get
+                    Started</a>
+            </div>
+        </div>
+
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-container">
+
+
+            <div class="floating-stat-card" data-aos="fade-down" data-aos-delay="300">
+                <div class="stat-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+                <div class="stat-info">
+                    <h4>10k+</h4>
+                    <p>Premium Properties</p>
+                </div>
+            </div>
+
+
+            <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="hero-title">Find Your Dream <br> <span class="typing-text"></span><span
+                        class="cursor">&nbsp;</span></h1>
+                <p class="hero-subtitle">Discover handpicked, luxurious homes in top locations. Explore premium
+                    properties tailored just for your lifestyle.</p>
+
+                <div class="hero-cta">
+                    <a href="404page.html" class="btn-primary">Explore Properties</a>
+                    <a href="404page.html" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Book a
+                        Visit</a>
+                </div>
+            </div>
+
+
+            <div class="glass-search-box" data-aos="fade-up" data-aos-delay="300">
+                <form class="search-form" id="heroSearchForm" novalidate>
+
+
+                    <div class="search-group" id="locGroup">
+                        <label>Location</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" id="locInput" placeholder="Enter City, Locality..." autocomplete="off">
+                        </div>
+
+                        <div class="error-message">Please enter a location.</div>
+                    </div>
+
+                    <div class="divider"></div>
+
+
+                    <div class="search-group" id="typeGroup">
+                        <label>Property Type</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-building"></i>
+                            <select id="typeSelect">
+                                <option value="" disabled selected>Select Type</option>
+                                <option value="villa">Luxury Villa</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="penthouse">Penthouse</option>
+                            </select>
+                        </div>
+
+                        <div class="error-message">Please select a property type.</div>
+                    </div>
+
+                    <div class="divider"></div>
+
+
+                    <div class="search-group" id="budgetGroup">
+                        <label>Budget</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                            <select id="budgetSelect">
+                                <option value="" disabled selected>Select Budget</option>
+                                <option value="low">$50k - $100k</option>
+                                <option value="mid">$100k - $500k</option>
+                                <option value="high">$500k+</option>
+                            </select>
+                        </div>
+
+                        <div class="error-message">Please select your budget.</div>
+                    </div>
+
+
+                    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+                        Search</button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="advanced-search-section" id="advanced-search">
+        <div class="search-container">
+
+
+            <div class="section-header" data-aos="fade-up">
+                <h2>Find Your Perfect Match</h2>
+                <p>Use our advanced filters to narrow down your search and find a property that perfectly fits your
+                    lifestyle and budget.</p>
+            </div>
+
+            <div class="search-grid">
+
+
+                <div class="property-types" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="filter-title">Property Type</h3>
+                    <div class="type-cards-grid">
+
+                        <div class="type-card active">
+                            <i class="fa-solid fa-house-chimney-window"></i>
+                            <h4>Villa</h4>
+                            <p>Luxury independent houses</p>
+                        </div>
+
+                        <div class="type-card">
+                            <i class="fa-solid fa-building"></i>
+                            <h4>Apartment</h4>
+                            <p>Modern high-rise flats</p>
+                        </div>
+
+                        <div class="type-card">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <h4>Commercial</h4>
+                            <p>Office and retail spaces</p>
+                        </div>
+
+                        <div class="type-card">
+                            <i class="fa-solid fa-map"></i>
+                            <h4>Plot / Land</h4>
+                            <p>Build your dream home</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="floating-filter-panel" data-aos="fade-left" data-aos-delay="200">
+
+
+                    <div class="filter-group">
+                        <label>Select City / Area</label>
+                        <div class="custom-select-box">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <select class="city-select">
+                                <option value="all">All Cities</option>
+                                <option value="chennai">Chennai, TN</option>
+                                <option value="bangalore">Bangalore, KA</option>
+                                <option value="hyderabad">Hyderabad, TS</option>
+                                <option value="mumbai">Mumbai, MH</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="filter-group">
+                        <div class="range-header">
+                            <label>Price Range</label>
+                            <span id="price-display">$100k - $500k</span>
+                        </div>
+                        <input type="range" min="50" max="2000" value="500" class="price-slider" id="priceRange">
+                        <div class="range-labels">
+                            <span>$50k</span>
+                            <span>$2M+</span>
+                        </div>
+                    </div>
+
+
+                    <div class="filter-group row-group">
+                        <div class="pill-group">
+                            <label>Bedrooms</label>
+                            <div class="pill-options" id="bedOptions">
+                                <input type="radio" name="beds" id="bed-any" value="any" checked>
+                                <label for="bed-any">Any</label>
+
+                                <input type="radio" name="beds" id="bed-1" value="1">
+                                <label for="bed-1">1BHK</label>
+
+                                <input type="radio" name="beds" id="bed-2" value="2">
+                                <label for="bed-2">2BHK</label>
+
+                                <input type="radio" name="beds" id="bed-3" value="3+">
+                                <label for="bed-3">3BHK+</label>
+                            </div>
+                        </div>
+
+                        <div class="pill-group">
+                            <label>Bathrooms</label>
+                            <div class="pill-options" id="bathOptions">
+                                <input type="radio" name="baths" id="bath-any" value="any" checked>
+                                <label for="bath-any">Any</label>
+
+                                <input type="radio" name="baths" id="bath-1" value="1">
+                                <label for="bath-1">1+</label>
+
+                                <input type="radio" name="baths" id="bath-2" value="2">
+                                <label for="bath-2">2+</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="filter-footer">
+                        <div class="live-count">
+                            <i class="fa-solid fa-circle-notch fa-spin count-spinner" style="display: none;"></i>
+                            <span><strong id="resultCount">1,245</strong> Properties Found</span>
+                        </div>
+                        <button class="animated-search-btn">
+                            <span>Search Now</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="featured-section" id="featured">
+        <div class="featured-container">
+
+
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="gradient-heading">Exclusive Properties</h2>
+                <p>Explore our handpicked selection of premium real estate options, curated for luxury, comfort, and
+                    investment potential.</p>
+            </div>
+
+
+            <div class="bento-grid">
+
+
+                <div class="bento-item item-large tilt-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Luxury Villa" class="property-img">
+                    <div class="card-overlay"></div>
+
+                    <div class="ribbon ribbon-luxury">Luxury</div>
+                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+
+                    <div class="property-info">
+                        <div class="price">$1.5M</div>
+                        <h3>Skyline Luxury Villa</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> ECR, Chennai</p>
+
+                        <div class="amenities">
+                            <span><i class="fa-solid fa-bed"></i> 5 Beds</span>
+                            <span><i class="fa-solid fa-bath"></i> 6 Baths</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 4500 Sqft</span>
+                        </div>
+
+                        <button class="quick-view-btn"><i class="fa-solid fa-eye"></i> Quick View</button>
+                    </div>
+                </div>
+
+
+                <div class="bento-item tilt-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Premium Apartment" class="property-img">
+                    <div class="card-overlay"></div>
+
+                    <div class="ribbon ribbon-new">New</div>
+                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+
+                    <div class="property-info">
+                        <div class="price">$350k</div>
+                        <h3>Ocean View Apartment</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> OMR, Chennai</p>
+
+                        <div class="amenities">
+                            <span><i class="fa-solid fa-bed"></i> 3 Beds</span>
+                            <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+                        </div>
+
+                        <button class="quick-view-btn"><i class="fa-solid fa-eye"></i> Quick View</button>
+                    </div>
+                </div>
+
+
+                <div class="bento-item tilt-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Commercial Space" class="property-img">
+                    <div class="card-overlay"></div>
+
+                    <div class="ribbon ribbon-hot">Hot</div>
+                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+
+                    <div class="property-info">
+                        <div class="price">$850k</div>
+                        <h3>Tech Park Workspace</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> T-Nagar, Chennai</p>
+
+                        <div class="amenities">
+                            <span><i class="fa-solid fa-building"></i> Grade A</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 3000 Sqft</span>
+                        </div>
+
+                        <button class="quick-view-btn"><i class="fa-solid fa-eye"></i> Quick View</button>
+                    </div>
+                </div>
+
+
+                <div class="bento-item tilt-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Independent House" class="property-img">
+                    <div class="card-overlay"></div>
+
+                    <div class="ribbon ribbon-luxury">Premium</div>
+                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+
+                    <div class="property-info">
+                        <div class="price">$500k</div>
+                        <h3>Emerald Independent Villa</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> Anna Nagar, Chennai</p>
+
+                        <div class="amenities">
+                            <span><i class="fa-solid fa-bed"></i> 4 Beds</span>
+                            <span><i class="fa-solid fa-car"></i> 2 Parking</span>
+                        </div>
+
+                        <button class="quick-view-btn"><i class="fa-solid fa-eye"></i> Quick View</button>
+                    </div>
+                </div>
+
+
+                <div class="bento-item tilt-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Plots" class="property-img">
+                    <div class="card-overlay"></div>
+
+                    <div class="ribbon ribbon-new">Trending</div>
+                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+
+                    <div class="property-info">
+                        <div class="price">$150k</div>
+                        <h3>Greenfields Plot</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> Tambaram, Chennai</p>
+
+                        <div class="amenities">
+                            <span><i class="fa-solid fa-map"></i> Residential</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 2400 Sqft</span>
+                        </div>
+
+                        <button class="quick-view-btn"><i class="fa-solid fa-eye"></i> Quick View</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="why-choose-us" id="why-us">
+
+        <div class="blur-circle circle-1"></div>
+        <div class="blur-circle circle-2"></div>
+
+        <div class="why-container">
+
+
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="gradient-heading">Why Choose Our Agency</h2>
+                <p>Experience seamless real estate services with our unmatched expertise. We make finding your dream
+                    home safe, easy, and affordable.</p>
+            </div>
+
+
+            <div class="features-grid">
+
+
+                <div class="glass-image-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Trusted Agents">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Trusted Agents</h3>
+                        <p>Certified professionals with deep market knowledge securing the best deals for you.</p>
+                        <a href="#" class="card-btn">Meet the Team <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="glass-image-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Verified Properties">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-check-to-slot"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>100% Verified</h3>
+                        <p>Every property undergoes strict multi-point verification for a risk-free investment.</p>
+                        <a href="#" class="card-btn">View Properties <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="glass-image-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Best Pricing">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Best Pricing</h3>
+                        <p>We guarantee the most competitive prices and maximum value for your money.</p>
+                        <a href="#" class="card-btn">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="glass-image-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Easy Documentation">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Easy Paperwork</h3>
+                        <p>In-house legal experts handle all paperwork and registration completely hassle-free.</p>
+                        <a href="#" class="card-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="glass-image-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Home Loan">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Loan Support</h3>
+                        <p>Partnered with top banks to secure home loans at the lowest interest rates quickly.</p>
+                        <a href="#" class="card-btn">Check Eligibility <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="glass-image-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Customer Support">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock assistance for site visits, queries, and post-sale support.</p>
+                        <a href="#" class="card-btn">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="showcase-section" id="showcase">
+
+        <div class="showcase-header" data-aos="fade-up">
+
+            <h2 class="gradient-heading-dark">Interactive Property Showcase</h2>
+            <p>Drag to explore or let it auto-scroll. Discover our handpicked luxury properties with interactive details
+                just a hover away.</p>
+        </div>
+
+
+        <div class="showcase-track-container" id="draggable-slider" data-aos="fade-up" data-aos-delay="200">
+            <div class="showcase-track">
+
+
+                <div class="showcase-card">
+                    <div class="floating-price">$2.5M</div>
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Villa">
+
+
+                        <div class="hover-amenities">
+                            <span><i class="fa-solid fa-bed"></i> 5 Beds</span>
+                            <span><i class="fa-solid fa-bath"></i> 6 Baths</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 5500 Sqft</span>
+                            <span><i class="fa-solid fa-car"></i> 3 Cars</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge">Luxury Villa</span>
+                        <h3>The Grand Mansion</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Beverly Hills, CA</p>
+                    </div>
+                </div>
+
+
+                <div class="showcase-card">
+                    <div class="floating-price">$850k</div>
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Apartment">
+                        <div class="hover-amenities">
+                            <span><i class="fa-solid fa-bed"></i> 3 Beds</span>
+                            <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 2200 Sqft</span>
+                            <span><i class="fa-solid fa-swimming-pool"></i> Pool</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge">Penthouse</span>
+                        <h3>Skyline Infinity</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Downtown, NY</p>
+                    </div>
+                </div>
+
+
+                <div class="showcase-card">
+                    <div class="floating-price">$1.2M</div>
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="House">
+                        <div class="hover-amenities">
+                            <span><i class="fa-solid fa-bed"></i> 4 Beds</span>
+                            <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 3200 Sqft</span>
+                            <span><i class="fa-solid fa-tree"></i> Garden</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge">Modern Home</span>
+                        <h3>Emerald Estate</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Silicon Valley, CA</p>
+                    </div>
+                </div>
+
+
+                <div class="showcase-card">
+                    <div class="floating-price">$450k</div>
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Apartment">
+                        <div class="hover-amenities">
+                            <span><i class="fa-solid fa-bed"></i> 2 Beds</span>
+                            <span><i class="fa-solid fa-bath"></i> 2 Baths</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 1500 Sqft</span>
+                            <span><i class="fa-solid fa-dumbbell"></i> Gym</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge">Apartment</span>
+                        <h3>Urban Oasis</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Austin, TX</p>
+                    </div>
+                </div>
+
+
+                <div class="showcase-card">
+                    <div class="floating-price">$3.4M</div>
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Commercial">
+                        <div class="hover-amenities">
+                            <span><i class="fa-solid fa-briefcase"></i> Office</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 10000 Sqft</span>
+                            <span><i class="fa-solid fa-square-parking"></i> 20 Parking</span>
+                            <span><i class="fa-solid fa-wifi"></i> Fiber</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge">Commercial</span>
+                        <h3>Tech Hub Plaza</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Seattle, WA</p>
+                    </div>
+                </div>
+
+
+                <div class="showcase-card">
+                    <div class="floating-price">$600k</div>
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Plot">
+                        <div class="hover-amenities">
+                            <span><i class="fa-solid fa-map"></i> Land</span>
+                            <span><i class="fa-solid fa-vector-square"></i> 5 Acres</span>
+                            <span><i class="fa-solid fa-road"></i> Highway Access</span>
+                            <span><i class="fa-solid fa-faucet-drip"></i> Water Ready</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge">Premium Plot</span>
+                        <h3>Greenwood Valley</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Denver, CO</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="agents-section" id="agents">
+        <div class="agents-container">
+
+
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="gradient-heading">Meet Our Expert Agents</h2>
+                <p>Our award-winning team of real estate professionals is here to guide you every step of the way.
+                    Experience, dedication, and proven results.</p>
+            </div>
+
+
+            <div class="agents-grid">
+
+
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="agent-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Agent 1" class="agent-img">
+
+
+                        <div class="agent-socials">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="agent-info">
+                        <h3>David Miller</h3>
+                        <p class="agent-role">Senior Realtor</p>
+
+                        <div class="agent-stats">
+                            <div class="stat"><i class="fa-solid fa-briefcase"></i> 10+ Yrs</div>
+                            <div class="stat"><i class="fa-solid fa-house-circle-check"></i> 150+ Sold</div>
+                            <div class="stat rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                        </div>
+
+                        <div class="agent-contacts">
+                            <button class="btn-call"><i class="fa-solid fa-phone"></i> Call</button>
+                            <button class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="agent-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Agent 2" class="agent-img">
+                        <div class="agent-socials">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="agent-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="agent-role">Luxury Property Specialist</p>
+                        <div class="agent-stats">
+                            <div class="stat"><i class="fa-solid fa-briefcase"></i> 8+ Yrs</div>
+                            <div class="stat"><i class="fa-solid fa-house-circle-check"></i> 120+ Sold</div>
+                            <div class="stat rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                        </div>
+                        <div class="agent-contacts">
+                            <button class="btn-call"><i class="fa-solid fa-phone"></i> Call</button>
+                            <button class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="agent-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Agent 3" class="agent-img">
+                        <div class="agent-socials">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="agent-info">
+                        <h3>Michael Lee</h3>
+                        <p class="agent-role">Commercial Expert</p>
+                        <div class="agent-stats">
+                            <div class="stat"><i class="fa-solid fa-briefcase"></i> 12+ Yrs</div>
+                            <div class="stat"><i class="fa-solid fa-house-circle-check"></i> 200+ Sold</div>
+                            <div class="stat rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                        </div>
+                        <div class="agent-contacts">
+                            <button class="btn-call"><i class="fa-solid fa-phone"></i> Call</button>
+                            <button class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="agent-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Agent 4" class="agent-img">
+                        <div class="agent-socials">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="agent-info">
+                        <h3>Emma Davis</h3>
+                        <p class="agent-role">Property Consultant</p>
+                        <div class="agent-stats">
+                            <div class="stat"><i class="fa-solid fa-briefcase"></i> 5+ Yrs</div>
+                            <div class="stat"><i class="fa-solid fa-house-circle-check"></i> 80+ Sold</div>
+                            <div class="stat rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                        </div>
+                        <div class="agent-contacts">
+                            <button class="btn-call"><i class="fa-solid fa-phone"></i> Call</button>
+                            <button class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="v-process-section" id="process">
+        <div class="v-process-container">
+
+
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="gradient-heading">Your Journey to Home</h2>
+                <p>We've simplified the real estate buying process into 6 easy steps. Scroll down to see how we bring
+                    you closer to your dream home.</p>
+            </div>
+
+
+            <div class="v-timeline-wrapper" id="vTimelineTrack">
+
+
+                <div class="v-line"></div>
+                <div class="v-progress" id="vProgressLine"></div>
+
+
+                <div class="v-step left" data-aos="fade-right">
+                    <div class="v-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="v-card">
+                        <div class="v-card-img">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Search Property">
+                        </div>
+                        <div class="v-card-content">
+                            <h3>1. Search Property</h3>
+                            <p>Browse our verified premium listings based on your location and budget preferences.</p>
+                            <a href="#" class="v-step-btn">Start Search <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="v-step right" data-aos="fade-left">
+                    <div class="v-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                    <div class="v-card">
+                        <div class="v-card-img">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Schedule Visit">
+                        </div>
+                        <div class="v-card-content">
+                            <h3>2. Schedule Visit</h3>
+                            <p>Book a physical or virtual site visit at your convenience to explore the property.</p>
+                            <a href="#" class="v-step-btn">Book Visit <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="v-step left" data-aos="fade-right">
+                    <div class="v-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="v-card">
+                        <div class="v-card-img">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Meet Agent">
+                        </div>
+                        <div class="v-card-content">
+                            <h3>3. Meet Agent</h3>
+                            <p>Discuss pricing, amenities, and negotiations directly with our expert agents.</p>
+                            <a href="#" class="v-step-btn">Contact Agent <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="v-step right" data-aos="fade-left">
+                    <div class="v-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="v-card">
+                        <div class="v-card-img">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Documentation">
+                        </div>
+                        <div class="v-card-content">
+                            <h3>4. Documentation</h3>
+                            <p>Our legal team ensures smooth paperwork, title checks, and secure registration.</p>
+                            <a href="#" class="v-step-btn">View Docs <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="v-step left" data-aos="fade-right">
+                    <div class="v-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    <div class="v-card">
+                        <div class="v-card-img">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Payment">
+                        </div>
+                        <div class="v-card-content">
+                            <h3>5. Payment & Loan</h3>
+                            <p>Complete your transaction safely. We also provide instant home loan approvals.</p>
+                            <a href="#" class="v-step-btn">Pay Securely <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="v-step right" data-aos="fade-left">
+                    <div class="v-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <div class="v-card">
+                        <div class="v-card-img">
+                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Move In">
+                        </div>
+                        <div class="v-card-content">
+                            <h3>6. Move In</h3>
+                            <p>Congratulations! Get your keys and step into your beautiful new dream home.</p>
+                            <a href="#" class="v-step-btn">Get Keys <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="blog-section" id="blog">
+        <div class="blog-container">
+
+
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="gradient-heading">Latest Insights & Trends</h2>
+                <p>Stay updated with the latest real estate market trends, investment tips, and interior design ideas to
+                    make informed decisions.</p>
+            </div>
+
+
+            <div class="blog-grid">
+
+
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-img-wrapper">
+                        <div class="blog-badge">Investment</div>
+                        <img src="https://images.unsplash.com/photo-1560520031-3a4fc4e952f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Property Investment">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Oct 12, 2026</span>
+
+                        </div>
+                        <h3>Top 10 Property Investment Tips for Beginners</h3>
+                        <p>Discover the essential strategies to maximize your ROI and build a profitable real estate
+                            portfolio this year.</p>
+                        <a href="#" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-img-wrapper">
+                        <div class="blog-badge badge-design">Interior Design</div>
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Interior Ideas">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Oct 18, 2026</span>
+
+                        </div>
+                        <h3>Minimalist Interior Ideas for Modern Homes</h3>
+                        <p>Transform your living space with these simple, elegant, and cost-effective minimalist
+                            interior design concepts.</p>
+                        <a href="#" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-img-wrapper">
+                        <div class="blog-badge badge-market">Market Trends</div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Market Updates">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Oct 22, 2026</span>
+
+                        </div>
+                        <h3>Q4 Real Estate Market Updates & Forecast</h3>
+                        <p>An in-depth analysis of current housing prices, interest rates, and what buyers can expect in
+                            the coming months.</p>
+                        <a href="#" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-img-wrapper">
+                        <div class="blog-badge badge-guide">Buying Guide</div>
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Buying Guide">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 02, 2026</span>
+
+                        </div>
+                        <h3>The Ultimate Home Buying Guide for First-Timers</h3>
+                        <p>From securing a mortgage to final registration, learn the step-by-step process of buying your
+                            very first home.</p>
+                        <a href="#" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="ecosystem-section" id="download-app">
+
+
+        <div class="eco-glow"></div>
+
+        <div class="eco-container">
+
+
+            <div class="eco-left" data-aos="fade-right" data-aos-duration="1000">
+                <div class="badge-tag"><i class="fa-solid fa-mobile-screen-button"></i> Mobile Ecosystem</div>
+                <h2 class="gradient-heading-dark">Your Dream Home, Right in Your Pocket</h2>
+                <p class="eco-desc">Experience the future of real estate browsing. Our next-gen mobile application puts
+                    thousands of luxury properties, live virtual walkthroughs, and direct agent chats right at your
+                    fingertips.</p>
+
+
+                <div class="eco-features-grid">
+
+                    <div class="eco-feature-box">
+                        <div class="ef-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="ef-text">
+                            <h4>Instant Alerts</h4>
+                            <p>Get notified the second a property drops in price.</p>
+                        </div>
+                    </div>
+
+                    <div class="eco-feature-box">
+                        <div class="ef-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                        <div class="ef-text">
+                            <h4>360° Tours</h4>
+                            <p>Explore villas virtually from anywhere in the world.</p>
+                        </div>
+                    </div>
+
+                    <div class="eco-feature-box">
+                        <div class="ef-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="ef-text">
+                            <h4>Direct Chat</h4>
+                            <p>Talk to verified agents instantly without delays.</p>
+                        </div>
+                    </div>
+
+                    <div class="eco-feature-box">
+                        <div class="ef-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="ef-text">
+                            <h4>Secure Deals</h4>
+                            <p>Verified legal paperwork and safe transactions.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="eco-store-btns">
+                    <a href="#" class="store-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div class="btn-text">
+                            <small>Download on the</small>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div class="btn-text">
+                            <small>GET IT ON</small>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="eco-right" data-aos="fade-left" data-aos-duration="1000">
+                <div class="mockup-cluster">
+
+
+                    <div class="main-phone-frame">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="App UI">
+                    </div>
+
+
+                    <div class="floating-glass-box box-1">
+                        <div class="fgb-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="fgb-text">
+                            <strong>4.9 / 5.0</strong>
+                            <span>App Store Rating</span>
+                        </div>
+                    </div>
+
+
+                    <div class="floating-glass-box box-2">
+                        <div class="fgb-icon"><i class="fa-solid fa-download"></i></div>
+                        <div class="fgb-text">
+                            <strong>100k+</strong>
+                            <span>Active Downloads</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="cta-section" id="contact">
+
+
+        <div class="aurora-bg"></div>
+        <div class="building-silhouette"></div>
+
+        <div class="cta-container" data-aos="zoom-in" data-aos-duration="1000">
+
+
+            <div class="glass-cta-box">
+
+                <div class="cta-badge"><i class="fa-solid fa-gem"></i> Exclusive Offer</div>
+
+                <h2 class="cta-heading">Find Your Dream Home Today</h2>
+
+                <p class="cta-desc">Take the first step towards luxury living. Explore our handpicked portfolio of
+                    exclusive properties or speak directly with our award-winning real estate agents.</p>
+
+                <div class="cta-buttons">
+                    <a href="#properties" class="btn-glow-primary">
+                        <i class="fa-solid fa-building-shield"></i> Explore Properties
+                    </a>
+                    <a href="#agents" class="btn-glass-outline">
+                        <i class="fa-solid fa-headset"></i> Contact an Agent
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="wave-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,60 L1200,120 L0,120 Z" fill="#111827"></path>
+            </svg>
+        </div>
+    </section>
+
+
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <h2><i class="fa-solid fa-building-shield"></i> RealEstate</h2>
+                    </a>
+                </div>
+                <p class="footer-desc">
+                    Find your dream home with RealEstate. We provide expert guidance in buying, selling, and renting
+                    properties to make your real estate journey smooth and successful.
+                </p>
+                <div class="social-icons">
+                    <a href="404page.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="404page.html"><i class="fab fa-twitter"></i></a>
+                    <a href="404page.html"><i class="fab fa-instagram"></i></a>
+                    <a href="404page.html"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                    <li><a href="agents.html"><i class="fas fa-chevron-right"></i> Agents</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Buy a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Sell a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Rent a Home</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Property Management</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Legal Advisory</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> info@realestate.com</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 45 Emerald Avenue, T.Nagar,<br>Chennai, TN 600017</li>
+                    <li><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 RealEstate Agency. All rights reserved. Your Key to the Perfect Home.</p>
+            <div class="footer-bottom-links">
+                <a href="404page.html">Privacy Policy</a>
+                <a href="404page.html">Terms of Service</a>
+                <a href="404page.html">Legal Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const textArray = ["Home", "Villa", "Apartment", "Penthouse"];
+            const typingElement = document.querySelector(".typing-text");
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typeSpeed = 150;
+
+            function typeEffect() {
+                if (!typingElement) return;
+                const currentWord = textArray[textIndex];
+
+                if (isDeleting) {
+                    typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    typeSpeed = 100;
+                } else {
+                    typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    typeSpeed = 150;
+                }
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    typeSpeed = 1500;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(typeEffect, typeSpeed);
+            }
+
+            if (typingElement) {
+                setTimeout(typeEffect, 1000);
+            }
+
+
+            const searchForm = document.getElementById("heroSearchForm");
+            const locInput = document.getElementById("locInput");
+            const typeSelect = document.getElementById("typeSelect");
+            const budgetSelect = document.getElementById("budgetSelect");
+
+            const locGroup = document.getElementById("locGroup");
+            const typeGroup = document.getElementById("typeGroup");
+            const budgetGroup = document.getElementById("budgetGroup");
+
+            if (searchForm) {
+
+                locInput.addEventListener("input", () => locGroup.classList.remove("error"));
+                typeSelect.addEventListener("change", () => typeGroup.classList.remove("error"));
+                budgetSelect.addEventListener("change", () => budgetGroup.classList.remove("error"));
+
+
+                searchForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    if (locInput.value.trim() === "") {
+                        locGroup.classList.add("error");
+                        isValid = false;
+                    }
+
+                    if (typeSelect.value === "") {
+                        typeGroup.classList.add("error");
+                        isValid = false;
+                    }
+
+                    if (budgetSelect.value === "") {
+                        budgetGroup.classList.add("error");
+                        isValid = false;
+                    }
+
+                    if (isValid) {
+                        window.location.href = '404page.html'
+                    }
+                });
+            }
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+            const typeCards = document.querySelectorAll('.type-card');
+
+            typeCards.forEach(card => {
+                card.addEventListener('click', () => {
+
+                    typeCards.forEach(c => c.classList.remove('active'));
+
+                    card.classList.add('active');
+
+
+                    updateLiveCount();
+                });
+            });
+
+
+            const priceSlider = document.getElementById('priceRange');
+            const priceDisplay = document.getElementById('price-display');
+
+            if (priceSlider) {
+                priceSlider.addEventListener('input', (e) => {
+                    const val = e.target.value;
+
+                    if (val >= 1000) {
+                        let mil = (val / 1000).toFixed(1);
+                        priceDisplay.textContent = `$100k - $${mil}M`;
+                    } else {
+                        priceDisplay.textContent = `$100k - $${val}k`;
+                    }
+                });
+
+
+                priceSlider.addEventListener('change', updateLiveCount);
+            }
+
+
+            const inputElements = document.querySelectorAll('.pill-options input, .city-select');
+            inputElements.forEach(input => {
+                input.addEventListener('change', updateLiveCount);
+            });
+
+
+            const resultCountText = document.getElementById('resultCount');
+            const spinner = document.querySelector('.count-spinner');
+
+            function updateLiveCount() {
+                if (!resultCountText) return;
+
+
+                spinner.style.display = 'inline-block';
+                resultCountText.style.opacity = '0.3';
+
+
+                const newCount = Math.floor(Math.random() * (5000 - 100 + 1)) + 100;
+
+
+                setTimeout(() => {
+
+                    resultCountText.textContent = newCount.toLocaleString();
+
+
+                    spinner.style.display = 'none';
+                    resultCountText.style.opacity = '1';
+                }, 600);
+            }
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+            const favButtons = document.querySelectorAll('.fav-btn');
+
+            favButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    btn.classList.toggle('active');
+                    const icon = btn.querySelector('i');
+
+
+                    if (btn.classList.contains('active')) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                    } else {
+                        icon.classList.remove('fa-solid');
+                        icon.classList.add('fa-regular');
+                    }
+                });
+            });
+
+
+            const quickViewBtns = document.querySelectorAll('.quick-view-btn');
+            quickViewBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    alert("Opening Quick View Modal for this property...");
+                });
+            });
+
+
+            const tiltCards = document.querySelectorAll('.tilt-card');
+
+
+            if (window.innerWidth > 992) {
+                tiltCards.forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+
+                        const rotateX = ((y - centerY) / centerY) * -5;
+                        const rotateY = ((x - centerX) / centerX) * 5;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                        card.style.transition = "transform 0.1s ease";
+                    });
+
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                        card.style.transition = "transform 0.5s ease";
+                    });
+                });
+            }
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.getElementById('draggable-slider');
+
+            if (!slider) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let isAutoScrolling = true;
+
+
+            slider.addEventListener('mouseenter', () => {
+                isAutoScrolling = false;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+                isAutoScrolling = true;
+            });
+
+
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+
+
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+
+            slider.addEventListener('touchstart', () => { isAutoScrolling = false; });
+            slider.addEventListener('touchend', () => { isAutoScrolling = true; });
+
+
+            function autoScroll() {
+                if (isAutoScrolling) {
+                    slider.scrollLeft += 1;
+
+
+                    if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 1)) {
+                        slider.scrollLeft = 0;
+                    }
+                }
+                requestAnimationFrame(autoScroll);
+            }
+
+
+            requestAnimationFrame(autoScroll);
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const timelineTrack = document.getElementById('vTimelineTrack');
+            const progressLine = document.getElementById('vProgressLine');
+
+            if (timelineTrack && progressLine) {
+
+
+                window.addEventListener('scroll', () => {
+
+                    const trackRect = timelineTrack.getBoundingClientRect();
+                    const trackTop = trackRect.top;
+                    const trackHeight = trackRect.height;
+                    const windowHeight = window.innerHeight;
+
+
+
+                    let progressPercentage = ((windowHeight / 2 - trackTop) / trackHeight) * 100;
+
+
+                    if (progressPercentage < 0) {
+                        progressPercentage = 0;
+                    } else if (progressPercentage > 100) {
+                        progressPercentage = 100;
+                    }
+
+
+                    progressLine.style.height = progressPercentage + '%';
+                });
+            }
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

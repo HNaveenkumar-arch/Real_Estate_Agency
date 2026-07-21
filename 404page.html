@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>404 - Property Not Found | Real Estate & Luxury Homes</title>
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-green: #059669;
+            --dark-green: #047857;
+            --white: #FFFFFF;
+            --text-dark: #1F2937;
+            --active-bg: #E6F4EA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatSmoothly 20s ease-in-out infinite alternate;
+        }
+
+        .shape-1 {
+            background-color: var(--primary-green);
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            background-color: var(--dark-green);
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            background-color: var(--primary-green);
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            left: 60%;
+            opacity: 0.05;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatSmoothly {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, -40px) rotate(90deg) scale(1.05);
+            }
+
+            100% {
+                transform: translate(-20px, 30px) rotate(180deg) scale(0.95);
+            }
+        }
+
+        .error-card {
+            position: relative;
+            z-index: 10;
+            background: var(--white);
+            border: 1px solid rgba(5, 150, 105, 0.1);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--primary-green);
+            margin-bottom: 6px;
+            text-shadow: 3px 3px 0px var(--active-bg);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            color: #666666;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            padding: 0 15px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 180px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: 1px solid var(--primary-green);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            border-color: var(--dark-green);
+            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1.5px solid #E0E0E0;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--active-bg);
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .error-card {
+                padding: 40px 20px;
+                border: none;
+                box-shadow: none;
+                background: transparent;
+            }
+
+            .error-code {
+                font-size: 6rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+                padding: 0;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .shape-1 {
+                width: 250px;
+                height: 250px;
+            }
+
+            .shape-2 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="error-card">
+        <div class="error-code">404</div>
+        <h2>Property Not Found! 🏡</h2>
+        <p>Looks like this address doesn't exist or the property has already been sold. Let's guide you back to find your dream home.</p>
+
+        <div class="btn-group">
+            <a href="javascript:history.back()" class="btn btn-outline">
+                <span>&#8592;</span> Go Back
+            </a>
+            <a href="index.html" class="btn btn-primary">
+                Browse Properties
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

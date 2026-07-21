@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealEstate - Create Account</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --emerald-green: #059669;
+            --emerald-dark: #047857;
+            --emerald-glow: rgba(5, 150, 105, 0.4);
+            --text-white: #f8fafc;
+            --text-light: #cbd5e1;
+            --card-bg: #ffffff;
+            --input-border: #e2e5ed;
+            --input-text: #334155;
+            --text-dark: #1f2937;
+        }
+
+        body {
+
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)),
+                url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) translate(-50%, -50%);
+            }
+
+            50% {
+                transform: translateY(-10px) translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translateY(0px) translate(-50%, -50%);
+            }
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+
+        .top-bar {
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-link:hover {
+            background: var(--emerald-green);
+            border-color: var(--emerald-green);
+        }
+
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1100px;
+            gap: 50px;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 80px;
+            z-index: 10;
+        }
+
+
+        .left-panel {
+            flex: 1;
+            width: 100%;
+            max-width: 500px;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        .login-card {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            color: var(--input-text);
+            width: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo i {
+            color: var(--emerald-green);
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .card-header h3 {
+            color: var(--text-dark);
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .card-header p {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+
+        .input-group {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .input-group i.left-icon {
+            position: absolute;
+            left: 18px;
+            top: 15px;
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 13px 15px 13px 48px;
+            border: 2px solid var(--input-border);
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--input-text);
+            background: #f8fafc;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--emerald-green);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
+        }
+
+
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none !important;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .toggle-password:hover {
+            color: var(--emerald-green);
+        }
+
+
+        .error-message {
+            color: #ef4444;
+            font-size: 12px;
+            margin-top: 5px;
+            margin-left: 5px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .input-group.error input {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.03);
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .input-group.error .error-message {
+            display: block;
+        }
+
+        .input-group.error i.left-icon {
+            color: #ef4444;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25%,
+            75% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            background-color: var(--emerald-green);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px var(--emerald-glow);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--emerald-dark);
+            transform: translateY(-2px);
+        }
+
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0 15px;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--input-border);
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: 1em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: 1em;
+        }
+
+
+        .social-logins {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #f8fafc;
+            border: 1px solid var(--input-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--emerald-green);
+            color: #fff;
+            border-color: var(--emerald-green);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px var(--emerald-glow);
+        }
+
+        .create-account {
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .create-account a {
+            color: var(--emerald-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+
+
+        .right-panel {
+            flex: 1.2;
+            position: relative;
+            animation: fadeUp 1s ease-out forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            animation: floatImage 6s ease-in-out infinite;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+
+        .floating-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 30px 25px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .floating-card h4 i {
+            color: #10b981;
+        }
+
+        .floating-card p {
+            font-size: 14px;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+
+        .preloader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s;
+        }
+
+        .preloader-content {
+            text-align: center;
+        }
+
+        .preloader-icon i {
+            font-size: 3rem;
+            color: var(--emerald-green);
+            animation: floatImage 2s infinite ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .preloader-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text-white);
+        }
+
+
+        @media screen and (max-width: 992px) {
+            .container {
+                justify-content: center;
+                margin-top: 80px;
+            }
+
+
+            .right-panel {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            body {
+                padding: 15px;
+            }
+
+            .top-bar {
+                top: 20px;
+                left: 15px;
+            }
+
+            .container {
+                margin-top: 70px;
+                gap: 30px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="preloader-overlay" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-icon"><i class="fa-solid fa-house-chimney"></i></div>
+            <div class="preloader-text">SETTING UP...</div>
+        </div>
+    </div>
+
+
+    <div class="top-bar">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <div class="container">
+
+
+        <div class="left-panel">
+            <div class="login-card">
+
+                <div class="logo">
+                    <i class="fa-solid fa-building-shield"></i> RealEstate
+                </div>
+
+                <div class="card-header">
+                    <h3>Create an Account</h3>
+                    <p>Join us to find your dream home</p>
+                </div>
+
+                <form id="registerForm" novalidate>
+
+
+                    <div class="input-group" id="nameGroup">
+                        <i class="far fa-user left-icon"></i>
+                        <input type="text" id="fullname" placeholder="Full Name (Letters only)" autocomplete="off">
+                        <div class="error-message" id="nameError">Name must contain only letters.</div>
+                    </div>
+
+
+                    <div class="input-group" id="emailGroup">
+                        <i class="far fa-envelope left-icon"></i>
+                        <input type="email" id="email" placeholder="Email Address" autocomplete="off">
+                        <div class="error-message" id="emailError">Please enter a valid email address.</div>
+                    </div>
+
+
+                    <div class="input-group" id="passwordGroup">
+                        <i class="fas fa-lock left-icon"></i>
+                        <input type="password" id="password" placeholder="Password (Min 6 chars)">
+                        <i class="far fa-eye toggle-password" id="togglePassword1"></i>
+                        <div class="error-message" id="passwordError">Password must be at least 6 characters.</div>
+                    </div>
+
+
+                    <div class="input-group" id="confirmPasswordGroup">
+                        <i class="fas fa-check-circle left-icon"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                        <i class="far fa-eye toggle-password" id="togglePassword2"></i>
+                        <div class="error-message" id="confirmPasswordError">Passwords do not match.</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign Up</button>
+
+                </form>
+
+
+                <div class="divider">Or Sign Up With</div>
+                <div class="social-logins">
+                    <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+                </div>
+
+
+                <div class="create-account">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="right-panel">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Luxury Home">
+
+
+                <div class="floating-card">
+                    <h4><i class="fa-solid fa-gem"></i> Join Our Community</h4>
+                    <p>Unlock access to premium properties, connect with top agents, and get personalized
+                        recommendations for your future home.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 1200);
+
+
+            const registerForm = document.getElementById("registerForm");
+
+            const nameInput = document.getElementById("fullname");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+            const confirmPasswordInput = document.getElementById("confirmPassword");
+
+            const nameGroup = document.getElementById("nameGroup");
+            const emailGroup = document.getElementById("emailGroup");
+            const passwordGroup = document.getElementById("passwordGroup");
+            const confirmPasswordGroup = document.getElementById("confirmPasswordGroup");
+
+
+            const togglePassword1 = document.getElementById("togglePassword1");
+            togglePassword1.addEventListener("click", function () {
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+                passwordInput.setAttribute("type", type);
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+            });
+
+
+            const togglePassword2 = document.getElementById("togglePassword2");
+            togglePassword2.addEventListener("click", function () {
+                const type = confirmPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+                confirmPasswordInput.setAttribute("type", type);
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+            });
+
+
+            nameInput.addEventListener("input", () => nameGroup.classList.remove("error"));
+            emailInput.addEventListener("input", () => emailGroup.classList.remove("error"));
+            passwordInput.addEventListener("input", () => passwordGroup.classList.remove("error"));
+            confirmPasswordInput.addEventListener("input", () => confirmPasswordGroup.classList.remove("error"));
+
+
+            registerForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+
+                const nameRegex = /^[a-zA-Z\s]+$/;
+                if (nameInput.value.trim().length < 3 || !nameRegex.test(nameInput.value.trim())) {
+                    nameGroup.classList.add("error");
+                    isValid = false;
+                }
+
+
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    emailGroup.classList.add("error");
+                    isValid = false;
+                }
+
+
+                if (passwordInput.value.trim().length < 6) {
+                    passwordGroup.classList.add("error");
+                    isValid = false;
+                }
+
+
+                if (confirmPasswordInput.value.trim() === "" || confirmPasswordInput.value !== passwordInput.value) {
+                    confirmPasswordGroup.classList.add("error");
+                    isValid = false;
+                }
+
+                if (isValid) {
+
+                    window.location.href = 'login.html'
+
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
