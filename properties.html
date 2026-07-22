@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Navbar</title>
-     
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="properties.css">
+    <link rel="stylesheet" href="common.css">
 </head>
+
 <body>
 
     <nav class="navbar">
-         
+
         <div class="logo">
-            <h2><i class="fa-solid fa-building-shield"></i> RealEstate</h2>
+            <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
         </div>
-        
-         
+
+
         <div class="nav-wrapper">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="properties.html" class="nav-link"><i class="fa-solid fa-house-chimney-window"></i> Properties</a>
+                    <a href="properties.html" class="nav-link active"><i class="fa-solid fa-house-chimney-window"></i>
+                        Properties</a>
                 </li>
                 <li class="nav-item">
                     <a href="agent.html" class="nav-link"><i class="fa-solid fa-user-tie"></i> Agents</a>
@@ -39,11 +43,12 @@
 
             <div class="nav-buttons">
                 <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> My Account</a>
-                <a href="register.html" class="btn-signup"><i class="fa-solid fa-arrow-right-to-bracket"></i> Get Started</a>
+                <a href="register.html" class="btn-signup"><i class="fa-solid fa-arrow-right-to-bracket"></i> Get
+                    Started</a>
             </div>
         </div>
 
-         
+
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -51,88 +56,1340 @@
         </div>
     </nav>
 
-     
-    <section class="dummy-content">
-        <h1>Scroll Down for Animation</h1>
-        <p>White & #059669 Emerald Green Theme</p>
+
+
+    <section class="properties-hero scroll-anim">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-wrapper">
+
+
+
+            <div class="hero-card scroll-anim">
+
+
+                <div class="card-breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <i class="fas fa-angle-double-right divider"></i>
+                    <span class="current">Properties</span>
+                </div>
+
+
+                <h1 class="gradient-text-dark">Discover Your Dream Property</h1>
+                <p class="card-subtitle">Explore handpicked luxury villas, premium apartments, and exclusive plots in
+                    top locations tailored just for you.</p>
+
+
+                <form id="heroSearchForm" class="card-search-form">
+                    <div class="search-input-group">
+                        <i class="fas fa-map-marker-alt search-icon"></i>
+                        <input type="text" id="propertySearchInput"
+                            placeholder="Enter location, property type, or keyword...">
+                        <button type="submit" class="btn-primary search-cta">Search Properties</button>
+                    </div>
+
+                    <div id="searchErrorMsg" class="error-msg"><i class="fas fa-exclamation-circle"></i> Please enter a
+                        location or keyword to search!</div>
+                </form>
+
+            </div>
+        </div>
     </section>
 
+
+    <section class="property-categories-section scroll-anim">
+        <div class="category-container">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-dark">Explore Property Categories</h2>
+                <p class="text-gray">Find exactly what you're looking for by browsing our specialized property
+                    collections.</p>
+            </div>
+
+            <div class="hex-grid">
+
+
+                <div class="hex-card-wrapper scroll-anim">
+                    <div class="hex-card-inner">
+                        <div class="hex-image" style="background-image: url('./asset/o5.webp');">
+                        </div>
+                        <div class="floating-icon"><i class="fas fa-home"></i></div>
+                        <div class="hex-content">
+                            <h3>Luxury Villas</h3>
+                            <div class="prop-count">245+ Properties</div>
+                            <button class="hex-btn" onclick="window.location.href='404page.html'">Explore Villas <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hex-card-wrapper scroll-anim">
+                    <div class="hex-card-inner">
+                        <div class="hex-image" style="background-image: url('./asset/r3.webp');">
+                        </div>
+                        <div class="floating-icon"><i class="fas fa-building"></i></div>
+                        <div class="hex-content">
+                            <h3>Premium Apartments</h3>
+                            <div class="prop-count">512+ Properties</div>
+                            <button class="hex-btn" onclick="window.location.href='404page.html'">Explore Apts <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hex-card-wrapper scroll-anim">
+                    <div class="hex-card-inner">
+                        <div class="hex-image" style="background-image: url('./asset/o7.webp');">
+                        </div>
+                        <div class="floating-icon"><i class="fas fa-city"></i></div>
+                        <div class="hex-content">
+                            <h3>Commercial Spaces</h3>
+                            <div class="prop-count">120+ Properties</div>
+                            <button class="hex-btn" onclick="window.location.href='404page.html'">Explore Comm. <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hex-card-wrapper scroll-anim">
+                    <div class="hex-card-inner">
+                        <div class="hex-image" style="background-image: url('./asset/o6.webp');">
+                        </div>
+                        <div class="floating-icon"><i class="fas fa-house-user"></i></div>
+                        <div class="hex-content">
+                            <h3>Independent Houses</h3>
+                            <div class="prop-count">340+ Properties</div>
+                            <button class="hex-btn" onclick="window.location.href='404page.html'">Explore Houses <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hex-card-wrapper scroll-anim">
+                    <div class="hex-card-inner">
+                        <div class="hex-image" style="background-image: url('./asset/u15.webp');">
+                        </div>
+                        <div class="floating-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="hex-content">
+                            <h3>Plots & Lands</h3>
+                            <div class="prop-count">180+ Properties</div>
+                            <button class="hex-btn" onclick="window.location.href='404page.html'">Explore Plots <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hex-card-wrapper scroll-anim">
+                    <div class="hex-card-inner">
+                        <div class="hex-image" style="background-image: url('./asset/u14.webp');">
+                        </div>
+                        <div class="floating-icon"><i class="fas fa-crown"></i></div>
+                        <div class="hex-content">
+                            <h3>Exclusive Luxury</h3>
+                            <div class="prop-count">85+ Properties</div>
+                            <button class="hex-btn" onclick="window.location.href='404page.html'">Explore Luxury <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="featured-bento-section scroll-anim">
+        <div class="bento-container">
+
+            <div class="section-header-simple">
+                <h2 class="gradient-text-dark">Featured Collections</h2>
+                <button class="btn-text" onclick="window.location.href='404page.html'">View All <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+
+
+            <div class="bento-grid">
+
+
+                <div class="bento-card bento-large scroll-anim">
+                    <div class="card-image-wrapper">
+                        <img src="./asset/o5.webp" alt="Villa">
+
+                        <div class="badges-top">
+                            <span class="badge featured-badge"><i class="fas fa-star"></i> Featured</span>
+                            <span class="badge new-badge">New Launch</span>
+                        </div>
+
+                        <div class="actions-right">
+                            <button class="icon-action compare-btn" title="Compare"
+                                onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-exchange-alt"></i></button>
+                            <button class="icon-action fav-btn" title="Save"
+                                onclick="window.location.href='404page.html'"><i class="far fa-heart"></i></button>
+                        </div>
+
+                        <div class="gallery-indicator"><i class="far fa-image"></i> 1/8</div>
+                    </div>
+
+                    <div class="glass-content">
+                        <div class="price-header">
+                            <h3>₹ 4.5 Cr</h3>
+                            <button class="quick-view-btn" onclick="openQuickView()"><i class="fas fa-eye"></i> Quick
+                                View</button>
+                        </div>
+                        <h4>Grand Sapphire Luxury Villa</h4>
+                        <p class="address-text"><i class="fas fa-map-marker-alt text-primary"></i> ECR Beach Road,
+                            Chennai</p>
+
+                        <div class="property-specs">
+                            <span><i class="fas fa-vector-square"></i> 3200 sq.ft</span>
+                            <span><i class="fas fa-bed"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath"></i> 4 Baths</span>
+                            <span><i class="fas fa-car"></i> 2 Parking</span>
+                        </div>
+
+                        <div class="agent-footer">
+                            <div class="agent-info-inline">
+                                <img src="./asset/u3.webp" alt="Agent">
+                                <span>Suresh Kumar</span>
+                            </div>
+                            <button class="btn-outline-small"
+                                onclick="window.location.href='404page.html'">Contact</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bento-card bento-small scroll-anim">
+                    <div class="card-image-wrapper">
+                        <img src="./asset/u8.webp" alt="Apartment">
+                        <div class="badges-top"><span class="badge premium-badge">Premium</span></div>
+                        <div class="actions-right"><button class="icon-action fav-btn"
+                                onclick="window.location.href='404page.html'"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="gallery-indicator"><i class="far fa-image"></i> 1/5</div>
+                    </div>
+                    <div class="glass-content small-content">
+                        <h3>₹ 1.2 Cr</h3>
+                        <h4>Skyline Modern Apt</h4>
+                        <p class="address-text"><i class="fas fa-map-marker-alt text-primary"></i> OMR, Chennai</p>
+                        <div class="property-specs-small">
+                            <span><i class="fas fa-bed"></i> 3</span>
+                            <span><i class="fas fa-bath"></i> 2</span>
+                            <span><i class="fas fa-vector-square"></i> 1500 sq.ft</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bento-card bento-small scroll-anim">
+                    <div class="card-image-wrapper">
+                        <img src="./asset/u17.webp" alt="House">
+                        <div class="badges-top"><span class="badge featured-badge"><i class="fas fa-star"></i>
+                                Featured</span></div>
+                        <div class="actions-right"><button class="icon-action fav-btn"
+                                onclick="window.location.href='404page.html'"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="gallery-indicator"><i class="far fa-image"></i> 1/4</div>
+                    </div>
+                    <div class="glass-content small-content">
+                        <h3>₹ 2.1 Cr</h3>
+                        <h4>Green Valley House</h4>
+                        <p class="address-text"><i class="fas fa-map-marker-alt text-primary"></i> Anna Nagar, Chennai
+                        </p>
+                        <div class="property-specs-small">
+                            <span><i class="fas fa-bed"></i> 4</span>
+                            <span><i class="fas fa-bath"></i> 3</span>
+                            <span><i class="fas fa-vector-square"></i> 2400 sq.ft</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div id="quickViewModal" class="quick-view-overlay">
+        <div class="quick-view-popup">
+            <button class="close-modal-btn" onclick="closeQuickView()"><i class="fas fa-times"></i></button>
+            <div class="qv-content">
+                <div class="qv-image">
+                    <img src="./asset/o4.webp" alt="Villa">
+                </div>
+                <div class="qv-details">
+                    <span class="badge new-badge mb-10">New Launch</span>
+                    <h2>Grand Sapphire Luxury Villa</h2>
+                    <h3 class="text-primary mb-20">₹ 4.5 Cr</h3>
+                    <p class="text-gray"><i class="fas fa-info-circle"></i> This premium villa offers state-of-the-art
+                        amenities with sea-facing balconies, smart home integrations, and private pool access.</p>
+                    <div class="qv-actions mt-20">
+                        <button class="btn-primary w-100" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-calendar-check"></i> Schedule Visit</button>
+                        <button class="btn-outline w-100" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-info"></i> Full Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="virtual-tour-section scroll-anim">
+        <div class="tour-container">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-dark">Experience It Live</h2>
+                <p class="text-gray">Step inside your future home with our 360° virtual tours, video walkthroughs, and
+                    detailed floor plans.</p>
+            </div>
+
+
+            <div class="main-tour-card scroll-anim">
+                <div class="tour-image-wrapper">
+
+
+                    <video class="tour-bg-video" autoplay muted loop playsinline>
+
+                        <source src="./asset/k2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+
+
+
+                    <div class="glass-overlay-bottom">
+                        <div class="tour-info">
+                            <h3><i class="fas fa-vr-cardboard text-primary"></i> 360° Interactive Tour</h3>
+                            <p>Grand Sapphire Luxury Villa - Full Walkthrough</p>
+                        </div>
+
+                        <button class="tour-action-btn" onclick="window.location.href='404page.html'">Start Tour <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tour-gallery-grid scroll-anim">
+
+
+                <div class="gallery-item">
+                    <img src="./asset/u21.webp" alt="Living Room">
+                    <div class="hover-glass-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-images"></i>
+                            <span>Living Room</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item">
+                    <img src="./asset/u20.webp" alt="Kitchen Walkthrough">
+                    <div class="hover-glass-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-video"></i>
+                            <span>Kitchen Video</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item">
+                    <img src="./asset/u19.webp" alt="Master Bedroom">
+                    <div class="hover-glass-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-bed"></i>
+                            <span>Master Bedroom</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img src="./asset/u18.webp" alt="Floor Plan" style="filter: sepia(30%) hue-rotate(180deg);">
+                    <div class="hover-glass-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-map"></i>
+                            <span>2D & 3D Floor Plans</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="why-choose-us-section scroll-anim">
+
+
+        <div class="glow-shape shape-1"></div>
+        <div class="glow-shape shape-2"></div>
+        <div class="glow-shape shape-3"></div>
+
+        <div class="benefits-container">
+
+            <div class="section-header-center relative-z">
+                <h2 class="gradient-text-dark">Why Buy With Us?</h2>
+                <p class="text-gray">Experience a seamless, secure, and transparent property buying journey with our
+                    premium end-to-end services.</p>
+            </div>
+
+            <div class="benefits-grid">
+
+
+                <div class="glass-benefit-card scroll-anim">
+                    <div class="benefit-img-wrapper">
+                        <img src="./asset/u22.webp" alt="Verified">
+                        <div class="icon-badge"><i class="fas fa-check-double"></i></div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>100% Verified</h3>
+                        <p>Every property undergoes a strict 50-point quality and legal check before being listed.</p>
+                        <button class="btn-outline-small benefit-btn"
+                            onclick="window.location.href='404page.html'">Learn More <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+
+                <div class="glass-benefit-card scroll-anim">
+                    <div class="benefit-img-wrapper">
+                        <img src="./asset/r8.webp" alt="Legal">
+                        <div class="icon-badge"><i class="fas fa-gavel"></i></div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Legal Assistance</h3>
+                        <p>Our in-house legal team handles all documentation, title registrations seamlessly.</p>
+                        <button class="btn-outline-small benefit-btn"
+                            onclick="window.location.href='404page.html'">Learn More <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+
+                <div class="glass-benefit-card scroll-anim">
+                    <div class="benefit-img-wrapper">
+                        <img src="./asset/u11.webp" alt="Loan">
+                        <div class="icon-badge"><i class="fas fa-hand-holding-usd"></i></div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Home Loan Support</h3>
+                        <p>Get instant approvals and the lowest interest rates through our national bank tie-ups.</p>
+                        <button class="btn-outline-small benefit-btn"
+                            onclick="window.location.href='404page.html'">Learn More <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+
+                <div class="glass-benefit-card scroll-anim">
+                    <div class="benefit-img-wrapper">
+                        <img src="./asset/r4.webp" alt="Agents">
+                        <div class="icon-badge"><i class="fas fa-user-tie"></i></div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Trusted Local Agents</h3>
+                        <p>Work with verified, highly rated area experts who understand your exact requirements.</p>
+                        <button class="btn-outline-small benefit-btn"
+                            onclick="window.location.href='404page.html'">Learn More <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+
+                <div class="glass-benefit-card scroll-anim">
+                    <div class="benefit-img-wrapper">
+                        <img src="./asset/r5.webp" alt="Price">
+                        <div class="icon-badge"><i class="fas fa-tags"></i></div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Best Price Guarantee</h3>
+                        <p>No hidden charges. We negotiate directly with sellers to get you the best deal.</p>
+                        <button class="btn-outline-small benefit-btn"
+                            onclick="window.location.href='404page.html'">Learn More <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+
+                <div class="glass-benefit-card scroll-anim">
+                    <div class="benefit-img-wrapper">
+                        <img src="./asset/o8.webp" alt="Security">
+                        <div class="icon-badge"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Secure Transactions</h3>
+                        <p>Your investments are protected with our highly secure, escrow-backed payment gateways.</p>
+                        <button class="btn-outline-small benefit-btn"
+                            onclick="window.location.href='404page.html'">Learn More <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="investment-insights-section scroll-anim">
+        <div class="insights-container">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-dark">Property Investment Insights</h2>
+                <p class="text-gray">Data-driven market trends and statistics to help you make highly profitable real
+                    estate decisions.</p>
+            </div>
+
+
+
+            <div class="stats-grid">
+
+
+                <div class="stat-glass-card scroll-anim">
+                    <div class="circular-progress" data-percentage="12">
+                        <div class="inner-circle">
+                            <span class="counter-value" data-target="12">0</span>%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Annual Price Growth</h3>
+                        <p>Consistent appreciation in prime city locations.</p>
+                    </div>
+                    <button class="stat-btn" onclick="window.location.href='404page.html'">View Market Data <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+
+
+                <div class="stat-glass-card scroll-anim">
+                    <div class="circular-progress" data-percentage="7">
+                        <div class="inner-circle">
+                            <span class="counter-value" data-target="7">0</span>%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Average Rental Yield</h3>
+                        <p>High passive income potential from IT corridors.</p>
+                    </div>
+                    <button class="stat-btn" onclick="window.location.href='404page.html'">View Rental Reports <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+
+
+                <div class="stat-glass-card scroll-anim">
+                    <div class="circular-progress" data-percentage="65">
+                        <div class="inner-circle">
+                            <span class="counter-value" data-target="65">0</span>%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3>5-Year ROI</h3>
+                        <p>Unmatched returns compared to standard investments.</p>
+                    </div>
+                    <button class="stat-btn" onclick="window.location.href='404page.html'">Calculate ROI <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+
+
+            <div class="insights-split-layout">
+
+
+                <div class="market-graph-card scroll-anim">
+                    <h3><i class="fas fa-chart-bar text-primary"></i> 5-Year Market Value Trend</h3>
+                    <p class="text-sm text-gray mb-20">Average property value per sq.ft (in ₹)</p>
+
+                    <div class="css-bar-chart">
+
+                        <div class="bar-group">
+                            <div class="bar">
+                                <div class="bar-fill" data-height="40%">
+                                    <span class="bar-tooltip">₹4,500</span>
+                                </div>
+                            </div>
+                            <span class="bar-label">2020</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar">
+                                <div class="bar-fill" data-height="55%">
+                                    <span class="bar-tooltip">₹5,200</span>
+                                </div>
+                            </div>
+                            <span class="bar-label">2021</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar">
+                                <div class="bar-fill" data-height="70%">
+                                    <span class="bar-tooltip">₹6,800</span>
+                                </div>
+                            </div>
+                            <span class="bar-label">2022</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar">
+                                <div class="bar-fill" data-height="85%">
+                                    <span class="bar-tooltip">₹8,100</span>
+                                </div>
+                            </div>
+                            <span class="bar-label">2023</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar">
+                                <div class="bar-fill" data-height="100%">
+                                    <span class="bar-tooltip">₹9,500</span>
+                                </div>
+                            </div>
+                            <span class="bar-label">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="investment-tips-card scroll-anim">
+                    <h3><i class="fas fa-lightbulb text-warning"></i> Top Investment Tips</h3>
+
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <div class="tip-icon"><i class="fas fa-train"></i></div>
+                            <div class="tip-text">
+                                <h4>Buy Near Upcoming Metro</h4>
+                                <p>Properties within 1km of new transit lines see a 15-20% value surge post-completion.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tip-item">
+                            <div class="tip-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="tip-text">
+                                <h4>Commercial vs Residential</h4>
+                                <p>Commercial spaces offer 8-10% rental yield compared to 3-4% for residential homes.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tip-item">
+                            <div class="tip-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="tip-text">
+                                <h4>Pre-Launch Offers</h4>
+                                <p>Investing during the pre-launch phase secures the lowest price per sq.ft.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="luxury-flip-section scroll-anim">
+        <div class="luxury-container">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-dark">Exclusive Luxury Estates</h2>
+                <p class="text-gray">Hover over the properties to explore premium amenities and smart home features.</p>
+            </div>
+
+            <div class="flip-card-grid">
+
+
+                <div class="flip-card scroll-anim" onclick="this.classList.toggle('hover')">
+                    <div class="flip-card-inner">
+
+
+                        <div class="flip-card-front">
+                            <img src="./asset/o1.webp" alt="Royal Palm Villa">
+                            <div class="front-overlay">
+                                <h3>Royal Palm Villa</h3>
+                                <p class="price-tag">Starting at ₹ 5.5 Cr</p>
+                                <span class="flip-indicator"><i class="fas fa-sync-alt"></i> Flip to Explore</span>
+                            </div>
+                        </div>
+
+
+                        <div class="flip-card-back">
+                            <div class="back-content">
+                                <h3>Royal Palm Villa</h3>
+                                <ul class="luxury-amenities">
+                                    <li><i class="fas fa-swimmer"></i> Swimming Pool</li>
+                                    <li><i class="fas fa-car"></i> 2 Car Parking</li>
+                                    <li><i class="fas fa-bed"></i> 4 Bedrooms</li>
+                                    <li><i class="fas fa-tree"></i> Private Garden</li>
+                                    <li><i class="fas fa-wifi"></i> Smart Home System</li>
+                                </ul>
+                                <button class="btn-primary w-100 mt-20"
+                                    onclick="window.location.href='404page.html'">View Property</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="flip-card scroll-anim" onclick="this.classList.toggle('hover')">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="./asset/u9.webp" alt="Skyline Penthouse">
+                            <div class="front-overlay">
+                                <h3>Skyline Penthouse</h3>
+                                <p class="price-tag">Starting at ₹ 3.2 Cr</p>
+                                <span class="flip-indicator"><i class="fas fa-sync-alt"></i> Flip to Explore</span>
+                            </div>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <div class="back-content">
+                                <h3>Skyline Penthouse</h3>
+                                <ul class="luxury-amenities">
+                                    <li><i class="fas fa-swimmer"></i> Infinity Pool</li>
+                                    <li><i class="fas fa-car"></i> 2 Car Parking</li>
+                                    <li><i class="fas fa-bed"></i> 3 Bedrooms</li>
+                                    <li><i class="fas fa-tree"></i> Sky Terrace</li>
+                                    <li><i class="fas fa-wifi"></i> Smart Security</li>
+                                </ul>
+                                <button class="btn-primary w-100 mt-20"
+                                    onclick="window.location.href='404page.html'">View Property</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="flip-card scroll-anim" onclick="this.classList.toggle('hover')">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="./asset/r1.webp" alt="Emerald Estate">
+                            <div class="front-overlay">
+                                <h3>Emerald Estate</h3>
+                                <p class="price-tag">Starting at ₹ 6.8 Cr</p>
+                                <span class="flip-indicator"><i class="fas fa-sync-alt"></i> Flip to Explore</span>
+                            </div>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <div class="back-content">
+                                <h3>Emerald Estate</h3>
+                                <ul class="luxury-amenities">
+                                    <li><i class="fas fa-swimmer"></i> Olympic Pool</li>
+                                    <li><i class="fas fa-car"></i> 4 Car Parking</li>
+                                    <li><i class="fas fa-bed"></i> 5 Bedrooms</li>
+                                    <li><i class="fas fa-tree"></i> Huge Courtyard</li>
+                                    <li><i class="fas fa-wifi"></i> AI Home Control</li>
+                                </ul>
+                                <button class="btn-primary w-100 mt-20"
+                                    onclick="window.location.href='404page.html'">View Property</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="investment-marquee-section scroll-anim">
+
+
+        <div class="skyline-bg"></div>
+        <div class="skyline-overlay"></div>
+
+        <div class="investment-container">
+
+            <div class="section-header-center relative-z">
+                <h2 class="gradient-text-light">Top Investment Opportunities</h2>
+                <p class="text-gray-light">Explore high-yield properties curated specifically for smart investors
+                    looking for unmatched returns.</p>
+            </div>
+
+
+            <div class="marquee-wrapper relative-z">
+                <div class="marquee-track">
+
+
+                    <div class="investment-float-card">
+                        <div class="card-badges">
+                            <span class="badge-hot">Hot Deal</span>
+                            <span class="badge-roi">Best ROI</span>
+                        </div>
+                        <div class="card-img-wrapper">
+                            <img src="./asset/o1.webp" alt="Luxury Villa">
+                            <div class="price-tag-overlay">₹ 4.5 Cr onwards</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>🏡 Luxury Villa</h3>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> ECR Coast Road, Chennai</p>
+
+                            <div class="investment-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Rental Yield</span>
+                                    <span class="metric-val">6.5% p.a</span>
+                                </div>
+                                <div class="availability-status available">
+                                    <i class="fas fa-circle"></i> Ready to Move
+                                </div>
+                            </div>
+
+
+                            <div class="roi-progress-row">
+                                <div class="roi-ring" style="background: conic-gradient(#059669 85%, #e5e7eb 0%);">
+                                    <span>14.5%</span>
+                                </div>
+                                <div class="roi-info">
+                                    <strong>Expected ROI</strong>
+                                    <span>High appreciation zone</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-invest-now" onclick="window.location.href='404page.html'">Invest Now <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <div class="investment-float-card">
+                        <div class="card-badges">
+                            <span class="badge-hot">Fast Selling</span>
+                        </div>
+                        <div class="card-img-wrapper">
+                            <img src="./asset/u14.webp" alt="Premium Apartment">
+                            <div class="price-tag-overlay">₹ 1.2 Cr onwards</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>🏢 Premium Apartment</h3>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> OMR IT Corridor, Chennai</p>
+
+                            <div class="investment-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Rental Yield</span>
+                                    <span class="metric-val">7.2% p.a</span>
+                                </div>
+                                <div class="availability-status fast-filling">
+                                    <i class="fas fa-circle"></i> Few Units Left
+                                </div>
+                            </div>
+
+                            <div class="roi-progress-row">
+                                <div class="roi-ring" style="background: conic-gradient(#059669 72%, #e5e7eb 0%);">
+                                    <span>12.0%</span>
+                                </div>
+                                <div class="roi-info">
+                                    <strong>Expected ROI</strong>
+                                    <span>High rental demand</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-invest-now" onclick="window.location.href='404page.html'">Invest Now <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <div class="investment-float-card">
+                        <div class="card-badges">
+                            <span class="badge-roi">Best ROI</span>
+                        </div>
+                        <div class="card-img-wrapper">
+                            <img src="./asset/o7.webp" alt="Commercial Space">
+                            <div class="price-tag-overlay">₹ 2.8 Cr onwards</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>🏬 Commercial Space</h3>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> Anna Nagar, Chennai</p>
+
+                            <div class="investment-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Rental Yield</span>
+                                    <span class="metric-val">9.0% p.a</span>
+                                </div>
+                                <div class="availability-status available">
+                                    <i class="fas fa-circle"></i> Immediate Lease
+                                </div>
+                            </div>
+
+                            <div class="roi-progress-row">
+                                <div class="roi-ring" style="background: conic-gradient(#059669 95%, #e5e7eb 0%);">
+                                    <span>16.8%</span>
+                                </div>
+                                <div class="roi-info">
+                                    <strong>Expected ROI</strong>
+                                    <span>Commercial hub advantage</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-invest-now" onclick="window.location.href='404page.html'">Invest Now <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <div class="investment-float-card">
+                        <div class="card-badges">
+                            <span class="badge-hot">New Launch</span>
+                        </div>
+                        <div class="card-img-wrapper">
+                            <img src="./asset/u16.webp" alt="Residential Plot">
+                            <div class="price-tag-overlay">₹ 45 Lakhs onwards</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>🌿 Residential Plot</h3>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> GST Road, Near Airport</p>
+
+                            <div class="investment-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-label">Appreciation</span>
+                                    <span class="metric-val">Fastest Growth</span>
+                                </div>
+                                <div class="availability-status available">
+                                    <i class="fas fa-circle"></i> DTCP Approved
+                                </div>
+                            </div>
+
+                            <div class="roi-progress-row">
+                                <div class="roi-ring" style="background: conic-gradient(#059669 80%, #e5e7eb 0%);">
+                                    <span>15.0%</span>
+                                </div>
+                                <div class="roi-info">
+                                    <strong>Expected ROI</strong>
+                                    <span>Rapid land value surge</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-invest-now" onclick="window.location.href='404page.html'">Invest Now <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="investment-float-card">
+                        <div class="card-badges">
+                            <span class="badge-hot">Hot Deal</span>
+                            <span class="badge-roi">Best ROI</span>
+                        </div>
+                        <div class="card-img-wrapper">
+                            <img src="./asset/o1.webp" alt="Luxury Villa">
+                            <div class="price-tag-overlay">₹ 4.5 Cr onwards</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>🏡 Luxury Villa</h3>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> ECR Coast Road, Chennai</p>
+                            <div class="investment-metrics">
+                                <div class="metric-item"><span class="metric-label">Rental Yield</span><span
+                                        class="metric-val">6.5% p.a</span></div>
+                                <div class="availability-status available"><i class="fas fa-circle"></i> Ready to Move
+                                </div>
+                            </div>
+                            <div class="roi-progress-row">
+                                <div class="roi-ring" style="background: conic-gradient(#059669 85%, #e5e7eb 0%);">
+                                    <span>14.5%</span>
+                                </div>
+                                <div class="roi-info"><strong>Expected ROI</strong><span>High appreciation zone</span>
+                                </div>
+                            </div>
+                            <button class="btn-invest-now" onclick="window.location.href='404page.html'">Invest Now <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <div class="investment-float-card">
+                        <div class="card-badges"><span class="badge-hot">Fast Selling</span></div>
+                        <div class="card-img-wrapper">
+                            <img src="./asset/u14.webp" alt="Premium Apartment">
+                            <div class="price-tag-overlay">₹ 1.2 Cr onwards</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>🏢 Premium Apartment</h3>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> OMR IT Corridor, Chennai</p>
+                            <div class="investment-metrics">
+                                <div class="metric-item"><span class="metric-label">Rental Yield</span><span
+                                        class="metric-val">7.2% p.a</span></div>
+                                <div class="availability-status fast-filling"><i class="fas fa-circle"></i> Few Units
+                                    Left</div>
+                            </div>
+                            <div class="roi-progress-row">
+                                <div class="roi-ring" style="background: conic-gradient(#059669 72%, #e5e7eb 0%);">
+                                    <span>12.0%</span>
+                                </div>
+                                <div class="roi-info"><strong>Expected ROI</strong><span>High rental demand</span></div>
+                            </div>
+                            <button class="btn-invest-now" onclick="window.location.href='404page.html'">Invest Now <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="premium-cta-section scroll-anim">
+
+
+        <div class="cta-bg-image"></div>
+        <div class="aurora-overlay">
+            <div class="aurora-blob blob-1"></div>
+            <div class="aurora-blob blob-2"></div>
+        </div>
+
+
+        <div class="city-silhouette float-silhouette"></div>
+
+
+        <div class="cta-container relative-z">
+
+
+            <div class="glass-cta-box scroll-anim">
+                <h2 class="cta-heading">Ready to Own Your Dream Property?</h2>
+                <p class="cta-subtext">Take the first step towards luxury living. Explore our exclusive collections,
+                    schedule a personalized site visit, or consult with our real estate experts today.</p>
+
+                <div class="cta-button-group">
+
+                    <button class="btn-glow-primary" onclick="window.location.href='404page.html'">
+                        <i class="fas fa-search"></i> Browse More Properties
+                    </button>
+
+
+                    <button class="btn-glass-solid" onclick="window.location.href='404page.html'">
+                        <i class="fas fa-calendar-check"></i> Schedule a Site Visit
+                    </button>
+
+
+                    <button class="btn-glass-outline" onclick="window.location.href='404page.html'">
+                        <i class="fas fa-headset"></i> Contact an Expert
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.06,130.83,120.2,192.27,106.69,240.28,96.2,284.22,76.54,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+
+
     <footer class="footer" id="footer">
-    <div class="footer-container">
+        <div class="footer-container">
 
-         
-        <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
-            <div class="footer-logo">
-                <a href="index.html" class="logo">
-                    <h2><i class="fa-solid fa-building-shield"></i> RealEstate</h2>
-                </a>
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
+                <div class="logo">
+                    <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+                </div>
+                <p class="footer-desc">
+                    Find your dream home with RealEstate. We provide expert guidance in buying, selling, and renting
+                    properties to make your real estate journey smooth and successful.
+                </p>
+                <div class="social-icons">
+                    <a href="404page.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="404page.html"><i class="fab fa-twitter"></i></a>
+                    <a href="404page.html"><i class="fab fa-instagram"></i></a>
+                    <a href="404page.html"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-            <p class="footer-desc">
-                Find your dream home with RealEstate. We provide expert guidance in buying, selling, and renting properties to make your real estate journey smooth and successful.
-            </p>
-            <div class="social-icons">
-                <a href="404page.html"><i class="fab fa-facebook-f"></i></a>
-                <a href="404page.html"><i class="fab fa-twitter"></i></a>
-                <a href="404page.html"><i class="fab fa-instagram"></i></a>
-                <a href="404page.html"><i class="fab fa-linkedin-in"></i></a>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                    <li><a href="agents.html"><i class="fas fa-chevron-right"></i> Agents</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Buy a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Sell a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Rent a Home</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Property Management</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Legal Advisory</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i>info@thestackly.com</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-map-marker-alt"></i> MMR COMPLEX, SALEM,<br> Tamil Nadu 636008 ·</li>
+                    <li><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 RealEstate Agency. All rights reserved. Your Key to the Perfect Home.</p>
+            <div class="footer-bottom-links">
+                <a href="404page.html">Privacy Policy</a>
+                <a href="404page.html">Terms of Service</a>
+                <a href="404page.html">Legal Disclaimer</a>
             </div>
         </div>
-
-         
-        <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-            <h4>Explore</h4>
-            <ul class="footer-links">
-                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                <li><a href="agents.html"><i class="fas fa-chevron-right"></i> Agents</a></li>
-                <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
-            </ul>
-        </div>
-
-         
-        <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
-            <h4>Our Services</h4>
-            <ul class="footer-links">
-                <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Buy a Property</a></li>
-                <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Sell a Property</a></li>
-                <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Rent a Home</a></li>
-                <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Property Management</a></li>
-                <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Legal Advisory</a></li>
-            </ul>
-        </div>
-
-         
-        <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
-            <h4>Contact Us</h4>
-            <ul class="footer-contact">
-                <li><i class="fas fa-envelope"></i> info@realestate.com</li>
-                <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
-                <li><i class="fas fa-map-marker-alt"></i> 45 Emerald Avenue, T.Nagar,<br>Chennai, TN 600017</li>
-                <li><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</li>
-            </ul>
-        </div>
-
-    </div>
-
-     
-    <div class="footer-bottom">
-        <p>&copy; 2026 RealEstate Agency. All rights reserved. Your Key to the Perfect Home.</p>
-        <div class="footer-bottom-links">
-            <a href="404page.html">Privacy Policy</a>
-            <a href="404page.html">Terms of Service</a>
-            <a href="404page.html">Legal Disclaimer</a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-      duration: 800,
-      once: true
-  });
-</script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchForm = document.getElementById("heroSearchForm");
+            const searchInput = document.getElementById("propertySearchInput");
+            const errorMsg = document.getElementById("searchErrorMsg");
+            const inputGroup = document.querySelector(".search-input-group");
+
+            searchForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Default form submit-a thadukka
+
+                const inputValue = searchInput.value.trim();
+
+                if (inputValue === "") {
+
+                    errorMsg.style.display = "block";
+                    inputGroup.classList.add("input-error");
+                    inputGroup.classList.remove("input-success");
+                } else {
+
+                    errorMsg.style.display = "none";
+                    inputGroup.classList.remove("input-error");
+                    inputGroup.classList.add("input-success");
+
+
+
+                    console.log("Searching for: " + inputValue);
+                    window.location.href = '404page.html'
+
+                }
+            });
+
+
+            searchInput.addEventListener("input", function () {
+                if (searchInput.value.trim() !== "") {
+                    errorMsg.style.display = "none";
+                    inputGroup.classList.remove("input-error");
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            const favButtons = document.querySelectorAll('.fav-btn');
+            favButtons.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault(); // Default aana link click-a thadukka
+                    this.classList.toggle('active');
+
+
+                    const icon = this.querySelector('i');
+                    if (this.classList.contains('active')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                    }
+                });
+            });
+        });
+
+
+        function openQuickView() {
+            const modal = document.getElementById('quickViewModal');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Background scroll-a block panna
+        }
+
+        function closeQuickView() {
+            const modal = document.getElementById('quickViewModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Scroll thirumba on panna
+        }
+
+
+        document.getElementById('quickViewModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeQuickView();
+            }
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            const sliderRange = document.getElementById("sliderRangeInput");
+            const beforeImage = document.getElementById("beforeImageContainer");
+            const sliderHandle = document.getElementById("sliderHandle");
+
+            if (sliderRange && beforeImage && sliderHandle) {
+                sliderRange.addEventListener("input", function (e) {
+                    const sliderVal = e.target.value;
+                    beforeImage.style.width = sliderVal + "%";
+                    sliderHandle.style.left = sliderVal + "%";
+                });
+            }
+
+
+            const flipCards = document.querySelectorAll('.flip-card');
+
+            flipCards.forEach(card => {
+                card.addEventListener('click', function () {
+
+                    const isAlreadyOpen = this.classList.contains('hover');
+
+
+                    flipCards.forEach(c => c.classList.remove('hover'));
+
+
+                    if (!isAlreadyOpen) {
+                        this.classList.add('hover');
+                    }
+                });
+            });
+
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const scrollElements = document.querySelectorAll(".scroll-anim");
+
+            const observerOptions = {
+                root: null,
+                threshold: 0.2, // Trigger when 20% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("is-visible");
+
+
+                        const progressBars = entry.target.querySelectorAll(".circular-progress");
+                        progressBars.forEach((bar) => {
+                            animateCircularProgress(bar);
+                        });
+
+                        const counters = entry.target.querySelectorAll(".counter-value");
+                        counters.forEach((counter) => {
+                            animateCounter(counter);
+                        });
+
+
+                        const barFills = entry.target.querySelectorAll(".bar-fill");
+                        barFills.forEach((fill) => {
+                            animateBarFill(fill);
+                        });
+
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+
+            scrollElements.forEach((el) => {
+                observer.observe(el);
+            });
+
+
+
+
+            function animateCircularProgress(progressBar) {
+                const targetPercentage = parseInt(progressBar.getAttribute("data-percentage"));
+                let currentPercentage = 0;
+                const targetDegree = (targetPercentage / 100) * 360;
+                let currentDegree = 0;
+
+                const interval = setInterval(() => {
+                    currentDegree += targetDegree / 30; // Adjust speed here
+
+                    if (currentDegree >= targetDegree) {
+                        currentDegree = targetDegree;
+                        clearInterval(interval);
+                    }
+
+                    progressBar.style.background = `conic-gradient(#028760 ${currentDegree}deg, #e2e8f0 0deg)`;
+                }, 20);
+            }
+
+
+            function animateCounter(counter) {
+                const target = parseInt(counter.getAttribute("data-target"));
+                let count = 0;
+                const increment = target / 30; // Adjust for smoothness
+
+                const updateCounter = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            }
+
+
+            function animateBarFill(bar) {
+                const targetHeight = bar.getAttribute("data-height");
+
+                setTimeout(() => {
+                    bar.style.height = targetHeight;
+                }, 200);
+            }
+        });
+    </script>
 </body>
+
 </html>

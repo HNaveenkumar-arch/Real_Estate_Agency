@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Dashboard - Prime Estates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="agent-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+
+    <nav class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+
+            <div class="panel-role" id="sidebarRoleDisplay">Agent Panel</div>
+        </div>
+
+        <div class="nav-sections">
+            <a class="nav-item active" onclick="switchTab('tab-dashboard', this, 'Dashboard')">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-listings', this, 'Manage Listings')">
+                <i class="fas fa-list"></i> Manage Listings
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-enquiries', this, 'Client Enquiries')">
+                <i class="fas fa-users"></i> Client Enquiries
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-appointments', this, 'Appointments')">
+                <i class="fas fa-calendar-check"></i> Appointments
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-earnings', this, 'Earnings / Profile')">
+                <i class="fas fa-wallet"></i> Earnings / Profile
+            </a>
+        </div>
+
+
+        <div class="bottom-links">
+            <a href="index.html" class="btn-bottom">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <a href="login.html" class="btn-bottom btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
+                <h2 id="dynamic-page-title" class="page-title">Dashboard</h2>
+            </div>
+
+            <div class="profile-area">
+                <div class="profile-info hide-on-mobile">
+                    <span class="profile-name" id="userNameDisplay">Loading...</span>
+                    <span class="role-badge" id="topbarRoleDisplay">Agent</span>
+                </div>
+                <div class="profile-icon">
+                    <img src="./asset/t2.webp" alt="Agent Profile" class="avatar-img">
+                </div>
+            </div>
+        </header>
+
+
+
+        <div class="dashboard-body">
+
+
+            <div id="tab-dashboard" class="content-tab active-tab">
+
+
+                <div class="card mb-20 welcome-card scroll-anim">
+                    <div class="welcome-header flex-between">
+                        <div>
+                            <h2>Welcome back, <span id="welcomeNameDisplay" class="text-primary">Agent</span>! 🚀
+                            </h2>
+                            <div class="welcome-details mb-10">
+                                <p class="text-gray"><i class="fas fa-envelope"></i> <span id="welcomeEmailDisplay"
+                                        class="font-medium">loading...</span></p>
+                                <p class="text-gray"><i class="fas fa-id-badge"></i> Role: <span id="welcomeRoleDisplay"
+                                        class="font-medium text-primary">Agent</span></p>
+                            </div>
+                            <p class="text-gray">Here is your daily summary. The real estate market is highly active
+                                today, and you have 3 new client enquiries waiting for your response.</p>
+                        </div>
+                        <div class="welcome-actions hide-on-mobile">
+                            <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-plus"></i> Add Listing</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid mb-20">
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon"><i class="fas fa-home"></i></div>
+                        <div class="stat-details">
+                            <h3>24</h3>
+                            <p>Active Listings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="color: #3b82f6; background: rgba(59, 130, 246, 0.1);"><i
+                                class="fas fa-users"></i></div>
+                        <div class="stat-details">
+                            <h3>18</h3>
+                            <p>Total Enquiries</p>
+                        </div>
+                    </div>
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i
+                                class="fas fa-calendar-alt"></i></div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>Pending Visits</p>
+                        </div>
+                    </div>
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1);"><i
+                                class="fas fa-wallet"></i></div>
+                        <div class="stat-details">
+                            <h3>₹ 1.2M</h3>
+                            <p>Monthly Revenue</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card mb-20 scroll-anim">
+                    <div class="section-header">
+                        <h2>Performance Analytics 📊</h2>
+                        <select class="custom-select">
+                            <option>This Year</option>
+                            <option>Last 6 Months</option>
+                            <option>This Month</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+
+                <div class="card mb-20 scroll-anim p-0 overflow-hidden">
+                    <div class="hover-image-card">
+                        <img src="./asset/u26.webp" alt="Premium Villa" class="main-featured-img">
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <span class="badge mb-10">Premium Listing</span>
+                                <h2>Grand Luxury ECR Villa</h2>
+                                <p><i class="fas fa-map-marker-alt"></i> East Coast Road, Chennai</p>
+                                <p class="desc mt-10">This spectacular beachfront property features 5 bedrooms, a
+                                    private infinity pool, and smart home integration. Perfect for high-net-worth
+                                    clients looking for exclusivity.</p>
+                                <div class="mt-20">
+                                    <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-eye"></i> View Details</button>
+                                    <button class="btn-outline-light" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-share-alt"></i>
+                                        Share</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2-cols mb-20">
+
+                    <div class="card scroll-anim">
+                        <div class="section-header">
+                            <h2>Recent Leads 🔥</h2>
+                            <button class="btn-text" onclick="window.location.href='404page.html'">View All</button>
+                        </div>
+                        <div class="lead-list">
+                            <div class="lead-item">
+                                <div class="lead-info">
+                                    <h4>Karthik Raj</h4>
+                                    <p class="text-gray">Looking for 3BHK in OMR</p>
+                                </div>
+                                <span class="status-badge new">New</span>
+                            </div>
+                            <div class="lead-item">
+                                <div class="lead-info">
+                                    <h4>Priya</h4>
+                                    <p class="text-gray">Interested in ECR Villa</p>
+                                </div>
+                                <span class="status-badge hot">Hot Lead</span>
+                            </div>
+                            <div class="lead-item">
+                                <div class="lead-info">
+                                    <h4>Manoj</h4>
+                                    <p class="text-gray">Commercial space inquiry</p>
+                                </div>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card scroll-anim">
+                        <div class="section-header">
+                            <h2>Today's Schedule ⏱️</h2>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="time">10:30 AM</div>
+                                <div class="event">
+                                    <h4>Site Visit - Skyline Apt</h4>
+                                    <p>Client: Ramesh</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item active-event">
+                                <div class="time">02:00 PM</div>
+                                <div class="event">
+                                    <h4>Virtual Tour Setup</h4>
+                                    <p>ECR Luxury Villa</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="time">04:30 PM</div>
+                                <div class="event">
+                                    <h4>Agreement Signing</h4>
+                                    <p>Client: Suresh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card scroll-anim mb-20">
+                    <h2>Real Estate Market Insights 📈</h2>
+                    <div class="insights-container mt-20">
+                        <img src="./asset/u11.webp" alt="Market Trends" class="insights-img">
+                        <div class="insights-text">
+                            <h3>Chennai Market Sees 8% Growth in Q3</h3>
+                            <p class="text-gray mt-10">The premium real estate sector in the coastal and IT
+                                corridors has witnessed a significant surge. High-net-worth individuals are
+                                prioritizing spacious villas and smart apartments over traditional setups.</p>
+                            <ul class="insight-list mt-10">
+                                <li><i class="fas fa-check-circle text-primary"></i> <strong>OMR & ECR:</strong> 12%
+                                    appreciation in land value.</li>
+                                <li><i class="fas fa-check-circle text-primary"></i> <strong>Commercial:</strong>
+                                    High demand for co-working spaces.</li>
+                                <li><i class="fas fa-check-circle text-primary"></i> <strong>Client
+                                        Behavior:</strong> 60% of buyers request virtual tours before site visits.
+                                </li>
+                            </ul>
+                            <p class="text-gray mt-10">As an agent, focusing your listings on properties with green
+                                certifications and smart automation will yield a 30% faster closing rate in the
+                                current economic climate.</p>
+                            <button class="btn-outline mt-20" onclick="window.location.href='404page.html'">Read Full
+                                Report <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="tab-listings" class="content-tab">
+
+                <div class="flex-between mb-20 scroll-anim">
+                    <div>
+                        <h2>Manage Listings 🏢</h2>
+                        <p class="text-gray text-sm mt-5">Overview, inventory, and marketing for your properties.</p>
+                    </div>
+
+                    <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'"><i
+                            class="fas fa-sync-alt"></i> Auto-Sync Listings</button>
+                </div>
+
+
+                <div class="stats-grid mb-20">
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="background: rgba(5, 150, 105, 0.1); color: var(--emerald-green);">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>18</h3>
+                            <p>Active Properties</p>
+                        </div>
+                    </div>
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="color: #3b82f6; background: rgba(59, 130, 246, 0.1);"><i
+                                class="fas fa-eye"></i></div>
+                        <div class="stat-details">
+                            <h3>2,450</h3>
+                            <p>Total Profile Views</p>
+                        </div>
+                    </div>
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i
+                                class="fas fa-bookmark"></i></div>
+                        <div class="stat-details">
+                            <h3>342</h3>
+                            <p>Saved by Clients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card scroll-anim">
+                        <div class="stat-icon" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1);"><i
+                                class="fas fa-check-circle"></i></div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Properties Sold</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card mb-20 scroll-anim p-0 overflow-hidden">
+                    <div class="hover-image-card" style="height: 400px;">
+                        <img src="./asset/r10.webp" alt="Spotlight Villa" class="main-featured-img">
+                        <div class="hover-overlay"
+                            style="background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 100%);">
+                            <div class="hover-content">
+                                <span class="badge mb-10" style="background: #fbbf24; color: #854d0e;"><i
+                                        class="fas fa-crown"></i> Most Viewed This Week</span>
+                                <h2>The Royal Palm Residency</h2>
+                                <p class="mb-10"><i class="fas fa-map-marker-alt"></i> Poes Garden, Chennai</p>
+                                <div class="flex-align text-sm mb-10" style="color: #cbd5e1;">
+                                    <span><i class="fas fa-bed"></i> 5 Beds</span> |
+                                    <span><i class="fas fa-bath"></i> 6 Baths</span> |
+                                    <span><i class="fas fa-vector-square"></i> 4,500 sqft</span>
+                                </div>
+
+                                <p class="desc mt-10 prop-desc">This ultra-luxury mansion offers unparalleled privacy,
+                                    imported Italian marble flooring, and a temperature-controlled rooftop pool. Highly
+                                    requested by NRI clients for immediate occupation.</p>
+                                <div class="mt-20 flex-align">
+                                    <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-arrow-up"></i> Boost Listing</button>
+                                    <button class="btn-outline-light" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-chart-bar"></i> View
+                                        Analytics</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section-header scroll-anim mb-15">
+                    <h2>Active Inventory 📋</h2>
+                </div>
+                <div class="property-grid mb-20">
+
+                    <div class="property-card scroll-anim">
+                        <div class="prop-image-wrapper">
+                            <img src="./asset/o11.webp" alt="Apartment" class="property-img">
+                            <span class="badge position-badge">For Sale</span>
+                        </div>
+                        <div class="property-content">
+                            <h3>Skyline Modern Apartment</h3>
+                            <p class="location text-gray text-sm"><i class="fas fa-map-marker-alt"></i> OMR IT
+                                Expressway</p>
+
+                            <p class="text-gray text-sm mt-10 prop-desc">
+                                Premium 3BHK apartment located in the heart of the IT corridor with fully furnished
+                                interiors and modular kitchen.
+                            </p>
+                            <div class="price-row flex-between mt-15"
+                                style="border-top: 1px solid #eee; padding-top: 15px;">
+                                <h4>₹ 1.5 Cr</h4>
+                                <div class="action-btns">
+                                    <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="icon-btn delete-btn" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="property-card scroll-anim">
+                        <div class="prop-image-wrapper">
+                            <img src="./asset/r7.webp" alt="Office Space" class="property-img">
+                            <span class="badge position-badge" style="background:#3b82f6;">For Rent</span>
+                        </div>
+                        <div class="property-content">
+                            <h3>TechPark Office Space</h3>
+                            <p class="location text-gray text-sm"><i class="fas fa-map-marker-alt"></i> Anna Nagar,
+                                Chennai</p>
+
+                            <p class="text-gray text-sm mt-10 prop-desc">
+                                Spacious 5000 sqft commercial space suitable for IT startups and corporate branches.
+                                Includes central AC.
+                            </p>
+                            <div class="price-row flex-between mt-15"
+                                style="border-top: 1px solid #eee; padding-top: 15px;">
+                                <h4>₹ 1.2 L /mo</h4>
+                                <div class="action-btns">
+                                    <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="icon-btn delete-btn" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card scroll-anim">
+                        <div class="prop-image-wrapper">
+                            <img src="./asset/r5.webp" alt="Villa" class="property-img">
+                            <span class="badge position-badge" style="background:#3b82f6;">For Rent</span>
+                        </div>
+                        <div class="property-content">
+                            <h3>Seaview Luxury Villa</h3>
+                            <p class="location text-gray text-sm"><i class="fas fa-map-marker-alt"></i> ECR Beachfront,
+                                Chennai</p>
+
+                            <p class="text-gray text-sm mt-10 prop-desc">
+                                A stunning 4BHK beachfront villa featuring a private infinity pool, landscaped garden,
+                                and state-of-the-art security system.
+                            </p>
+                            <div class="price-row flex-between mt-15"
+                                style="border-top: 1px solid #eee; padding-top: 15px;">
+                                <h4>₹ 2.5 L /mo</h4>
+                                <div class="action-btns">
+                                    <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="icon-btn delete-btn" onclick="window.location.href='404page.html'"><i
+                                            class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card scroll-anim">
+                    <div class="section-header">
+                        <h2>Marketing Channels 🚀</h2>
+                    </div>
+                    <p class="text-gray mb-20 line-height-lg">
+                        Expand your reach! Your properties are automatically synced with these major platforms. Push
+                        your top listings to social media with a single click to generate 3x more leads.
+                    </p>
+
+                    <div class="grid-3-cols">
+
+                        <div class="channel-card">
+                            <div class="channel-icon" style="color: #1877f2; background: #e7f0fd;"><i
+                                    class="fab fa-facebook"></i></div>
+                            <h4>Facebook Ads</h4>
+                            <p class="text-sm text-gray mt-5 mb-15 prop-desc">Reach local buyers through targeted
+                                geographic campaigns.</p>
+                            <button class="btn-outline w-100" onclick="window.location.href='404page.html'">Publish
+                                Now</button>
+                        </div>
+
+                        <div class="channel-card">
+                            <div class="channel-icon" style="color: #e1306c; background: #fce4ec;"><i
+                                    class="fab fa-instagram"></i></div>
+                            <h4>Instagram Showcase</h4>
+                            <p class="text-sm text-gray mt-5 mb-15 prop-desc">Share visual property tours and high-res
+                                images to followers.</p>
+                            <button class="btn-outline w-100" onclick="window.location.href='404page.html'">Create
+                                Post</button>
+                        </div>
+
+                        <div class="channel-card">
+                            <div class="channel-icon"
+                                style="color: var(--emerald-green); background: var(--emerald-light);"><i
+                                    class="fas fa-globe"></i></div>
+                            <h4>Property Portals</h4>
+                            <p class="text-sm text-gray mt-5 mb-15 prop-desc">Auto-sync with MagicBricks, Housing.com,
+                                and 99acres.</p>
+                            <button class="btn-primary w-100 shadow-btn"
+                                onclick="window.location.href='404page.html'">Status: Synced <i
+                                    class="fas fa-check-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div id="tab-enquiries" class="content-tab">
+
+
+                <div class="flex-between mb-20 scroll-anim">
+                    <div class="enq-header-text">
+                        <h2>Client Enquiries 👥</h2>
+                        <p class="text-gray text-sm mt-5">Manage requests, follow-ups, and messages from potential
+                            buyers.</p>
+                    </div>
+                    <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'"><i
+                            class="fas fa-paper-plane"></i> Broadcast Message</button>
+                </div>
+
+
+                <div class="enq-metrics-grid mb-20">
+                    <div class="enq-metric-box scroll-anim">
+                        <div class="enq-icon bg-emerald-light text-emerald"><i class="fas fa-inbox"></i></div>
+                        <div class="enq-metric-info">
+                            <h3>42</h3>
+                            <p>Total Enquiries</p>
+                        </div>
+                    </div>
+                    <div class="enq-metric-box scroll-anim">
+                        <div class="enq-icon bg-red-light text-red"><i class="fas fa-envelope-open-text"></i></div>
+                        <div class="enq-metric-info">
+                            <h3>8</h3>
+                            <p>Unread Messages</p>
+                        </div>
+                    </div>
+                    <div class="enq-metric-box scroll-anim">
+                        <div class="enq-icon bg-orange-light text-orange"><i class="fas fa-fire"></i></div>
+                        <div class="enq-metric-info">
+                            <h3>5</h3>
+                            <p>Hot Leads</p>
+                        </div>
+                    </div>
+                    <div class="enq-metric-box scroll-anim">
+                        <div class="enq-icon bg-blue-light text-blue"><i class="fas fa-stopwatch"></i></div>
+                        <div class="enq-metric-info">
+                            <h3>15 Min</h3>
+                            <p>Avg Response Time</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section-header scroll-anim mb-15">
+                    <h2>🔥 Hot Leads (Action Required)</h2>
+                </div>
+                <div class="enq-hot-leads-grid mb-20">
+
+                    <div class="enq-lead-card scroll-anim border-red">
+                        <div class="enq-lead-header">
+                            <div class="enq-client-profile">
+                                <div class="enq-avatar bg-red text-white">V</div>
+                                <div class="enq-client-name">
+                                    <h4>Vikram Singh</h4>
+                                    <p>Ready to pay advance</p>
+                                </div>
+                            </div>
+                            <span class="enq-badge badge-red">Urgent</span>
+                        </div>
+                        <p class="enq-lead-desc">
+                            Client is highly interested in the <strong>ECR Beachfront Villa</strong>. Requested the
+                            final price negotiation and legal documents for verification today.
+                        </p>
+                        <div class="enq-lead-actions">
+                            <button class="btn-primary flex-grow" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-phone-alt"></i> Call Client</button>
+                            <button class="btn-outline" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-file-pdf"></i> Send Docs</button>
+                        </div>
+                    </div>
+
+
+                    <div class="enq-lead-card scroll-anim border-orange">
+                        <div class="enq-lead-header">
+                            <div class="enq-client-profile">
+                                <div class="enq-avatar bg-orange text-white">N</div>
+                                <div class="enq-client-name">
+                                    <h4>Nandhini</h4>
+                                    <p>Corporate Lease</p>
+                                </div>
+                            </div>
+                            <span class="enq-badge badge-orange">High Priority</span>
+                        </div>
+                        <p class="enq-lead-desc">
+                            Looking to finalize the <strong>TechPark Office Space</strong> by this weekend. Need to
+                            confirm the parking slot allocations with the builder.
+                        </p>
+                        <div class="enq-lead-actions">
+                            <button class="btn-primary flex-grow" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-envelope"></i> Email Details</button>
+                            <button class="btn-outline" onclick="window.location.href='404page.html'"><i
+                                    class="fab fa-whatsapp"></i> WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card mb-20 scroll-anim">
+                    <div class="section-header">
+                        <h2>Recent Enquiries 📥</h2>
+                        <button class="btn-text" onclick="window.location.href='404page.html'">View History</button>
+                    </div>
+                    <div class="enq-list-container mt-15">
+
+
+                        <div class="enq-row hover-scale">
+                            <div class="enq-avatar bg-emerald text-white">S</div>
+                            <div class="enq-row-content">
+                                <div class="enq-row-top">
+                                    <h4>Suresh Kumar</h4>
+                                    <span class="enq-time">10 mins ago</span>
+                                </div>
+                                <p class="enq-interest">Interested in: <strong>Grand Luxury Villa</strong></p>
+                                <p class="enq-contact"><i class="fas fa-phone"></i> +91 98765 43210</p>
+                            </div>
+                            <div class="enq-row-actions">
+                                <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-phone"></i> Call</button>
+                                <button class="btn-outline" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-comment"></i> Message</button>
+                            </div>
+                        </div>
+
+
+                        <div class="enq-row hover-scale">
+                            <div class="enq-avatar bg-blue text-white">A</div>
+                            <div class="enq-row-content">
+                                <div class="enq-row-top">
+                                    <h4>Anitha</h4>
+                                    <span class="enq-time">2 hours ago</span>
+                                </div>
+                                <p class="enq-interest">Question about: <strong>Skyline Apartment</strong></p>
+                                <p class="enq-contact"><i class="fas fa-envelope"></i> anitha@example.com</p>
+                            </div>
+                            <div class="enq-row-actions">
+                                <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-reply"></i> Reply</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="card scroll-anim">
+                    <div class="section-header">
+                        <h2>Direct Messages 💬</h2>
+                        <span class="enq-badge bg-emerald text-white">3 Unread</span>
+                    </div>
+                    <div class="enq-chat-wrapper mt-15">
+
+
+                        <div class="enq-chat-item hover-scale">
+                            <div class="enq-chat-img-box">
+                                <img src="./asset/t1.webp" alt="Client">
+                                <span class="enq-online-status"></span>
+                            </div>
+                            <div class="enq-chat-details">
+                                <div class="enq-chat-header">
+                                    <h4>Ramesh (Buyer)</h4>
+                                    <span class="enq-time text-emerald">Just Now</span>
+                                </div>
+                                <p class="enq-chat-msg text-truncate">"Are the property taxes cleared for the Velachery
+                                    house? Need to know ASAP."</p>
+                            </div>
+                        </div>
+
+
+                        <div class="enq-chat-item hover-scale">
+                            <div class="enq-chat-img-box">
+                                <img src="./asset/u2.webp" alt="Client">
+                            </div>
+                            <div class="enq-chat-details">
+                                <div class="enq-chat-header">
+                                    <h4>Priya (Tenant)</h4>
+                                    <span class="enq-time">Yesterday</span>
+                                </div>
+                                <p class="enq-chat-msg text-truncate">"Thank you! We will visit the site tomorrow at 10
+                                    AM. See you there."</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn-outline w-100 mt-20" onclick="window.location.href='404page.html'"><i
+                            class="fas fa-comments"></i> Open Message Center</button>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div id="tab-appointments" class="content-tab">
+
+
+                <div class="flex-between mb-20 scroll-anim">
+                    <div>
+                        <h2>Appointments & Visits 📅</h2>
+                        <p class="text-gray text-sm mt-5">Track your site visits, client meetings, and daily schedules.
+                        </p>
+                    </div>
+                    <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'"><i
+                            class="fas fa-sync"></i> Sync Google Calendar</button>
+                </div>
+
+
+                <div class="appt-metrics-grid mb-20">
+                    <div class="appt-metric-box scroll-anim">
+                        <div class="appt-icon" style="background: #e0f2fe; color: #0284c7;"><i
+                                class="fas fa-calendar-day"></i></div>
+                        <div class="appt-details">
+                            <h3>4</h3>
+                            <p>Today's Visits</p>
+                        </div>
+                    </div>
+                    <div class="appt-metric-box scroll-anim">
+                        <div class="appt-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-clock"></i>
+                        </div>
+                        <div class="appt-details">
+                            <h3>12</h3>
+                            <p>Upcoming This Week</p>
+                        </div>
+                    </div>
+                    <div class="appt-metric-box scroll-anim">
+                        <div class="appt-icon" style="background: #dcfce7; color: #16a34a;"><i
+                                class="fas fa-check-double"></i></div>
+                        <div class="appt-details">
+                            <h3>28</h3>
+                            <p>Completed (Month)</p>
+                        </div>
+                    </div>
+                    <div class="appt-metric-box scroll-anim">
+                        <div class="appt-icon" style="background: #fee2e2; color: #dc2626;"><i
+                                class="fas fa-times-circle"></i></div>
+                        <div class="appt-details">
+                            <h3>2</h3>
+                            <p>Cancellations</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="appt-panel scroll-anim mb-20">
+                    <div class="section-header">
+                        <h2>Today's Itinerary ⏱️</h2>
+                        <button class="btn-text" onclick="window.location.href='404page.html'">Download Itinerary
+                            PDF</button>
+                    </div>
+
+                    <div class="agenda-timeline mt-15">
+
+                        <div class="agenda-row active-agenda hover-effect">
+                            <div class="agenda-time-block">
+                                <span class="a-time">10:30 AM</span>
+                                <span class="a-duration">45 Mins</span>
+                            </div>
+                            <div class="agenda-info-block">
+                                <h4 class="font-medium text-dark">Site Visit: Grand Luxury ECR Villa</h4>
+                                <p class="text-sm text-gray mt-5"><i class="fas fa-user-tie text-primary"></i> Client:
+                                    Vikram Singh (NRI Buyer)</p>
+                            </div>
+                            <div class="agenda-actions-block">
+                                <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-map-marked-alt"></i> Get
+                                    Directions</button>
+                            </div>
+                        </div>
+
+
+                        <div class="agenda-row hover-effect">
+                            <div class="agenda-time-block">
+                                <span class="a-time">02:00 PM</span>
+                                <span class="a-duration">1 Hour</span>
+                            </div>
+                            <div class="agenda-info-block">
+                                <h4 class="font-medium text-dark">Lease Agreement Signing</h4>
+                                <p class="text-sm text-gray mt-5"><i class="fas fa-building text-primary"></i> Property:
+                                    TechPark Office Space</p>
+                            </div>
+                            <div class="agenda-actions-block">
+                                <button class="btn-outline" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-file-signature"></i> Prep Docs</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section-header scroll-anim mb-15">
+                    <h2>Upcoming VIP Tours 🌟</h2>
+                </div>
+                <div class="vip-tour-grid mb-20">
+
+                    <div class="vip-tour-card scroll-anim">
+                        <div class="vip-header flex-between">
+                            <span class="badge" style="background: #fef3c7; color: #d97706;">Tomorrow</span>
+                            <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-bell"></i></button>
+                        </div>
+                        <h3 class="mt-15 text-dark">Skyline Penthouse Tour</h3>
+
+                        <p class="text-sm text-gray mt-10 prop-desc">Exclusive preview for an international investment
+                            group. Ensure VIP catering and VR setup are fully functional before they arrive.</p>
+                        <div class="mt-15 flex-align" style="border-top: 1px solid #eee; padding-top: 15px;">
+                            <div class="item-avatar" style="background: #8b5cf6;">I</div>
+                            <div>
+                                <h4 class="font-medium text-sm">Investor Group Alpha</h4>
+                                <p class="text-xs text-gray">5 Members Attending</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="vip-tour-card scroll-anim">
+                        <div class="vip-header flex-between">
+                            <span class="badge" style="background: #e0f2fe; color: #0284c7;">Next Monday</span>
+                            <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-bell"></i></button>
+                        </div>
+                        <h3 class="mt-15 text-dark">Seaview Villa Inspection</h3>
+
+                        <p class="text-sm text-gray mt-10 prop-desc">Final architectural inspection with the buyer's
+                            private structural engineer. Bring the latest approved blueprints.</p>
+                        <div class="mt-15 flex-align" style="border-top: 1px solid #eee; padding-top: 15px;">
+                            <div class="item-avatar" style="background: #14b8a6;">M</div>
+                            <div>
+                                <h4 class="font-medium text-sm">Mr. Mukesh (Architect)</h4>
+                                <p class="text-xs text-gray">External Consultant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="appt-panel scroll-anim" style="border-left: 4px solid var(--emerald-green);">
+                    <div class="section-header">
+                        <h2>Actionable Reminders 🔔</h2>
+                    </div>
+                    <div class="reminder-wrap mt-15">
+                        <div class="reminder-note flex-align hover-effect">
+                            <div class="reminder-icon-box text-primary"><i class="fas fa-key"></i></div>
+                            <div class="flex-grow">
+                                <h4 class="font-medium text-dark">Collect Keys for Anna Nagar Property</h4>
+                                <p class="text-sm text-gray">Needed for the 4:30 PM showing tomorrow. Current keys are
+                                    with the owner.</p>
+                            </div>
+                            <button class="btn-outline"
+                                onclick="window.location.href='404page.html'">Acknowledge</button>
+                        </div>
+                        <div class="reminder-note flex-align hover-effect mt-10">
+                            <div class="reminder-icon-box" style="color: #f59e0b;"><i class="fas fa-car"></i></div>
+                            <div class="flex-grow">
+                                <h4 class="font-medium text-dark">Confirm Cab Booking</h4>
+                                <p class="text-sm text-gray">Airport pickup required for the VIP Investor Group arriving
+                                    tomorrow.</p>
+                            </div>
+                            <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div id="tab-earnings" class="content-tab">
+
+
+                <div class="flex-between mb-20 scroll-anim">
+                    <div>
+                        <h2>Earnings & Milestones 💰</h2>
+                        <p class="text-gray text-sm mt-5">Track your commissions, payouts, and professional agent
+                            status.</p>
+                    </div>
+                    <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'"><i
+                            class="fas fa-file-invoice-dollar"></i> Request
+                        Payout</button>
+                </div>
+
+
+                <div class="earn-metrics-grid mb-20">
+                    <div class="earn-metric-card scroll-anim" style="background: var(--emerald-green); color: white;">
+                        <div class="earn-icon" style="background: rgba(255,255,255,0.2);"><i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="earn-info">
+                            <h3 style="color: white;">₹ 12,50,000</h3>
+                            <p style="color: rgba(255,255,255,0.8);">Total Commission Earned</p>
+                        </div>
+                    </div>
+                    <div class="earn-metric-card scroll-anim">
+                        <div class="earn-icon bg-blue-light text-blue"><i class="fas fa-chart-pie"></i></div>
+                        <div class="earn-info">
+                            <h3>₹ 1,45,000</h3>
+                            <p>Earned This Month</p>
+                        </div>
+                    </div>
+                    <div class="earn-metric-card scroll-anim">
+                        <div class="earn-icon bg-orange-light text-orange"><i class="fas fa-hourglass-half"></i></div>
+                        <div class="earn-info">
+                            <h3>₹ 50,000</h3>
+                            <p>Pending Clearance</p>
+                        </div>
+                    </div>
+                    <div class="earn-metric-card scroll-anim">
+                        <div class="earn-icon bg-red-light text-red"><i class="fas fa-gift"></i></div>
+                        <div class="earn-info">
+                            <h3>₹ 25,000</h3>
+                            <p>Quarterly Bonus</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid-2-cols mb-20">
+
+
+                    <div class="card scroll-anim earn-tier-card">
+                        <div class="section-header">
+                            <h2>Next Tier Progress 🚀</h2>
+                            <span class="badge" style="background: #e0f2fe; color: #0284c7;">Platinum Tier</span>
+                        </div>
+                        <p class="text-gray mb-15 line-height-lg">
+                            You are <strong>₹ 2,50,000</strong> away from reaching the Platinum Agent Tier. Unlocking
+                            this tier gives you a 5% bump in commission splits and dedicated marketing funds.
+                        </p>
+
+                        <div class="progress-section mb-10">
+                            <div class="flex-between mb-5">
+                                <span class="font-medium">Current: ₹ 12.5L</span>
+                                <span class="text-primary font-medium">Goal: ₹ 15L</span>
+                            </div>
+                            <div class="progress-bar" style="height: 12px; background: #e5e7eb;">
+                                <div class="progress-fill"
+                                    style="width: 83%; background: linear-gradient(90deg, var(--emerald-green), #34d399);">
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray mt-10 text-right">83% Completed</p>
+                        </div>
+                        <button class="btn-outline w-100 mt-10" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-bolt"></i> View Tips to
+                            Accelerate</button>
+                    </div>
+
+
+                    <div class="card scroll-anim">
+                        <div class="section-header">
+                            <h2>Reputation & Badges 🎖️</h2>
+                            <div class="flex-align text-primary font-medium">
+                                <i class="fas fa-star"></i> 4.9/5 Rating
+                            </div>
+                        </div>
+                        <p class="text-gray mb-15">Badges earned through client feedback and consistent performance.</p>
+
+                        <div class="badge-grid mt-15">
+                            <div class="reputation-badge hover-effect">
+                                <div class="rep-icon" style="color: #f59e0b; background: #fef3c7;"><i
+                                        class="fas fa-trophy"></i></div>
+                                <div>
+                                    <h4 class="font-medium text-dark">Top Closer</h4>
+                                    <p class="text-xs text-gray mt-5">Sold 10+ properties</p>
+                                </div>
+                            </div>
+                            <div class="reputation-badge hover-effect">
+                                <div class="rep-icon" style="color: #3b82f6; background: #eff6ff;"><i
+                                        class="fas fa-reply-all"></i></div>
+                                <div>
+                                    <h4 class="font-medium text-dark">Fast Responder</h4>
+                                    <p class="text-xs text-gray mt-5">&lt; 15 min reply time</p>
+                                </div>
+                            </div>
+                            <div class="reputation-badge hover-effect">
+                                <div class="rep-icon" style="color: #10b981; background: #d1fae5;"><i
+                                        class="fas fa-user-shield"></i></div>
+                                <div>
+                                    <h4 class="font-medium text-dark">Trusted Agent</h4>
+                                    <p class="text-xs text-gray mt-5">100% 5-star reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2-cols">
+
+
+                    <div class="card scroll-anim">
+                        <div class="section-header">
+                            <h2>Recent Payouts 💳</h2>
+                            <button class="btn-text" onclick="window.location.href='404page.html'">View Ledger</button>
+                        </div>
+                        <div class="payout-list mt-15">
+                            <div class="payout-item hover-effect">
+                                <div class="payout-info">
+                                    <h4 class="font-medium text-dark">Commission: ECR Villa</h4>
+                                    <p class="text-sm text-gray mt-5">Transferred on: Oct 12, 2026</p>
+                                </div>
+                                <div class="payout-amount text-right">
+                                    <h4 class="text-emerald">+ ₹ 90,000</h4>
+                                    <span class="badge mt-5"
+                                        style="background: #dcfce7; color: #16a34a;">Credited</span>
+                                </div>
+                            </div>
+                            <div class="payout-item hover-effect">
+                                <div class="payout-info">
+                                    <h4 class="font-medium text-dark">Lease: TechPark Office</h4>
+                                    <p class="text-sm text-gray mt-5">Transferred on: Oct 05, 2026</p>
+                                </div>
+                                <div class="payout-amount text-right">
+                                    <h4 class="text-emerald">+ ₹ 55,000</h4>
+                                    <span class="badge mt-5"
+                                        style="background: #dcfce7; color: #16a34a;">Credited</span>
+                                </div>
+                            </div>
+                            <div class="payout-item hover-effect" style="border-left: 3px solid #f59e0b;">
+                                <div class="payout-info">
+                                    <h4 class="font-medium text-dark">Commission: Skyline Apt</h4>
+                                    <p class="text-sm text-gray mt-5">Awaiting bank clearance</p>
+                                </div>
+                                <div class="payout-amount text-right">
+                                    <h4 class="text-orange">+ ₹ 50,000</h4>
+                                    <span class="badge mt-5"
+                                        style="background: #fef3c7; color: #d97706;">Processing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card scroll-anim">
+                        <div class="section-header">
+                            <h2>Tax & Documents 📄</h2>
+                        </div>
+                        <p class="text-gray mb-15">Download your official earnings reports and tax deduction
+                            certificates.</p>
+
+                        <div class="doc-list mt-15">
+                            <div class="doc-item hover-effect">
+                                <div class="flex-align">
+                                    <div class="doc-icon text-red bg-red-light"><i class="fas fa-file-pdf"></i></div>
+                                    <div>
+                                        <h4 class="font-medium text-dark">Q3 TDS Certificate</h4>
+                                        <p class="text-xs text-gray mt-5">PDF • 1.2 MB</p>
+                                    </div>
+                                </div>
+                                <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-download"></i></button>
+                            </div>
+                            <div class="doc-item hover-effect">
+                                <div class="flex-align">
+                                    <div class="doc-icon text-blue bg-blue-light"><i class="fas fa-file-invoice"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-dark">September 2026 Invoice</h4>
+                                        <p class="text-xs text-gray mt-5">PDF • 800 KB</p>
+                                    </div>
+                                </div>
+                                <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-download"></i></button>
+                            </div>
+                            <div class="doc-item hover-effect">
+                                <div class="flex-align">
+                                    <div class="doc-icon text-emerald bg-emerald-light"><i
+                                            class="fas fa-file-excel"></i></div>
+                                    <div>
+                                        <h4 class="font-medium text-dark">Annual Earnings Ledger</h4>
+                                        <p class="text-xs text-gray mt-5">XLSX • 3.5 MB</p>
+                                    </div>
+                                </div>
+                                <button class="icon-btn edit-btn" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const storedEmail = localStorage.getItem('userEmail') || "agent@primeestates.com";
+            const storedRole = localStorage.getItem('userRole') || "agent"; // default to agent
+
+            let extractedName = storedEmail.split('@')[0];
+            extractedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+            extractedName = extractedName.replace(/[._]/g, ' ');
+
+            const formattedRole = storedRole.charAt(0).toUpperCase() + storedRole.slice(1);
+
+
+            if (document.getElementById("userNameDisplay")) document.getElementById("userNameDisplay").textContent = extractedName;
+            if (document.getElementById("topbarRoleDisplay")) document.getElementById("topbarRoleDisplay").textContent = formattedRole;
+            if (document.getElementById("welcomeNameDisplay")) document.getElementById("welcomeNameDisplay").textContent = extractedName;
+            if (document.getElementById("welcomeEmailDisplay")) document.getElementById("welcomeEmailDisplay").textContent = storedEmail;
+            if (document.getElementById("welcomeRoleDisplay")) document.getElementById("welcomeRoleDisplay").textContent = formattedRole;
+            if (document.getElementById("profileNameInput")) document.getElementById("profileNameInput").value = extractedName;
+            if (document.getElementById("profileEmailInput")) document.getElementById("profileEmailInput").value = storedEmail;
+
+
+            initScrollAnimations();
+        });
+
+
+        function initScrollAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // 10% கார்டு தெரிந்தவுடனே அனிமேஷன் ஆக தொடங்கும்
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show-anim');
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+
+            document.querySelectorAll('.scroll-anim').forEach((element) => {
+                observer.observe(element);
+            });
+        }
+
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            sidebar.classList.toggle('mobile-open');
+
+            if (sidebar.classList.contains('mobile-open')) {
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+
+        function switchTab(tabId, element, pageTitle) {
+            document.querySelectorAll('.content-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            document.querySelectorAll('.nav-item').forEach(nav => {
+                nav.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active-tab');
+            element.classList.add('active');
+            document.getElementById('dynamic-page-title').innerText = pageTitle;
+
+
+            const newTabElements = document.getElementById(tabId).querySelectorAll('.scroll-anim');
+            newTabElements.forEach(el => {
+                el.classList.remove('show-anim');
+                setTimeout(() => el.classList.add('show-anim'), 50);
+            });
+
+
+            if (window.innerWidth <= 768) {
+                toggleSidebar();
+            }
+        }
+
+
+        function logout() {
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userRole');
+            window.location.href = "login.html";
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+
+
+
+            initChart();
+        });
+
+        function initChart() {
+            const ctx = document.getElementById('revenueChart');
+            if (!ctx) return;
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Revenue (in Lakhs)',
+                        data: [12, 19, 15, 25, 22, 30],
+                        borderColor: '#059669', // Emerald Green
+                        backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4, // Smooth curve
+                        fill: true,
+                        pointBackgroundColor: '#ffffff',
+                        pointBorderColor: '#059669',
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { borderDash: [5, 5], color: '#e5e7eb' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

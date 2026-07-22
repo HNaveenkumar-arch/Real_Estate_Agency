@@ -4,21 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>404 - Property Not Found | Real Estate & Luxury Homes</title>
+    <title>404 - Off The Market | Luxury Real Estate</title>
     <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
         rel="stylesheet">
-     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-green: #059669;
-            --dark-green: #047857;
-            --white: #FFFFFF;
-            --text-dark: #1F2937;
-            --active-bg: #E6F4EA;
+
+            --bg-white: #ffffff;
+            --emerald-green: #059669;
+            --emerald-light: rgba(5, 150, 105, 0.08);
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+
+
+            --emerald-dark: #047857;
         }
 
         * {
@@ -28,95 +32,52 @@
         }
 
         body {
-            background-color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
-            min-height: 100dvh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background-color: var(--bg-white);
+
+            background-image: url('./asset/u25.webp');
+            background-size: cover;
+            background-position: center;
             position: relative;
         }
 
-        .background-shapes {
+
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.295) 0%, rgba(27, 27, 27, 0.267) 100%);
+            z-index: 1;
         }
 
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.08;
-            animation: floatSmoothly 20s ease-in-out infinite alternate;
-        }
 
-        .shape-1 {
-            background-color: var(--primary-green);
-            width: 400px;
-            height: 400px;
-            top: -150px;
-            right: -100px;
-            animation-delay: 0s;
-        }
-
-        .shape-2 {
-            background-color: var(--dark-green);
-            width: 300px;
-            height: 300px;
-            bottom: -100px;
-            left: -50px;
-            animation-delay: -5s;
-        }
-
-        .shape-3 {
-            background-color: var(--primary-green);
-            width: 150px;
-            height: 150px;
-            top: 40%;
-            left: 60%;
-            opacity: 0.05;
-            animation-delay: -10s;
-        }
-
-        @keyframes floatSmoothly {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-
-            50% {
-                transform: translate(30px, -40px) rotate(90deg) scale(1.05);
-            }
-
-            100% {
-                transform: translate(-20px, 30px) rotate(180deg) scale(0.95);
-            }
-        }
-
-        .error-card {
+        .luxury-card {
             position: relative;
             z-index: 10;
-            background: var(--white);
-            border: 1px solid rgba(5, 150, 105, 0.1);
-            border-radius: 24px;
-            padding: 60px 40px;
+            background: var(--bg-white);
+            border: 1px solid var(--emerald-light);
+            border-radius: 16px;
+            padding: 60px 50px;
             text-align: center;
-            max-width: 550px;
+            max-width: 650px;
             width: 90%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
-            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+            box-shadow: 0 25px 50px rgba(31, 41, 55, 0.08), 0 0 0 10px var(--emerald-light);
+            animation: fadeIn 1s ease-out forwards;
         }
 
-        @keyframes slideUpFade {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(20px);
             }
 
             to {
@@ -125,118 +86,124 @@
             }
         }
 
+        .icon-wrapper {
+            margin-bottom: 20px;
+            color: var(--emerald-green);
+            font-size: 2.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         .error-code {
             font-family: 'Playfair Display', serif;
-            font-size: 8rem;
+            font-size: 7.5rem;
             font-weight: 700;
             line-height: 1;
-            color: var(--primary-green);
-            margin-bottom: 6px;
-            text-shadow: 3px 3px 0px var(--active-bg);
+            margin-bottom: 10px;
+            color: var(--emerald-green);
+            letter-spacing: 2px;
         }
 
         h2 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            color: var(--text-dark);
         }
 
         p {
-            color: #666666;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            padding: 0 15px;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
         }
 
         .btn-group {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 14px 28px;
-            border-radius: 50px;
+            padding: 15px 35px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: flex;
+            letter-spacing: 1px;
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            flex: 1;
-            min-width: 180px;
             justify-content: center;
+            gap: 10px;
+            border-radius: 4px;
         }
 
+
         .btn-primary {
-            background-color: var(--primary-green);
-            color: var(--white);
-            border: 1px solid var(--primary-green);
+            background-color: var(--emerald-green);
+            color: var(--bg-white);
+            border: 1px solid var(--emerald-green);
         }
 
         .btn-primary:hover {
-            background-color: var(--dark-green);
-            border-color: var(--dark-green);
-            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
-            transform: translateY(-3px);
+            background-color: var(--emerald-dark);
+            border-color: var(--emerald-dark);
+            box-shadow: 0 10px 20px var(--emerald-light);
+            transform: translateY(-2px);
         }
+
 
         .btn-outline {
             background-color: transparent;
-            color: var(--text-dark);
-            border: 1.5px solid #E0E0E0;
+            color: var(--emerald-green);
+            border: 1px solid var(--emerald-green);
         }
 
         .btn-outline:hover {
-            background-color: var(--active-bg);
-            border-color: var(--primary-green);
-            color: var(--primary-green);
-            transform: translateY(-3px);
+            background: var(--emerald-light);
+            transform: translateY(-2px);
         }
 
+
         @media (max-width: 768px) {
-            .error-card {
-                padding: 40px 20px;
-                border: none;
-                box-shadow: none;
-                background: transparent;
+            .luxury-card {
+                padding: 40px 25px;
+                box-shadow: 0 15px 30px rgba(31, 41, 55, 0.05), 0 0 0 6px var(--emerald-light);
             }
 
             .error-code {
-                font-size: 6rem;
+                font-size: 5.5rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             p {
                 font-size: 0.95rem;
-                padding: 0;
             }
 
             .btn-group {
                 flex-direction: column;
-                gap: 12px;
+                gap: 15px;
             }
 
             .btn {
                 width: 100%;
-            }
-
-            .shape-1 {
-                width: 250px;
-                height: 250px;
-            }
-
-            .shape-2 {
-                width: 200px;
-                height: 200px;
             }
         }
     </style>
@@ -244,23 +211,25 @@
 
 <body>
 
-    <div class="background-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
 
-    <div class="error-card">
+    <div class="overlay"></div>
+
+    <div class="luxury-card">
+        <div class="icon-wrapper">
+
+            <i class="fa-solid fa-house-circle-xmark"></i>
+        </div>
         <div class="error-code">404</div>
-        <h2>Property Not Found! 🏡</h2>
-        <p>Looks like this address doesn't exist or the property has already been sold. Let's guide you back to find your dream home.</p>
+        <h2>Off The Market</h2>
+        <p>The exclusive property you are searching for is currently unavailable or sold. Explore our premium portfolio
+            for similar estates.</p>
 
         <div class="btn-group">
             <a href="javascript:history.back()" class="btn btn-outline">
-                <span>&#8592;</span> Go Back
+                <i class="fa-solid fa-arrow-left-long"></i> Return
             </a>
             <a href="index.html" class="btn btn-primary">
-                Browse Properties
+                View Portfolio <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
     </div>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Navbar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+        </div>
+
+
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="properties.html" class="nav-link"><i class="fa-solid fa-house-chimney-window"></i>
+                        Properties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="agent.html" class="nav-link"><i class="fa-solid fa-user-tie"></i> Agents</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active"><i class="fa-solid fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> My Account</a>
+                <a href="register.html" class="btn-signup"><i class="fa-solid fa-arrow-right-to-bracket"></i> Get
+                    Started</a>
+            </div>
+        </div>
+
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+
+
+    <section class="contact-hero-section parallax-bg" id="contactHero">
+
+
+        <div class="mouse-spotlight" id="spotlight"></div>
+
+
+        <div class="hero-overlay"></div>
+
+
+        <div class="buildings-silhouette"></div>
+
+
+        <i class="fas fa-phone-alt float-icon icon-phone"></i>
+        <i class="fas fa-envelope float-icon icon-mail"></i>
+        <i class="fas fa-map-marker-alt float-icon icon-location"></i>
+
+        <div class="contact-hero-container relative-z">
+
+
+            <div class="hero-glass-box">
+
+
+                <div class="hero-image-side" style="background-image: url(./asset/u26.webp);">
+                    <div class="image-overlay-glow"></div>
+                </div>
+
+
+                <div class="hero-content-side">
+
+
+                    <div class="breadcrumbs">
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                        <i class="fas fa-angle-double-right divider"></i>
+                        <span class="current-page">Contact</span>
+                    </div>
+
+
+                    <h1 class="animated-gradient-heading">Let's Find Your Dream Property Together</h1>
+
+
+                    <p class="hero-subtitle">Have questions about buying, selling, or investing? Our expert team is here
+                        to help you make the right move.</p>
+
+
+                    <div class="hero-action-buttons">
+                        <a href="404page.html" class="btn-glow-emerald">
+                            <i class="fas fa-user-tie"></i> Contact an Expert
+                        </a>
+                        <a href="404page.html" class="btn-outline-white">
+                            <i class="fas fa-calendar-alt"></i> Schedule a Consultation
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="premium-contact-section scroll-anim" id="contact-details">
+
+
+        <div class="shape-blob shape-1"></div>
+        <div class="shape-blob shape-2"></div>
+
+        <div class="contact-split-container relative-z">
+
+
+            <div class="contact-illustration-side">
+                <div class="illus-content">
+                    <h2 class="gradient-text-emerald">Let's Talk Real Estate</h2>
+                    <p class="text-slate">Our property experts are ready to guide you. Fill out the form, and we'll be
+                        in touch within 24 hours.</p>
+                    <img src="./asset/r9.webp" alt="Contact Office" class="contact-img">
+
+                    <div class="quick-contact-info">
+                        <div class="info-item"><i class="fas fa-phone-alt"></i> +91 9876543210</div>
+                        <div class="info-item"><i class="fas fa-envelope"></i> support@thestackly.com</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contact-form-side">
+                <div class="glass-form-box">
+                    <form id="premiumContactForm" novalidate>
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+                                <input type="text" id="fullName" class="form-input" placeholder=" " required>
+                                <label for="fullName" class="floating-label">Full Name</label>
+                                <div class="error-text" id="nameError"><i class="fas fa-exclamation-circle"></i> Name is
+                                    required (Letters only).</div>
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <input type="tel" id="phoneNum" class="form-input" placeholder=" " maxlength="10"
+                                    required>
+                                <label for="phoneNum" class="floating-label">Phone Number</label>
+
+                                <div class="error-text" id="phoneError"><i class="fas fa-exclamation-circle"></i> Please
+                                    enter exactly 10 digits.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <input type="email" id="emailAdd" class="form-input" placeholder=" " required>
+                            <label for="emailAdd" class="floating-label">Email Address</label>
+                            <div class="error-text" id="emailError"><i class="fas fa-exclamation-circle"></i> Please
+                                enter a valid email.</div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+                                <select id="propInterest" class="form-select" required>
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="buy">Buy a Property</option>
+                                    <option value="sell">Sell a Property</option>
+                                    <option value="rent">Rent</option>
+                                    <option value="invest">Investment</option>
+                                </select>
+                                <label for="propInterest" class="floating-label select-label">Property Interest</label>
+                                <div class="error-text" id="interestError"><i class="fas fa-exclamation-circle"></i>
+                                    Please select your interest.</div>
+                            </div>
+
+
+                            <div class="input-group">
+                                <input type="text" id="prefLocation" class="form-input" placeholder=" " required>
+                                <label for="prefLocation" class="floating-label">Preferred Location</label>
+                                <div class="error-text" id="locationError"><i class="fas fa-exclamation-circle"></i>
+                                    Location is required.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <select id="budgetRange" class="form-select" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="low">Under $500k</option>
+                                <option value="mid">$500k - $1M</option>
+                                <option value="high">$1M - $5M</option>
+                                <option value="ultra">$5M+</option>
+                            </select>
+                            <label for="budgetRange" class="floating-label select-label">Budget Range</label>
+                            <div class="error-text" id="budgetError"><i class="fas fa-exclamation-circle"></i> Please
+                                select a budget range.</div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <textarea id="userMessage" class="form-textarea" placeholder=" " rows="3"
+                                required></textarea>
+                            <label for="userMessage" class="floating-label">Your Message</label>
+                            <div class="error-text" id="messageError"><i class="fas fa-exclamation-circle"></i> Please
+                                enter at least 10 characters.</div>
+                        </div>
+
+
+                        <button type="submit" class="btn-gradient-submit" id="submitBtn">
+                            <span class="btn-text">Send Message <i class="fas fa-paper-plane"></i></span>
+                        </button>
+
+                    </form>
+
+
+                    <div class="success-animation-box" id="successBox" style="display: none;">
+                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                        </svg>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for reaching out. Our expert will contact you soon.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="location-map-section scroll-anim">
+        <div class="map-container relative-z">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">Visit Our Headquarters</h2>
+                <p class="text-slate">Drop by for a cup of coffee and let's discuss your next big real estate move in
+                    person.</p>
+            </div>
+
+
+            <div class="map-split-layout">
+
+
+                <div class="office-preview-card">
+
+
+                    <div class="office-img-header" style="background-image: url(./asset/o7.webp);">
+                        <div class="status-badge"><span class="pulse-dot"></span> Open Now</div>
+                    </div>
+
+                    <div class="office-details">
+                        <div class="address-box">
+
+                            <i class="fas fa-map-marker-alt animated-pin text-emerald"></i>
+                            <div>
+                                <h3>Stackly Headquarters</h3>
+                                <p class="address-text">MMR COMPLEX, SALEM,<br> Tamil Nadu 636008 ·
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr class="divider-line">
+
+
+                        <h4 class="landmark-title"><i class="fas fa-building"></i> Nearby Landmarks</h4>
+                        <ul class="landmark-list">
+                            <li><i class="fas fa-map-pin"></i> 5 mins from City Central Mall</li>
+                            <li><i class="fas fa-train"></i> 10 mins from Main Railway Station</li>
+                            <li><i class="fas fa-plane"></i> 45 mins from International Airport</li>
+                        </ul>
+
+
+                        <div class="map-action-buttons">
+                            <a href="404page.html" class="btn-glow-emerald full-width">
+                                <i class="fas fa-directions"></i> Get Driving Directions
+                            </a>
+                            <a href="404page.html" class="btn-outline-slate full-width">
+                                <i class="fas fa-street-view"></i> Explore Street View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="map-frame-wrapper">
+                    <div class="map-box">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.161609877049!2d78.17140487386634!3d11.682956588526372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1781692635052!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" class="cm-iframe">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="contact-info-section scroll-anim">
+        <div class="info-container relative-z">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">We're Here to Help</h2>
+                <p class="text-slate">Reach out to us through any of the channels below. We ensure quick and reliable
+                    support.</p>
+            </div>
+
+            <div class="info-cards-grid">
+
+
+                <div class="info-glass-card">
+                    <div class="icon-gradient-circle float-anim">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone</h3>
+
+                    <div class="info-details">
+                        <div class="info-row">
+                            <span class="info-label">Sales Support:</span>
+                            <a href="404page.html" class="info-value hover-emerald">+91 9876543210</a>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Customer Care:</span>
+                            <a href="404page.html" class="info-value hover-emerald">+91 2345678901</a>
+                        </div>
+                    </div>
+
+                    <a href="404page.html" class="btn-card-action">Call Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+
+                <div class="info-glass-card">
+                    <div class="icon-gradient-circle float-anim delay-1">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+
+                    <div class="info-details">
+                        <div class="info-row">
+                            <span class="info-label">General:</span>
+                            <a href="404page.html" class="info-value hover-emerald">support@thestackly.com</a>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Sales Team:</span>
+                            <a href="404page.html" class="info-value hover-emerald">info@thestackly.com</a>
+                        </div>
+                    </div>
+
+                    <a href="404page.html" class="btn-card-action">Send Email <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+
+                <div class="info-glass-card">
+                    <div class="icon-gradient-circle float-anim delay-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Office Address</h3>
+
+                    <div class="info-details">
+                        <div class="info-row">
+                            <span class="info-label">Head Office:</span>
+                            <span class="info-value">MMR COMPLEX, SALEM, Tamil Nadu 636008 ·</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Branch Office:</span>
+                            <span class="info-value">MMR COMPLEX, SALEM.</span>
+                        </div>
+                    </div>
+
+                    <a href="404page.html" class="btn-card-action">Get Directions <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+
+                <div class="info-glass-card">
+                    <div class="icon-gradient-circle float-anim delay-3">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Business Hours</h3>
+
+                    <div class="info-details">
+                        <div class="info-row">
+                            <span class="info-label">Mon - Sat:</span>
+                            <span class="info-value font-bold">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Sunday:</span>
+                            <span class="info-value text-red font-bold">Closed (Holiday)</span>
+                        </div>
+                    </div>
+
+                    <a href="404page.html" class="btn-card-action">Book Appointment <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="final-cta-section scroll-anim">
+
+
+        <div class="cta-bg-layer" style="background-image: url(./asset/u25.webp);">
+        </div>
+
+
+        <div class="aurora-glow-overlay"></div>
+
+
+        <div class="light-rays"></div>
+
+
+        <div class="particles-container">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
+            <div class="particle p5"></div>
+            <div class="particle p6"></div>
+        </div>
+
+
+        <div class="skyline-bg"></div>
+
+
+        <div class="cta-glass-box relative-z">
+            <h2>Ready to Find Your <br><span class="gradient-text-emerald">Perfect Property?</span></h2>
+            <p>Connect with our experienced real estate professionals and schedule your free consultation today.</p>
+
+            <div class="cta-action-group">
+
+                <a href="404page.html" class="btn-magnetic mag-primary">
+                    <span class="btn-text"><i class="fas fa-home"></i> Book a Property Visit</span>
+                </a>
+                <a href="404page.html" class="btn-magnetic mag-dark">
+                    <span class="btn-text"><i class="fas fa-phone-alt"></i> Talk to an Agent</span>
+                </a>
+                <a href="404page.html" class="btn-magnetic mag-outline-light">
+                    <span class="btn-text"><i class="fas fa-envelope"></i> Send an Enquiry</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="bottom-wave">
+            <svg class="wave-anim-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+                    class="wave-fill"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
+                <div class="logo">
+                    <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+                </div>
+                <p class="footer-desc">
+                    Find your dream home with RealEstate. We provide expert guidance in buying, selling, and renting
+                    properties to make your real estate journey smooth and successful.
+                </p>
+                <div class="social-icons">
+                    <a href="404page.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="404page.html"><i class="fab fa-twitter"></i></a>
+                    <a href="404page.html"><i class="fab fa-instagram"></i></a>
+                    <a href="404page.html"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                    <li><a href="agents.html"><i class="fas fa-chevron-right"></i> Agents</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Buy a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Sell a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Rent a Home</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Property Management</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Legal Advisory</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i>info@thestackly.com</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-map-marker-alt"></i> MMR COMPLEX, SALEM,<br> Tamil Nadu 636008 ·</li>
+                    <li><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 RealEstate Agency. All rights reserved. Your Key to the Perfect Home.</p>
+            <div class="footer-bottom-links">
+                <a href="404page.html">Privacy Policy</a>
+                <a href="404page.html">Terms of Service</a>
+                <a href="404page.html">Legal Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const heroSection = document.getElementById("contactHero");
+            const spotlight = document.getElementById("spotlight");
+
+            if (heroSection && spotlight) {
+                heroSection.addEventListener("mousemove", (e) => {
+                    const rect = heroSection.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+
+                    spotlight.style.setProperty("--x", `${x}px`);
+                    spotlight.style.setProperty("--y", `${y}px`);
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("premiumContactForm");
+            const successBox = document.getElementById("successBox");
+
+
+            const nameInput = document.getElementById("fullName");
+            const phoneInput = document.getElementById("phoneNum");
+
+
+            nameInput.addEventListener("input", function () {
+                this.value = this.value.replace(/[0-9]/g, '');
+            });
+
+
+            phoneInput.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, ''); // Removes anything that is not a number
+            });
+
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Stop page reload
+
+                let isValid = true;
+
+
+                function validateField(inputId, errorId, minLength = 1) {
+                    const input = document.getElementById(inputId);
+                    const errorText = document.getElementById(errorId);
+
+                    if (input.value.trim().length < minLength) {
+                        errorText.classList.add("show-error");
+                        input.classList.add("input-error");
+                        isValid = false;
+                    } else {
+                        errorText.classList.remove("show-error");
+                        input.classList.remove("input-error");
+                    }
+                }
+
+
+                validateField("fullName", "nameError", 1);
+                validateField("emailAdd", "emailError", 1);
+                validateField("propInterest", "interestError", 1);
+                validateField("prefLocation", "locationError", 1);
+                validateField("budgetRange", "budgetError", 1);
+
+
+                validateField("userMessage", "messageError", 10);
+
+
+                const phoneErrorText = document.getElementById("phoneError");
+                if (phoneInput.value.trim().length !== 10) {
+                    phoneErrorText.classList.add("show-error");
+                    phoneInput.classList.add("input-error");
+                    isValid = false;
+                } else {
+                    phoneErrorText.classList.remove("show-error");
+                    phoneInput.classList.remove("input-error");
+                }
+
+
+                const allInputs = form.querySelectorAll(".form-input, .form-textarea, .form-select");
+                allInputs.forEach(input => {
+                    input.addEventListener("input", function () {
+                        this.classList.remove("input-error");
+                        const errorMsg = this.parentElement.querySelector(".error-text");
+                        if (errorMsg) errorMsg.classList.remove("show-error");
+                    });
+                });
+
+
+                if (isValid) {
+                    form.style.display = "none";
+                    window.location.href = '404page.html'
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Prime Estates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="client-dashboard.css">
+</head>
+
+<body>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+
+            <div class="panel-role" id="sidebarRoleDisplay">Client Panel</div>
+        </div>
+
+        <div class="nav-sections">
+            <a class="nav-item active" onclick="switchTab('tab-dashboard', this, 'Dashboard')">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-properties', this, 'My Properties / Saved')">
+                <i class="fas fa-home"></i> My Properties / Saved
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-visits', this, 'Schedule Visits')">
+                <i class="fas fa-calendar-check"></i> Schedule Visits
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-messages', this, 'Messages')">
+                <i class="fas fa-envelope"></i> Messages
+            </a>
+            <a class="nav-item" onclick="switchTab('tab-profile', this, 'Profile & Settings')">
+                <i class="fas fa-user-cog"></i> Profile & Settings
+            </a>
+        </div>
+
+
+        <div class="bottom-links">
+            <a href="index.html" class="btn-bottom">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <a href="login.html" class="btn-bottom btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
+                <h2 id="dynamic-page-title" class="page-title">Dashboard</h2>
+            </div>
+
+            <div class="profile-area">
+
+                <div class="profile-info hide-on-mobile">
+                    <span class="profile-name" id="userNameDisplay">Loading...</span>
+
+                    <span class="role-badge" id="topbarRoleDisplay">Client</span>
+                </div>
+                <div class="profile-icon">
+                    <img src="./asset/t4.webp" alt="Profile" class="avatar-img">
+                </div>
+            </div>
+        </header>
+
+
+        <div class="dashboard-body">
+
+
+            <div id="tab-dashboard" class="content-tab active-tab">
+
+
+                <div class="card mb-20 welcome-card scroll-anim">
+                    <h2>Welcome back, <span id="welcomeNameDisplay" class="text-primary">User</span>! 👋</h2>
+                    <div class="welcome-details mb-10">
+                        <p class="text-gray"><i class="fas fa-envelope"></i> <span id="welcomeEmailDisplay"
+                                class="font-medium">loading...</span></p>
+                        <p class="text-gray"><i class="fas fa-user-tag"></i> Role: <span id="welcomeRoleDisplay"
+                                class="font-medium text-primary">Client</span></p>
+                    </div>
+                    <p class="text-gray">Here is the overview of your real estate activities. The market in your
+                        preferred locations has seen a 4% increase in value this month.</p>
+                </div>
+
+
+                <div class="stats-grid scroll-anim">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Saved Properties</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="stat-details">
+                            <h3>3</h3>
+                            <p>Upcoming Visits</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-bell"></i></div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>New Alerts</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section-container scroll-anim">
+                    <div class="section-header">
+                        <h3><i class="fas fa-building text-primary"></i> Recommended For You</h3>
+                        <a href="404page.html" class="view-all">View All</a>
+                    </div>
+                    <div class="property-grid">
+                        <div class="property-card">
+                            <div class="property-img">
+                                <span class="badge">For Sale</span>
+                            </div>
+                            <div class="property-info">
+                                <h4>Luxury Villa in OMR</h4>
+                                <p class="price">₹ 2.5 Cr</p>
+                                <p class="text-gray text-sm"><i class="fas fa-map-marker-alt"></i> OMR, Chennai</p>
+                                <button class="btn-outline w-100" onclick="window.location.href='404page.html'">View
+                                    Details</button>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-img bg-2">
+                                <span class="badge">For Rent</span>
+                            </div>
+                            <div class="property-info">
+                                <h4>2BHK Modern Apartment</h4>
+                                <p class="price">₹ 25,000/mo</p>
+                                <p class="text-gray text-sm"><i class="fas fa-map-marker-alt"></i> Velachery, Chennai
+                                </p>
+                                <button class="btn-outline w-100" onclick="window.location.href='404page.html'">View
+                                    Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section-container scroll-anim">
+                    <div class="section-header">
+                        <h3><i class="fas fa-map-signs text-primary"></i> Upcoming Site Visits</h3>
+                    </div>
+                    <div class="visit-list">
+                        <div class="visit-card">
+                            <div class="visit-date">
+                                <span class="day">24</span>
+                                <span class="month">Jul</span>
+                            </div>
+                            <div class="visit-details">
+                                <h4>Green Valley Plots</h4>
+                                <p class="text-gray text-sm"><i class="far fa-clock"></i> 10:30 AM | <i
+                                        class="fas fa-user"></i> Agent: Ramesh</p>
+                            </div>
+                            <button class="btn-primary"
+                                onclick="window.location.href='404page.html'">Reschedule</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section-container scroll-anim">
+                    <div class="section-header">
+                        <h3><i class="fas fa-history text-primary"></i> Recent Activity</h3>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                            <div class="timeline-content">
+                                <p>You saved <strong>Seaside Villa</strong> to your favorites.</p>
+                                <span class="text-sm text-gray">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="timeline-content">
+                                <p>Requested a callback for <strong>OMR Tech Park Office Space</strong>.</p>
+                                <span class="text-sm text-gray">Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="insight-banner scroll-anim">
+                    <div class="insight-content">
+                        <h3><i class="fas fa-chart-line"></i> Market Insights</h3>
+                        <p>Property values in <strong>Chennai South</strong> are expected to rise by 6% in the next
+                            quarter. Great time to invest!</p>
+                    </div>
+                    <button class="btn-primary" onclick="window.location.href='404page.html'">Read Report</button>
+                </div>
+
+
+                <div class="section-container scroll-anim">
+                    <div class="agent-card">
+                        <div class="agent-profile">
+                            <div class="agent-avatar"><i class="fas fa-user-tie"></i></div>
+                            <div class="agent-info">
+                                <h4>Your Assigned Agent</h4>
+                                <p class="text-gray">Suresh Kumar - Senior Realtor</p>
+                            </div>
+                        </div>
+                        <div class="agent-actions">
+                            <button class="btn-outline" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-phone-alt"></i> Call</button>
+                            <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-comment-dots"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tab-properties" class="content-tab">
+
+
+                <div class="portfolio-overview scroll-anim">
+
+                    <div class="overview-header">
+                        <div class="overview-text">
+                            <h2>Your Saved Portfolio 🏡</h2>
+                            <p class="text-gray">Manage and compare your <strong>12</strong> shortlisted properties.</p>
+                        </div>
+                        <div class="portfolio-value">
+                            <span class="text-sm text-gray">Estimated Portfolio Value</span>
+                            <h3 class="text-primary">₹ 5.7 Cr</h3>
+                        </div>
+                    </div>
+
+                    <div class="category-pills">
+                        <button class="category-pill active" onclick="window.location.href='404page.html'">
+                            <div class="pill-icon"><i class="fas fa-th-large"></i></div>
+                            <div class="pill-text">All Properties</div>
+                            <div class="pill-badge">12</div>
+                        </button>
+
+                        <button class="category-pill" onclick="window.location.href='404page.html'">
+                            <div class="pill-icon"><i class="fas fa-home"></i></div>
+                            <div class="pill-text">Luxury Villas</div>
+                            <div class="pill-badge">4</div>
+                        </button>
+
+                        <button class="category-pill" onclick="window.location.href='404page.html'">
+                            <div class="pill-icon"><i class="fas fa-building"></i></div>
+                            <div class="pill-text">Apartments</div>
+                            <div class="pill-badge">6</div>
+                        </button>
+
+                        <button class="category-pill" onclick="window.location.href='404page.html'">
+                            <div class="pill-icon"><i class="fas fa-map"></i></div>
+                            <div class="pill-text">Plots / Lands</div>
+                            <div class="pill-badge">2</div>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="premium-property-grid scroll-anim">
+
+                    <div class="premium-card">
+                        <div class="card-image-wrapper">
+                            <img src="./asset/r1.webp" alt="Luxury Villa" class="prop-img">
+                            <span class="badge premium-badge">Premium</span>
+                            <button class="fav-btn" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="price-header">
+                                <h3>₹ 4.5 Cr</h3>
+                                <span class="status-tag">For Sale</span>
+                            </div>
+                            <h4>Grand Luxury Seaside Villa</h4>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> ECR, Chennai</p>
+                            <div class="prop-amenities">
+                                <span><i class="fas fa-bed"></i> 4</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-ruler-combined"></i> 3200 sqft</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-outline w-100" onclick="window.location.href='404page.html'">Schedule
+                                    Visit</button>
+                                <button class="btn-primary w-100" onclick="window.location.href='404page.html'">View
+                                    Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="premium-card">
+                        <div class="card-image-wrapper">
+                            <img src="./asset/r2.webp" alt="Modern Apartment" class="prop-img">
+                            <span class="badge new-badge">Newly Added</span>
+                            <button class="fav-btn" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="price-header">
+                                <h3>₹ 1.2 Cr</h3>
+                                <span class="status-tag">For Sale</span>
+                            </div>
+                            <h4>Skyline Modern Apartment</h4>
+                            <p class="location-text"><i class="fas fa-map-marker-alt"></i> OMR, Chennai</p>
+                            <div class="prop-amenities">
+                                <span><i class="fas fa-bed"></i> 3</span>
+                                <span><i class="fas fa-bath"></i> 2</span>
+                                <span><i class="fas fa-ruler-combined"></i> 1500 sqft</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-outline w-100" onclick="window.location.href='404page.html'">Schedule
+                                    Visit</button>
+                                <button class="btn-primary w-100" onclick="window.location.href='404page.html'">View
+                                    Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="compare-section scroll-anim">
+                    <div class="compare-content">
+                        <div class="compare-icon"><i class="fas fa-balance-scale-left"></i></div>
+                        <div class="compare-text">
+                            <h3>Compare Properties</h3>
+                            <p>Confused between multiple properties? Compare their features side-by-side.</p>
+                        </div>
+                    </div>
+                    <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'">Start
+                        Comparison (2)</button>
+                </div>
+
+
+                <div class="neighborhood-section scroll-anim">
+                    <h3><i class="fas fa-map text-primary"></i> Your Interested Locations</h3>
+                    <div class="neighborhood-grid">
+                        <div class="location-card">
+                            <img src="./asset/r3.webp" alt="ECR">
+                            <div class="location-overlay">
+                                <h4>East Coast Road</h4>
+                                <p>4 Saved Properties</p>
+                                <button class="btn-glass" onclick="window.location.href='404page.html'">Explore
+                                    Area</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <img src="./asset/r4.webp" alt="OMR">
+                            <div class="location-overlay">
+                                <h4>OMR Tech Corridor</h4>
+                                <p>2 Saved Properties</p>
+                                <button class="btn-glass" onclick="window.location.href='404page.html'">Explore
+                                    Area</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="price-alert-banner scroll-anim">
+                    <div class="alert-info">
+                        <div class="alert-icon"><i class="fas fa-bell-on"></i>🔔</div>
+                        <div>
+                            <h3>Price Drop Alert!</h3>
+                            <p>The price for <strong>Skyline Modern Apartment</strong> has dropped by 5%.</p>
+                        </div>
+                    </div>
+                    <button class="btn-alert" onclick="window.location.href='404page.html'">Claim Offer</button>
+                </div>
+
+            </div>
+
+
+            <div id="tab-visits" class="content-tab">
+
+
+                <div class="calendar-section scroll-anim">
+                    <div class="section-header-simple">
+                        <h2>Your Schedule 📅</h2>
+                        <button class="btn-outline" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-plus"></i> Book New Visit</button>
+                    </div>
+                    <div class="calendar-strip">
+                        <div class="date-box">
+                            <span class="day-name">Mon</span>
+                            <span class="date-num">21</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="day-name">Tue</span>
+                            <span class="date-num">22</span>
+                        </div>
+                        <div class="date-box active">
+                            <span class="day-name">Wed</span>
+                            <span class="date-num">24</span>
+                            <span class="dot-indicator"></span>
+                        </div>
+                        <div class="date-box">
+                            <span class="day-name">Thu</span>
+                            <span class="date-num">25</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="day-name">Fri</span>
+                            <span class="date-num">26</span>
+                            <span class="dot-indicator"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="upcoming-section scroll-anim">
+                    <h3 class="section-title"><i class="fas fa-clock text-primary"></i> Upcoming Appointments</h3>
+
+                    <div class="visit-ticket">
+                        <div class="ticket-image">
+                            <img src="./asset/o1.webp" alt="Villa">
+                            <div class="ticket-time">10:30 AM</div>
+                        </div>
+                        <div class="ticket-details">
+                            <div class="ticket-header">
+                                <h4>Grand Luxury Seaside Villa</h4>
+
+                            </div>
+                            <p class="text-gray text-sm"><i class="fas fa-map-marker-alt"></i> ECR, Chennai</p>
+                            <div class="agent-mini-profile">
+                                <div class="agent-avatar-small"><i class="fas fa-user-tie"></i></div>
+                                <span>Agent: <strong>Ramesh Kumar</strong></span>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-directions"></i> Get Directions</button>
+                                <button class="btn-outline-danger" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-calendar-times"></i> Reschedule</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="past-visits-section scroll-anim">
+                    <h3 class="section-title"><i class="fas fa-history text-gray"></i> Past Visits</h3>
+
+                    <div class="history-card">
+                        <div class="history-date">
+                            <span class="text-gray">18 Oct</span>
+                        </div>
+                        <div class="history-info">
+                            <h4>Skyline Modern Apartment</h4>
+                            <p class="text-sm text-gray">Visited with Agent Suresh</p>
+                        </div>
+                        <div class="history-actions">
+                            <button class="btn-outline w-100" onclick="window.location.href='404page.html'">Leave
+                                Feedback</button>
+                            <button class="btn-primary w-100" onclick="window.location.href='404page.html'">Make an
+                                Offer</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="virtual-tour-banner scroll-anim">
+                    <div class="vr-content">
+                        <div class="vr-icon"><i class="fas fa-vr-cardboard"></i></div>
+                        <div class="vr-text">
+                            <h3>Can't visit in person?</h3>
+                            <p>Experience properties from your home with our 360° Virtual Tours.</p>
+                        </div>
+                    </div>
+                    <button class="btn-glass-dark" onclick="window.location.href='404page.html'">Explore VR
+                        Tours</button>
+                </div>
+
+
+                <div class="agent-support-section scroll-anim">
+                    <div class="support-card">
+                        <div class="support-info">
+                            <h3>Need to change your schedule?</h3>
+                            <p class="text-gray">Your dedicated property expert is just a call away to assist you with
+                                your visits.</p>
+                        </div>
+                        <div class="support-contact">
+                            <div class="contact-agent">
+                                <img src="./asset/u1.webp" alt="Agent">
+                                <div>
+                                    <h4>Ramesh Kumar</h4>
+                                    <span class="text-sm text-gray">Senior Realtor</span>
+                                </div>
+                            </div>
+                            <div class="contact-btns">
+                                <button class="icon-btn call-btn" onclick="window.location.href='404page.html'"><i
+                                        class="fas fa-phone-alt"></i></button>
+                                <button class="icon-btn wa-btn" onclick="window.location.href='404page.html'"><i
+                                        class="fab fa-whatsapp"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tab-messages" class="content-tab">
+
+
+                <div class="msg-header-section scroll-anim">
+                    <div class="msg-title-area">
+                        <h2>Messages & Inquiries ✉️</h2>
+                        <p class="text-gray">You have <strong class="text-primary">2 unread</strong> messages.</p>
+                    </div>
+                    <div class="msg-filter-pills">
+                        <button class="msg-pill active" onclick="window.location.href='404page.html'">All</button>
+                        <button class="msg-pill" onclick="window.location.href='404page.html'">Unread <span
+                                class="dot-badge"></span></button>
+                        <button class="msg-pill" onclick="window.location.href='404page.html'">Agents</button>
+                        <button class="msg-pill" onclick="window.location.href='404page.html'">Property Owners</button>
+                    </div>
+                </div>
+
+
+                <div class="msg-list-section scroll-anim">
+
+                    <div class="chat-item unread">
+                        <div class="chat-avatar bg-primary">R</div>
+                        <div class="chat-details">
+                            <div class="chat-top">
+                                <h4>Ramesh (Agent)</h4>
+                                <span class="chat-time">10:00 AM</span>
+                            </div>
+                            <p class="chat-preview">Hello! The owner has agreed to your negotiation terms for the ECR
+                                Villa. Let me know when we can proceed...</p>
+                        </div>
+                        <div class="unread-count">1</div>
+                    </div>
+
+
+                    <div class="chat-item unread">
+                        <div class="chat-avatar bg-warning">O</div>
+                        <div class="chat-details">
+                            <div class="chat-top">
+                                <h4>Owner - Skyline Apt</h4>
+                                <span class="chat-time">Yesterday</span>
+                            </div>
+                            <p class="chat-preview">I have uploaded the latest interior pictures and the parking area
+                                details.</p>
+                        </div>
+                        <div class="unread-count">3</div>
+                    </div>
+
+
+                    <div class="chat-item">
+                        <div class="chat-avatar bg-gray">S</div>
+                        <div class="chat-details">
+                            <div class="chat-top">
+                                <h4>Support Team</h4>
+                                <span class="chat-time">18 Oct</span>
+                            </div>
+                            <p class="chat-preview">Your site visit for Green Valley Plots has been successfully
+                                completed. Please leave your feedback.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="quick-reply-section scroll-anim">
+                    <h3 class="section-title"><i class="fas fa-bolt text-primary"></i> Quick Send Templates</h3>
+                    <div class="reply-tags">
+                        <button class="reply-tag" onclick="window.location.href='404page.html'">"Is the price
+                            negotiable?"</button>
+                        <button class="reply-tag" onclick="window.location.href='404page.html'">"Share the exact
+                            location."</button>
+                        <button class="reply-tag" onclick="window.location.href='404page.html'">"I want to schedule a
+                            visit."</button>
+                        <button class="reply-tag" onclick="window.location.href='404page.html'">"Send the floor
+                            plan."</button>
+                    </div>
+                </div>
+
+
+                <div class="shared-media-section scroll-anim">
+                    <div class="section-header-simple">
+                        <h3 class="section-title"><i class="fas fa-folder-open text-gray"></i> Recently Shared Media
+                        </h3>
+                        <a href="404page.html" class="view-all">View All</a>
+                    </div>
+                    <div class="media-grid">
+                        <div class="media-card">
+                            <img src="./asset/u7.webp" alt="Interior">
+                            <div class="media-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="media-card">
+                            <img src="./asset/u17.webp" alt="Kitchen">
+                            <div class="media-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="document-card">
+                            <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                            <div class="doc-info">
+                                <h4>Floor_Plan.pdf</h4>
+                                <span>2.4 MB</span>
+                            </div>
+                            <button class="download-btn" onclick="window.location.href='404page.html'"><i
+                                    class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="priority-support-banner scroll-anim">
+                    <div class="support-text">
+                        <h3><i class="fas fa-headset"></i> Need Legal or Loan Advice?</h3>
+                        <p>Chat with our in-house experts to get instant clarification on property documents.</p>
+                    </div>
+                    <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'">Start Live
+                        Chat</button>
+                </div>
+
+            </div>
+
+
+            <div id="tab-profile" class="content-tab">
+
+
+                <div class="profile-header-card scroll-anim">
+                    <div class="profile-avatar-wrapper">
+                        <img src="./asset/u5.webp" alt="Client Avatar" class="profile-img">
+                        <button class="edit-avatar-btn" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="profile-basic-info">
+                        <h2 id="profileNameDisplay">Welcome, User!</h2>
+                        <p class="text-gray" id="profileEmailDisplay">client@example.com</p>
+                        <div class="user-badges">
+                            <span class="badge premium-badge"><i class="fas fa-crown"></i> Gold Member</span>
+                            <span class="badge verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <button class="btn-outline profile-edit-btn" onclick="window.location.href='404page.html'"><i
+                            class="fas fa-pencil-alt"></i> Edit Profile</button>
+                </div>
+
+
+                <div class="settings-section scroll-anim">
+                    <div class="section-header-simple">
+                        <h3 class="section-title"><i class="fas fa-home text-primary"></i> My Buying Preferences</h3>
+                        <button class="btn-text" onclick="window.location.href='404page.html'">Update <i
+                                class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="pref-tags-container">
+                        <div class="pref-tag"><i class="fas fa-building"></i> Villas & Independent Houses</div>
+                        <div class="pref-tag"><i class="fas fa-map-marker-alt"></i> Chennai South (OMR, ECR)</div>
+                        <div class="pref-tag"><i class="fas fa-wallet"></i> Budget: ₹ 1Cr - ₹ 3Cr</div>
+                        <div class="pref-tag"><i class="fas fa-key"></i> Ready to Move-in</div>
+                    </div>
+                </div>
+
+
+                <div class="settings-section scroll-anim">
+                    <h3 class="section-title"><i class="fas fa-bell text-primary"></i> Notification Alerts</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>WhatsApp Updates</h4>
+                                <p class="text-sm text-gray">Get instant schedule reminders and price drops.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Email Newsletters</h4>
+                                <p class="text-sm text-gray">Weekly real estate market insights and new launches.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="settings-section scroll-anim">
+                    <h3 class="section-title"><i class="fas fa-shield-alt text-primary"></i> Account Security</h3>
+                    <div class="security-card">
+                        <div class="sec-icon"><i class="fas fa-lock"></i></div>
+                        <div class="sec-details">
+                            <h4>Two-Factor Authentication</h4>
+                            <p class="text-sm text-gray">Protect your account with an extra layer of security.</p>
+                        </div>
+                        <button class="btn-primary shadow-btn" onclick="window.location.href='404page.html'">Enable
+                            2FA</button>
+                    </div>
+                </div>
+
+
+                <div class="account-actions-section scroll-anim">
+                    <button class="btn-action support-btn" onclick="window.location.href='404page.html'">
+                        <i class="fas fa-headset"></i> Help & Support Center
+                    </button>
+                    <button class="btn-action logout-btn" onclick="window.location.href='404page.html'">
+                        <i class="fas fa-sign-out-alt"></i> Logout Securely
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const storedEmail = localStorage.getItem('userEmail') || "client@mail.com";
+
+            const storedRole = "client";
+
+
+            let extractedName = storedEmail.split('@')[0];
+            extractedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+            extractedName = extractedName.replace(/[._]/g, ' ');
+
+
+            const formattedRole = storedRole.charAt(0).toUpperCase() + storedRole.slice(1);
+
+
+            if (document.getElementById("userNameDisplay")) {
+                document.getElementById("userNameDisplay").textContent = extractedName;
+            }
+            if (document.getElementById("topbarRoleDisplay")) {
+                document.getElementById("topbarRoleDisplay").textContent = formattedRole;
+            }
+            if (document.getElementById("sidebarRoleDisplay")) {
+                document.getElementById("sidebarRoleDisplay").textContent = formattedRole + " Panel";
+            }
+
+
+            if (document.getElementById("welcomeNameDisplay")) {
+                document.getElementById("welcomeNameDisplay").textContent = extractedName;
+            }
+            if (document.getElementById("welcomeEmailDisplay")) {
+                document.getElementById("welcomeEmailDisplay").textContent = storedEmail;
+            }
+            if (document.getElementById("welcomeRoleDisplay")) {
+                document.getElementById("welcomeRoleDisplay").textContent = formattedRole;
+            }
+
+
+            if (document.getElementById("profileNameInput")) {
+                document.getElementById("profileNameInput").value = extractedName;
+            }
+            if (document.getElementById("profileEmailInput")) {
+                document.getElementById("profileEmailInput").value = storedEmail;
+            }
+        });
+
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            sidebar.classList.toggle('mobile-open');
+
+            if (sidebar.classList.contains('mobile-open')) {
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+
+        function switchTab(tabId, element, pageTitle) {
+            document.querySelectorAll('.content-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            document.querySelectorAll('.nav-item').forEach(nav => {
+                nav.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active-tab');
+            element.classList.add('active');
+
+            document.getElementById('dynamic-page-title').innerText = pageTitle;
+
+            if (window.innerWidth <= 768) {
+                toggleSidebar();
+            }
+        }
+
+
+        function logout() {
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userRole');
+            window.location.href = "login.html";
+        }
+
+
+
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // 10% element visibile aanathum animation trigger aagum
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+
+            const animatedElements = document.querySelectorAll('.scroll-anim');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Navbar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+        </div>
+
+
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="properties.html" class="nav-link"><i class="fa-solid fa-house-chimney-window"></i>
+                        Properties</a>
+                </li>
+                <li class="nav-item">
+                    <a href="agent.html" class="nav-link"><i class="fa-solid fa-user-tie"></i> Agents</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link active"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> My Account</a>
+                <a href="register.html" class="btn-signup"><i class="fa-solid fa-arrow-right-to-bracket"></i> Get
+                    Started</a>
+            </div>
+        </div>
+
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+
+
+    <section class="blog-hero-section parallax-bg" style="background-image: url('./asset/u29.webp');">
+
+        <div class="hero-glass-overlay"></div>
+
+        <div class="float-shape shape-circle"></div>
+        <div class="float-shape shape-square"></div>
+        <div class="float-shape shape-triangle"></div>
+
+        <div class="blog-hero-container relative-z">
+
+
+            <div class="breadcrumbs">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-angle-double-right divider"></i>
+                <span class="current-page">Blog</span>
+            </div>
+
+            <div class="hero-content-split">
+
+
+                <div class="hero-text-side">
+                    <h1 class="animated-headline">Real Estate Insights & <span class="text-emerald">Market Trends</span>
+                    </h1>
+                    <p class="hero-subtitle">Stay ahead of the curve. Discover expert advice, investment strategies, and
+                        the latest property news curated just for you.</p>
+
+
+                    <div class="search-wrapper">
+                        <div class="hero-search-box" id="searchBoxContainer">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="searchInput" placeholder="Search articles, locations, or topics...">
+                            <button class="btn-search" onclick="validateSearch()">Search</button>
+                        </div>
+
+                        <div id="searchError" class="search-error-msg">
+                            <i class="fas fa-exclamation-circle"></i> Please enter a keyword to search.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hero-card-side">
+                    <div class="featured-glass-card">
+                        <div class="card-text-left">
+                            <span class="badge-pulse"><i class="fas fa-bolt"></i> Hot Topic</span>
+                            <h3>2024 Metro City Price Forecasts</h3>
+                            <a href="404page.html" class="btn-read-link">Read Full Report <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="card-img-right" style="background-image: url('./asset/r8.webp');"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="featured-agents-section scroll-anim">
+        <div class="agents-container">
+
+            <div class="section-header-center relative-z">
+                <h2 class="gradient-text-emerald">Top Performing Agents</h2>
+                <p class="text-gray-light">Meet our award-winning real estate experts who consistently deliver
+                    exceptional results.</p>
+            </div>
+
+            <div class="bento-agents-grid">
+
+
+                <div class="agent-bento-card bento-wide">
+                    <div class="agent-img-box">
+                        <img src="./asset/r4.webp" alt="Top Agent">
+                        <div class="agent-rating"><i class="fas fa-star"></i> 4.9 (120 Reviews)</div>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-header">
+                            <h3>David Miller <i class="fas fa-check-circle verified-badge" title="Verified Expert"></i>
+                            </h3>
+                            <span class="agent-role">Luxury Property Specialist</span>
+                        </div>
+                        <div class="agent-awards">
+                            <span class="award-chip"><i class="fas fa-trophy"></i> Agent of the Year '23</span>
+                            <span class="award-chip"><i class="fas fa-home"></i> 50+ Homes Sold</span>
+                        </div>
+                        <p>David brings 12 years of experience in the premium residential market, helping high-net-worth
+                            clients secure exclusive properties.</p>
+                        <a href="404page.html" class="btn-card-outline">View Profile <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="agent-bento-card">
+                    <div class="agent-img-box">
+                        <img src="./asset/r7.webp" alt="Agent">
+                        <div class="agent-rating"><i class="fas fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-header">
+                            <h3>Sarah Jenkins <i class="fas fa-check-circle verified-badge"></i></h3>
+                            <span class="agent-role">Commercial Expert</span>
+                        </div>
+                        <p>Expert in corporate leasing and commercial ROI.</p>
+                        <a href="404page.html" class="btn-card-outline mt-auto">View Profile <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="agent-bento-card">
+                    <div class="agent-img-box">
+                        <img src="./asset/r6.webp" alt="Agent">
+                        <div class="agent-rating"><i class="fas fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="agent-info">
+                        <div class="agent-header">
+                            <h3>Michael Chen <i class="fas fa-check-circle verified-badge"></i></h3>
+                            <span class="agent-role">Investment Advisor</span>
+                        </div>
+                        <p>Data-driven investor focusing on high-yield markets.</p>
+                        <a href="404page.html" class="btn-card-outline mt-auto">View Profile <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="agent-bento-card bento-wide-reverse">
+                    <div class="agent-info">
+                        <div class="agent-header">
+                            <h3>Elena Rodriguez <i class="fas fa-check-circle verified-badge"></i></h3>
+                            <span class="agent-role">First-Time Buyer Specialist</span>
+                        </div>
+                        <div class="agent-awards">
+                            <span class="award-chip"><i class="fas fa-medal"></i> Top Negotiator</span>
+                            <span class="award-chip"><i class="fas fa-smile"></i> 100% Client Success</span>
+                        </div>
+                        <p>Elena makes the complex home buying process seamless and stress-free for new buyers with her
+                            exceptional negotiation skills.</p>
+                        <a href="404page.html" class="btn-card-outline">View Profile <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="agent-img-box">
+                        <img src="./asset/r5.webp" alt="Agent">
+                        <div class="agent-rating"><i class="fas fa-star"></i> 4.9 (85 Reviews)</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="agent-collection-section scroll-anim">
+        <div class="collection-container">
+
+            <div class="section-header-center relative-z">
+                <h2 class="gradient-text-emerald">Meet Our Elite Experts</h2>
+                <p class="text-gray-light">Browse through our complete collection of certified real estate professionals
+                    ready to help you.</p>
+            </div>
+
+            <div class="agent-grid">
+
+
+                <div class="glass-agent-card">
+                    <div class="agent-photo-box">
+                        <img src="./asset/u1.webp" alt="Agent Profile">
+
+
+                        <div class="social-links-overlay">
+                            <a href="404page.html" style="--delay: 0.1s"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404page.html" style="--delay: 0.2s"><i class="fab fa-twitter"></i></a>
+                            <a href="404page.html" style="--delay: 0.3s"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="agent-details">
+                        <div class="agent-name-role">
+                            <h3>Robert Fox</h3>
+                            <span class="designation">Senior Real Estate Broker</span>
+                        </div>
+
+
+                        <div class="agent-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-value">12+</span>
+                                <span class="stat-label">Years Exp</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">340</span>
+                                <span class="stat-label">Properties Sold</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value text-warning"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+
+                        <a href="404page.html" class="btn-contact-agent"><i class="fas fa-envelope"></i> Contact
+                            Robert</a>
+                    </div>
+                </div>
+
+
+                <div class="glass-agent-card">
+                    <div class="agent-photo-box">
+                        <img src="./asset/u2.webp" alt="Agent Profile">
+
+                        <div class="social-links-overlay">
+                            <a href="404page.html" style="--delay: 0.1s"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404page.html" style="--delay: 0.2s"><i class="fab fa-twitter"></i></a>
+                            <a href="404page.html" style="--delay: 0.3s"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="agent-details">
+                        <div class="agent-name-role">
+                            <h3>Amanda Smith</h3>
+                            <span class="designation">Luxury Homes Specialist</span>
+                        </div>
+
+                        <div class="agent-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Years Exp</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">185</span>
+                                <span class="stat-label">Properties Sold</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value text-warning"><i class="fas fa-star"></i> 5.0</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+
+                        <a href="404page.html" class="btn-contact-agent"><i class="fas fa-envelope"></i> Contact
+                            Amanda</a>
+                    </div>
+                </div>
+
+
+                <div class="glass-agent-card">
+                    <div class="agent-photo-box">
+                        <img src="./asset/u3.webp" alt="Agent Profile">
+
+                        <div class="social-links-overlay">
+                            <a href="404page.html" style="--delay: 0.1s"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404page.html" style="--delay: 0.2s"><i class="fab fa-twitter"></i></a>
+                            <a href="404page.html" style="--delay: 0.3s"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="agent-details">
+                        <div class="agent-name-role">
+                            <h3>William Chen</h3>
+                            <span class="designation">Commercial Property Agent</span>
+                        </div>
+
+                        <div class="agent-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Years Exp</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">420</span>
+                                <span class="stat-label">Properties Sold</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value text-warning"><i class="fas fa-star"></i> 4.8</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+
+                        <a href="404page.html" class="btn-contact-agent"><i class="fas fa-envelope"></i> Contact
+                            William</a>
+                    </div>
+                </div>
+
+
+                <div class="glass-agent-card">
+                    <div class="agent-photo-box">
+                        <img src="./asset/u5.webp" alt="Agent Profile">
+
+                        <div class="social-links-overlay">
+                            <a href="404page.html" style="--delay: 0.1s"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404page.html" style="--delay: 0.2s"><i class="fab fa-twitter"></i></a>
+                            <a href="404page.html" style="--delay: 0.3s"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="agent-details">
+                        <div class="agent-name-role">
+                            <h3>Jessica Taylor</h3>
+                            <span class="designation">Residential Consultant</span>
+                        </div>
+
+                        <div class="agent-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Years Exp</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">150</span>
+                                <span class="stat-label">Properties Sold</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value text-warning"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+
+                        <a href="404page.html" class="btn-contact-agent"><i class="fas fa-envelope"></i> Contact
+                            Jessica</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="expertise-section scroll-anim">
+
+
+        <div class="bg-shape-hex shape-hex-1"></div>
+        <div class="bg-shape-hex shape-hex-2"></div>
+
+        <div class="expertise-container relative-z">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">Our Core Expertise</h2>
+                <p class="text-gray-light">Whether you're looking for a luxury villa or a commercial space, our
+                    specialized agents have you covered.</p>
+            </div>
+
+            <div class="expertise-flip-grid">
+
+
+                <div class="expert-flip-card">
+                    <div class="expert-flip-inner">
+
+                        <div class="expert-flip-front" style="background-image: url('./asset/o4.webp');">
+                            <div class="front-overlay"></div>
+                            <i class="fas fa-gem front-icon"></i>
+                            <h3>Luxury Homes</h3>
+                        </div>
+
+                        <div class="expert-flip-back">
+                            <i class="fas fa-gem back-icon-watermark"></i>
+                            <h4>Luxury Homes</h4>
+                            <p>Work with our elite agents to find exclusive, high-net-worth properties with premium
+                                amenities.</p>
+                            <ul class="expert-features">
+                                <li><i class="fas fa-check"></i> Private Villas</li>
+                                <li><i class="fas fa-check"></i> Sea-facing Mansions</li>
+                            </ul>
+                            <a href="404page.html" class="btn-flip-action">View Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="expert-flip-card">
+                    <div class="expert-flip-inner">
+                        <div class="expert-flip-front" style="background-image: url('./asset/u27.webp');">
+                            <div class="front-overlay"></div>
+                            <i class="fas fa-building front-icon"></i>
+                            <h3>Apartments</h3>
+                        </div>
+                        <div class="expert-flip-back">
+                            <i class="fas fa-building back-icon-watermark"></i>
+                            <h4>Apartments</h4>
+                            <p>From cozy studios to luxury penthouses, discover the best high-rise living spaces in the
+                                city.</p>
+                            <ul class="expert-features">
+                                <li><i class="fas fa-check"></i> Gated Communities</li>
+                                <li><i class="fas fa-check"></i> Premium Penthouses</li>
+                            </ul>
+                            <a href="404page.html" class="btn-flip-action">View Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="expert-flip-card">
+                    <div class="expert-flip-inner">
+                        <div class="expert-flip-front" style="background-image: url('./asset/u26.webp');">
+                            <div class="front-overlay"></div>
+                            <i class="fas fa-house-user front-icon"></i>
+                            <h3>Villas</h3>
+                        </div>
+                        <div class="expert-flip-back">
+                            <i class="fas fa-house-user back-icon-watermark"></i>
+                            <h4>Villas</h4>
+                            <p>Independent houses offering ultimate privacy, private gardens, and spacious living areas.
+                            </p>
+                            <ul class="expert-features">
+                                <li><i class="fas fa-check"></i> Independent Layouts</li>
+                                <li><i class="fas fa-check"></i> Custom Architecture</li>
+                            </ul>
+                            <a href="404page.html" class="btn-flip-action">View Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="expert-flip-card">
+                    <div class="expert-flip-inner">
+                        <div class="expert-flip-front" style="background-image: url('./asset/u14.webp');">
+                            <div class="front-overlay"></div>
+                            <i class="fas fa-city front-icon"></i>
+                            <h3>Commercial</h3>
+                        </div>
+                        <div class="expert-flip-back">
+                            <i class="fas fa-city back-icon-watermark"></i>
+                            <h4>Commercial</h4>
+                            <p>Secure high-ROI commercial properties, retail spaces, and office buildings in prime hubs.
+                            </p>
+                            <ul class="expert-features">
+                                <li><i class="fas fa-check"></i> Office Spaces</li>
+                                <li><i class="fas fa-check"></i> Retail Outlets</li>
+                            </ul>
+                            <a href="404page.html" class="btn-flip-action">View Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="expert-flip-card">
+                    <div class="expert-flip-inner">
+                        <div class="expert-flip-front" style="background-image: url(./asset/u16.webp);">
+                            <div class="front-overlay"></div>
+                            <i class="fas fa-map-marked-alt front-icon"></i>
+                            <h3>Plots & Land</h3>
+                        </div>
+                        <div class="expert-flip-back">
+                            <i class="fas fa-map-marked-alt back-icon-watermark"></i>
+                            <h4>Plots & Land</h4>
+                            <p>Invest in rapidly appreciating land parcels and DTCP approved residential plots.</p>
+                            <ul class="expert-features">
+                                <li><i class="fas fa-check"></i> Investment Plots</li>
+                                <li><i class="fas fa-check"></i> Agricultural Land</li>
+                            </ul>
+                            <a href="404page.html" class="btn-flip-action">View Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="expert-flip-card">
+                    <div class="expert-flip-inner">
+                        <div class="expert-flip-front" style="background-image: url('./asset/u17.webp');">
+                            <div class="front-overlay"></div>
+                            <i class="fas fa-key front-icon"></i>
+                            <h3>Rental Properties</h3>
+                        </div>
+                        <div class="expert-flip-back">
+                            <i class="fas fa-key back-icon-watermark"></i>
+                            <h4>Rental Properties</h4>
+                            <p>Generate consistent passive income with our verified tenant screening and rental
+                                management.</p>
+                            <ul class="expert-features">
+                                <li><i class="fas fa-check"></i> Tenant Screening</li>
+                                <li><i class="fas fa-check"></i> Property Management</li>
+                            </ul>
+                            <a href="404page.html" class="btn-flip-action">View Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="success-stats-section scroll-anim">
+
+        <div class="stats-bg-glow"></div>
+
+        <div class="stats-container relative-z">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">Proven Track Record</h2>
+                <p class="text-gray-light">Numbers that speak for our dedication, market expertise, and commitment to
+                    excellence.</p>
+            </div>
+
+            <div class="stats-flex-grid">
+
+
+                <div class="stat-glass-card" style="background-image: url('./asset/o4.webp');">
+                    <div class="stat-card-overlay"></div>
+                    <div class="stat-content-z">
+                        <div class="stat-icon-box glow-emerald">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="stat-number-row">
+                            <h3 class="stat-counter" data-target="1500">0</h3>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <p class="stat-title">Homes Sold</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-glass-card" style="background-image: url('./asset/u1.webp');">
+                    <div class="stat-card-overlay"></div>
+                    <div class="stat-content-z">
+                        <div class="circular-progress-ring" style="--progress: 98; --ring-color: #34d399;">
+                            <div class="ring-inner">
+                                <span class="stat-counter" data-target="98">0</span><span class="ring-suffix">%</span>
+                            </div>
+                        </div>
+                        <p class="stat-title mt-4">Happy Clients</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-glass-card" style="background-image: url('./asset/r8.webp');">
+                    <div class="stat-card-overlay"></div>
+                    <div class="stat-content-z">
+                        <div class="stat-icon-box glow-blue">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-number-row text-blue">
+                            <h3 class="stat-counter" data-target="15">0</h3>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <p class="stat-title">Years Experience</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-glass-card" style="background-image: url('./asset/u27.webp');">
+                    <div class="stat-card-overlay"></div>
+                    <div class="stat-content-z">
+                        <div class="circular-progress-ring" style="--progress: 12; --ring-color: #3b82f6;">
+                            <div class="ring-inner">
+                                <span class="stat-counter" data-target="12">0</span>
+                            </div>
+                        </div>
+                        <p class="stat-title mt-4">Cities Covered</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-glass-card" style="background-image: url('./asset/r4.webp');">
+                    <div class="stat-card-overlay"></div>
+                    <div class="stat-content-z">
+                        <div class="stat-icon-box glow-gold">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-number-row text-gold">
+                            <h3 class="stat-counter" data-target="45">0</h3>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <p class="stat-title">Awards Won</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="agent-success-section scroll-anim">
+
+
+        <div class="success-bg-glow"></div>
+
+        <div class="success-container relative-z">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">Success Stories & Reviews</h2>
+                <p class="text-gray-light">Discover how our elite agents have transformed property journeys into
+                    remarkable success stories.</p>
+            </div>
+
+
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"David made buying our first luxury home an absolute breeze. His
+                                market knowledge and negotiation skills saved us over $50k. Highly recommended!"</p>
+                            <div class="client-profile">
+                                <img src="./asset/u3.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>Sarah & Mark</h4>
+                                    <span>Luxury Home Buyers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"As a commercial investor, I need quick data and honest opinions.
+                                Amanda delivered exactly that, helping me secure a prime retail space in just two
+                                weeks."</p>
+                            <div class="client-profile">
+                                <img src="./asset/u1.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>James Wilson</h4>
+                                    <span>Commercial Investor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="review-text">"They sold my downtown apartment 20% above the asking price! The
+                                staging tips and professional photography they provided made all the difference."</p>
+                            <div class="client-profile">
+                                <img src="./asset/u2.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>Emily Chen</h4>
+                                    <span>Property Seller</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"Relocating to a new city was stressful, but their team found us the
+                                perfect rental villa near my new office within just 3 days of property tours."</p>
+                            <div class="client-profile">
+                                <img src="./asset/u5.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>Michael Brown</h4>
+                                    <span>Corporate Relocation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"David made buying our first luxury home an absolute breeze. His
+                                market knowledge and negotiation skills saved us over $50k. Highly recommended!"</p>
+                            <div class="client-profile">
+                                <img src="./asset/u3.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>Sarah & Mark</h4>
+                                    <span>Luxury Home Buyers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"As a commercial investor, I need quick data and honest opinions.
+                                Amanda delivered exactly that, helping me secure a prime retail space in just two
+                                weeks."</p>
+                            <div class="client-profile">
+                                <img src="./asset/u1.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>James Wilson</h4>
+                                    <span>Commercial Investor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="review-text">"They sold my downtown apartment 20% above the asking price! The
+                                staging tips and professional photography they provided made all the difference."</p>
+                            <div class="client-profile">
+                                <img src="./asset/u2.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>Emily Chen</h4>
+                                    <span>Property Seller</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-glass-card">
+                        <i class="fas fa-quote-right floating-quote"></i>
+                        <div class="story-content">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"Relocating to a new city was stressful, but their team found us the
+                                perfect rental villa near my new office within just 3 days of property tours."</p>
+                            <div class="client-profile">
+                                <img src="./asset/u5.webp" alt="Client">
+                                <div class="client-info">
+                                    <h4>Michael Brown</h4>
+                                    <span>Corporate Relocation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="team-timeline-section scroll-anim">
+
+        <div class="timeline-container relative-z">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">Meet Our Expert Divisions</h2>
+                <p class="text-gray-light">A seamless property journey backed by specialized teams at every step.</p>
+            </div>
+
+
+            <div class="timeline-wrapper">
+
+
+                <div class="timeline-center-line">
+                    <div class="line-glow-indicator"></div>
+                </div>
+
+
+                <div class="timeline-row left-align">
+                    <div class="timeline-dot"><i class="fas fa-user-tie"></i></div>
+                    <div class="timeline-glass-card">
+                        <div class="floating-avatars">
+                            <img src="./asset/u1.webp" alt="Agent" class="avatar float-slow">
+                            <img src="./asset/u2.webp" alt="Agent" class="avatar float-fast">
+                        </div>
+                        <h3>Senior Agents</h3>
+                        <p>Our top-tier brokers with over 15 years of market experience. They lead negotiations and
+                            secure the best deals for luxury and commercial properties.</p>
+                        <a href="404page.html" class="team-link">View Agents <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="timeline-row right-align">
+                    <div class="timeline-dot"><i class="fas fa-comments-dollar"></i></div>
+                    <div class="timeline-glass-card">
+                        <div class="floating-avatars">
+                            <img src="./asset/u3.webp" alt="Consultant" class="avatar float-fast">
+                            <img src="./asset/u5.webp" alt="Consultant" class="avatar float-slow">
+                        </div>
+                        <h3>Property Consultants</h3>
+                        <p>Dedicated advisors who understand your unique needs, filter the noise, and shortlist
+                            properties that perfectly match your lifestyle and budget.</p>
+                        <a href="404page.html" class="team-link">View Consultants <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="timeline-row left-align">
+                    <div class="timeline-dot"><i class="fas fa-balance-scale"></i></div>
+                    <div class="timeline-glass-card">
+                        <div class="floating-avatars">
+                            <img src="./asset/t4.webp" alt="Legal" class="avatar float-slow">
+                            <img src="./asset/t3.webp" alt="Legal" class="avatar float-fast">
+                        </div>
+                        <h3>Legal Advisors</h3>
+                        <p>Our in-house legal team ensures 100% compliance. They handle title verifications, encumbrance
+                            checks, and draft foolproof agreements.</p>
+                        <a href="404page.html" class="team-link">View Legal Team <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="timeline-row right-align">
+                    <div class="timeline-dot"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <div class="timeline-glass-card">
+                        <div class="floating-avatars">
+                            <img src="./asset/t2.webp" alt="Finance" class="avatar float-fast">
+                            <img src="./asset/t1.webp" alt="Finance" class="avatar float-slow">
+                        </div>
+                        <h3>Loan Advisors</h3>
+                        <p>Experts who connect you with top banks. They secure the lowest interest rates and process
+                            your mortgage approvals with zero hassle.</p>
+                        <a href="404page.html" class="team-link">View Finance Team <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="agent-flip-section scroll-anim">
+        <div class="flip-container">
+
+            <div class="section-header-center">
+                <h2 class="gradient-text-emerald">Meet Our Top Producers</h2>
+                <p class="text-gray">Hover over the cards to see detailed statistics and connect directly with our elite
+                    agents.</p>
+            </div>
+
+            <div class="agent-flip-grid">
+
+
+                <div class="flip-card-wrapper js-tilt-effect">
+                    <div class="flip-card-inner">
+
+
+                        <div class="flip-card-front" style="background-image: url('./asset/u1.webp');">
+                            <div class="front-gradient-overlay"></div>
+                            <div class="front-content">
+                                <h3>David Miller</h3>
+                                <span class="exp-badge"><i class="fas fa-briefcase"></i> 12 Years Exp</span>
+                            </div>
+                        </div>
+
+
+                        <div class="flip-card-back glass-light-card">
+                            <h4 class="back-name">David Miller</h4>
+                            <p class="back-spec text-emerald">Luxury Homes Specialist</p>
+
+                            <div class="back-stats-box">
+                                <div class="stat-item">
+                                    <span class="stat-num">350+</span>
+                                    <span class="stat-text">Total Sales</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num text-warning"><i class="fas fa-star"></i> 4.9</span>
+                                    <span class="stat-text">Client Rating</span>
+                                </div>
+                            </div>
+
+                            <ul class="back-features">
+                                <li><i class="fas fa-check-circle"></i> Top Negotiator 2023</li>
+                                <li><i class="fas fa-check-circle"></i> High-Net-Worth Clients</li>
+                            </ul>
+
+                            <a href="404page.html" class="btn-flip-contact">Contact David <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="flip-card-wrapper js-tilt-effect">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('./asset/u2.webp');">
+                            <div class="front-gradient-overlay"></div>
+                            <div class="front-content">
+                                <h3>Sarah Jenkins</h3>
+                                <span class="exp-badge"><i class="fas fa-briefcase"></i> 8 Years Exp</span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back glass-light-card">
+                            <h4 class="back-name">Sarah Jenkins</h4>
+                            <p class="back-spec text-emerald">Commercial Expert</p>
+
+                            <div class="back-stats-box">
+                                <div class="stat-item">
+                                    <span class="stat-num">210+</span>
+                                    <span class="stat-text">Total Sales</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num text-warning"><i class="fas fa-star"></i> 5.0</span>
+                                    <span class="stat-text">Client Rating</span>
+                                </div>
+                            </div>
+
+                            <ul class="back-features">
+                                <li><i class="fas fa-check-circle"></i> Corporate Leasing</li>
+                                <li><i class="fas fa-check-circle"></i> ROI Optimization</li>
+                            </ul>
+
+                            <a href="404page.html" class="btn-flip-contact">Contact Sarah <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flip-card-wrapper js-tilt-effect">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('./asset/u3.webp');">
+                            <div class="front-gradient-overlay"></div>
+                            <div class="front-content">
+                                <h3>Michael Chen</h3>
+                                <span class="exp-badge"><i class="fas fa-briefcase"></i> 15 Years Exp</span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back glass-light-card">
+                            <h4 class="back-name">Michael Chen</h4>
+                            <p class="back-spec text-emerald">Investment Advisor</p>
+
+                            <div class="back-stats-box">
+                                <div class="stat-item">
+                                    <span class="stat-num">480+</span>
+                                    <span class="stat-text">Total Sales</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num text-warning"><i class="fas fa-star"></i> 4.8</span>
+                                    <span class="stat-text">Client Rating</span>
+                                </div>
+                            </div>
+
+                            <ul class="back-features">
+                                <li><i class="fas fa-check-circle"></i> Data-Driven Strategies</li>
+                                <li><i class="fas fa-check-circle"></i> Global Portfolios</li>
+                            </ul>
+
+                            <a href="404page.html" class="btn-flip-contact">Contact Michael <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="premium-cta-section scroll-anim">
+
+
+        <div class="cta-bg-image" style="background-image: url('./asset/o1.webp');"></div>
+
+
+        <div class="aurora-overlay"></div>
+
+
+        <div class="buildings-silhouette"></div>
+
+
+        <div class="cta-container relative-z">
+            <div class="cta-glass-panel">
+                <h2>Connect With Our Trusted Real Estate Experts</h2>
+                <p>Ready to make your next move? Our elite team is here to provide personalized guidance, market
+                    insights, and seamless property solutions.</p>
+
+                <div class="cta-button-group">
+
+                    <a href="404page.html" class="btn-magnetic mag-primary">
+                        <span class="btn-text">Find an Agent <i class="fas fa-search"></i></span>
+                    </a>
+                    <a href="404page.html" class="btn-magnetic mag-secondary">
+                        <span class="btn-text">Schedule Consultation <i class="fas fa-calendar-check"></i></span>
+                    </a>
+                    <a href="404page.html" class="btn-magnetic mag-outline">
+                        <span class="btn-text">Contact Us <i class="fas fa-envelope"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cta-wave-divider">
+            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.06,130.83,120.22,192.39,105.77,236.79,95.4,279.79,75.14,321.39,56.44Z"
+                    class="wave-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
+                <div class="logo">
+                    <a href="index.html"><img src="./asset/darkgreen_logo.webp" alt="logo"></a>
+                </div>
+                <p class="footer-desc">
+                    Find your dream home with RealEstate. We provide expert guidance in buying, selling, and renting
+                    properties to make your real estate journey smooth and successful.
+                </p>
+                <div class="social-icons">
+                    <a href="404page.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="404page.html"><i class="fab fa-twitter"></i></a>
+                    <a href="404page.html"><i class="fab fa-instagram"></i></a>
+                    <a href="404page.html"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                    <li><a href="agents.html"><i class="fas fa-chevron-right"></i> Agents</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Buy a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Sell a Property</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Rent a Home</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Property Management</a></li>
+                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Legal Advisory</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i>info@thestackly.com</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-map-marker-alt"></i> MMR COMPLEX, SALEM,<br> Tamil Nadu 636008 ·</li>
+                    <li><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 RealEstate Agency. All rights reserved. Your Key to the Perfect Home.</p>
+            <div class="footer-bottom-links">
+                <a href="404page.html">Privacy Policy</a>
+                <a href="404page.html">Terms of Service</a>
+                <a href="404page.html">Legal Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+    <script>
+        function validateSearch() {
+            const inputField = document.getElementById("searchInput");
+            const searchBox = document.getElementById("searchBoxContainer");
+            const errorMsg = document.getElementById("searchError");
+
+
+            if (inputField.value.trim() === "") {
+
+                errorMsg.style.display = "flex";
+
+
+                searchBox.classList.add("error-shake");
+
+
+                setTimeout(() => {
+                    searchBox.classList.remove("error-shake");
+                }, 400);
+            } else {
+
+                errorMsg.style.display = "none";
+
+
+                window.location.href = '404page.html'
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll('.stat-counter');
+            const speed = 100; // Animation speed (lower is slower)
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+
+                        const updateCount = () => {
+                            const current = +counter.innerText;
+                            const increment = target / speed;
+
+                            if (current < target) {
+                                counter.innerText = Math.ceil(current + increment);
+                                setTimeout(updateCount, 20); // Frame refresh rate
+                            } else {
+                                counter.innerText = target; // Ensure exact finish
+                            }
+                        };
+
+                        updateCount();
+                        observer.unobserve(counter); // Run only once
+                    }
+                });
+            }, { threshold: 0.5 }); // Triggers when 50% of the section is visible
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const tiltCards = document.querySelectorAll('.js-tilt-effect');
+
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', function (e) {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // x position within the element
+                    const y = e.clientY - rect.top;  // y position within the element
+
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -10; // Max tilt 10deg
+                    const rotateY = ((x - centerX) / centerX) * 10;
+
+                    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    card.style.transition = 'none'; // Remove transition for smooth tracking
+                });
+
+
+                card.addEventListener('mouseleave', function () {
+                    card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
+                    card.style.transition = 'transform 0.5s ease'; // Smooth snap back
+                });
+
+
+                card.addEventListener('mouseenter', function () {
+                    card.style.transition = 'transform 0.1s ease';
+                });
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
