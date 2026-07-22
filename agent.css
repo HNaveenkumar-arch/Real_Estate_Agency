@@ -359,7 +359,7 @@
 }
 
 .featured-blog-section {
-  padding: 100px 20px;
+  padding: 60px 20px;
   background-color: #f8fafc;
 }
 
@@ -610,7 +610,7 @@
 }
 
 .blog-categories-section {
-  padding: 100px 20px;
+  padding: 50px 20px;
   background-color: #f8fafc;
 }
 
@@ -771,7 +771,7 @@ a {
 }
 
 .trending-articles-section {
-  padding: 100px 0;
+  padding: 50px 0;
   background-color: #ffffff;
   overflow: hidden;
   position: relative;
@@ -972,7 +972,7 @@ a {
 }
 
 .video-hub-section {
-  padding: 100px 20px;
+  padding: 60px 20px;
   background-color: #0f172a;
   position: relative;
 }
@@ -1174,7 +1174,7 @@ a {
 }
 
 .market-stats-section {
-  padding: 100px 20px;
+  padding: 60px 20px;
   background-color: #0b0f19;
   position: relative;
   overflow: hidden;
@@ -1449,7 +1449,7 @@ a {
 
 .success-stories-section {
   position: relative;
-  padding: 120px 0;
+  padding: 60px 0;
   overflow: hidden;
 }
 
@@ -1687,7 +1687,7 @@ a {
 }
 
 .buying-tips-section {
-  padding: 120px 20px;
+  padding: 70px 20px;
   background-color: #f8fafc;
   position: relative;
 }
@@ -1872,7 +1872,7 @@ a {
 }
 
 .flip-cards-section {
-  padding: 120px 20px;
+  padding: 70px 20px;
   background-color: #0b0f19;
   position: relative;
   overflow: hidden;
@@ -2107,7 +2107,7 @@ a {
 
 .premium-cta-section {
   position: relative;
-  padding: 150px 20px 180px;
+  padding: 70px 20px 180px;
   background-color: #050b14;
   overflow: hidden;
   text-align: center;

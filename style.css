@@ -406,7 +406,7 @@
 }
 
 .advanced-search-section {
-  padding: 100px 5%;
+  padding: 50px 5%;
   background-color: #f8fafc;
   font-family: "Poppins", sans-serif;
   color: #1f2937;
@@ -762,7 +762,7 @@
 }
 
 .featured-section {
-  padding: 100px 5%;
+  padding: 50px 5%;
   background-color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
@@ -1007,7 +1007,7 @@
 
 .why-choose-us {
   position: relative;
-  padding: 100px 5%;
+  padding: 60px 5%;
   background-color: #f1f5f9;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -1216,7 +1216,7 @@
 }
 
 .showcase-section {
-  padding: 100px 0 100px 5%;
+  padding: 60px 0 100px 5%;
   background-color: #111827;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -1414,7 +1414,7 @@
 }
 
 .agents-section {
-  padding: 100px 5%;
+  padding: 50px 5%;
   background-color: #f8fafc;
   font-family: "Poppins", sans-serif;
 }
@@ -1689,7 +1689,7 @@
 }
 
 .v-process-section {
-  padding: 100px 5%;
+  padding: 50px 5%;
   background-color: #f8fafc;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -1930,7 +1930,7 @@
 }
 
 .blog-section {
-  padding: 100px 5%;
+  padding: 50px 5%;
   background-color: #f8fafc;
   font-family: "Poppins", sans-serif;
 }
@@ -2121,7 +2121,7 @@
 
 .ecosystem-section {
   position: relative;
-  padding: 120px 5%;
+  padding: 60px 5%;
   background-color: #0b0f19;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -2442,7 +2442,7 @@
 
 .cta-section {
   position: relative;
-  padding: 140px 5% 120px;
+  padding: 70px 5% 120px;
 
   background:
     linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)),

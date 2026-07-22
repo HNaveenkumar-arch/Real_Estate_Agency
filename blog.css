@@ -427,7 +427,7 @@
 }
 
 .featured-agents-section {
-  padding: 100px 20px;
+  padding: 60px 20px;
   background-color: #ffffff;
   position: relative;
   perspective: 1500px;
@@ -688,7 +688,7 @@
 }
 
 .agent-collection-section {
-  padding: 100px 20px;
+  padding: 50px 20px;
   background-color: #050b14;
   position: relative;
 }
@@ -898,7 +898,7 @@
 }
 
 .expertise-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -1106,7 +1106,7 @@
 }
 
 .success-stats-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -1340,7 +1340,7 @@
 }
 
 .agent-success-section {
-  padding: 120px 0;
+  padding: 70px 0;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -1539,7 +1539,7 @@
 }
 
 .team-timeline-section {
-  padding: 120px 20px;
+  padding: 70px 20px;
   background-color: #030712;
   position: relative;
   overflow: hidden;
@@ -1793,7 +1793,7 @@
 }
 
 .agent-flip-section {
-  padding: 120px 20px;
+  padding: 70px 20px;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -2026,7 +2026,7 @@
 
 .premium-cta-section {
   position: relative;
-  padding: 120px 20px 180px;
+  padding: 70px 20px 180px;
   display: flex;
   align-items: center;
   justify-content: center;
