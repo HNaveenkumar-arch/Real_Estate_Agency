@@ -266,7 +266,7 @@
 
 @media (max-width: 992px) {
   .hero-glass-box {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .hero-image-side {
     width: 100%;

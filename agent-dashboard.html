@@ -12,6 +12,21 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader-overlay" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-icon">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="preloader-text">
+                FINDING HOMES<span class="dots"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-line"></div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
@@ -1115,7 +1130,7 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // 10% கார்டு தெரிந்தவுடனே அனிமேஷன் ஆக தொடங்கும்
+                threshold: 0.1 
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
@@ -1205,10 +1220,10 @@
                     datasets: [{
                         label: 'Revenue (in Lakhs)',
                         data: [12, 19, 15, 25, 22, 30],
-                        borderColor: '#059669', // Emerald Green
+                        borderColor: '#059669', 
                         backgroundColor: 'rgba(5, 150, 105, 0.1)',
                         borderWidth: 3,
-                        tension: 0.4, // Smooth curve
+                        tension: 0.4, 
                         fill: true,
                         pointBackgroundColor: '#ffffff',
                         pointBorderColor: '#059669',
@@ -1237,6 +1252,16 @@
                 }
             });
         }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const preloader = document.getElementById('preloader');
+
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 1600);
+        });
     </script>
 </body>
 

@@ -40,3 +40,13 @@ navLinks.forEach(link => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById('preloader');
+
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }, 1600);
+});

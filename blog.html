@@ -14,6 +14,21 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader-overlay" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-icon">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="preloader-text">
+                FINDING HOMES<span class="dots"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-line"></div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar">
 
         <div class="logo">
@@ -1182,12 +1197,10 @@
                 window.location.href = '404page.html'
             }
         }
-    </script>
 
-    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const counters = document.querySelectorAll('.stat-counter');
-            const speed = 100; // Animation speed (lower is slower)
+            const speed = 100; 
 
             const counterObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -1201,17 +1214,17 @@
 
                             if (current < target) {
                                 counter.innerText = Math.ceil(current + increment);
-                                setTimeout(updateCount, 20); // Frame refresh rate
+                                setTimeout(updateCount, 20); 
                             } else {
-                                counter.innerText = target; // Ensure exact finish
+                                counter.innerText = target; 
                             }
                         };
 
                         updateCount();
-                        observer.unobserve(counter); // Run only once
+                        observer.unobserve(counter); 
                     }
                 });
-            }, { threshold: 0.5 }); // Triggers when 50% of the section is visible
+            }, { threshold: 0.5 }); 
 
             counters.forEach(counter => {
                 counterObserver.observe(counter);
@@ -1225,23 +1238,23 @@
             tiltCards.forEach(card => {
                 card.addEventListener('mousemove', function (e) {
                     const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left; // x position within the element
-                    const y = e.clientY - rect.top;  // y position within the element
+                    const x = e.clientX - rect.left; 
+                    const y = e.clientY - rect.top;  
 
 
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
-                    const rotateX = ((y - centerY) / centerY) * -10; // Max tilt 10deg
+                    const rotateX = ((y - centerY) / centerY) * -10; 
                     const rotateY = ((x - centerX) / centerX) * 10;
 
                     card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                    card.style.transition = 'none'; // Remove transition for smooth tracking
+                    card.style.transition = 'none'; 
                 });
 
 
                 card.addEventListener('mouseleave', function () {
                     card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
-                    card.style.transition = 'transform 0.5s ease'; // Smooth snap back
+                    card.style.transition = 'transform 0.5s ease'; 
                 });
 
 

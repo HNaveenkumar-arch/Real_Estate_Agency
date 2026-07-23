@@ -14,6 +14,21 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader-overlay" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-icon">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="preloader-text">
+                FINDING HOMES<span class="dots"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-line"></div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar">
 
         <div class="logo">
@@ -569,9 +584,7 @@
                 });
             }
         });
-    </script>
 
-    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("premiumContactForm");
             const successBox = document.getElementById("successBox");
@@ -587,12 +600,12 @@
 
 
             phoneInput.addEventListener("input", function () {
-                this.value = this.value.replace(/[^0-9]/g, ''); // Removes anything that is not a number
+                this.value = this.value.replace(/[^0-9]/g, ''); 
             });
 
 
             form.addEventListener("submit", function (e) {
-                e.preventDefault(); // Stop page reload
+                e.preventDefault(); 
 
                 let isValid = true;
 
