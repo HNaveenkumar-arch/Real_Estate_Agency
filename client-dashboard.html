@@ -56,7 +56,7 @@
             <a href="index.html" class="btn-bottom">
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
-            <a href="login.html" class="btn-bottom btn-logout" onclick="logout()">
+            <a  onclick="logout()" class="btn-bottom btn-logout" onclick="logout()">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </div>
@@ -740,7 +740,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
-            const storedEmail = localStorage.getItem('userEmail') || "client@mail.com";
+            const storedEmail = localStorage.getItem('userEmail');
+            if(!storedEmail){
+                alert("Login before accessing Dashboard!")
+                window.location.href='login.html'
+            }
 
             const storedRole = "client";
 
@@ -782,7 +786,9 @@
                 document.getElementById("profileEmailInput").value = storedEmail;
             }
         });
-
+        function logout(){
+            localStorage.removeItem('userEmail')
+        }
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');

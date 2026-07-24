@@ -1103,8 +1103,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
-            const storedEmail = localStorage.getItem('userEmail') || "agent@primeestates.com";
-            const storedRole = localStorage.getItem('userRole') || "agent"; // default to agent
+            const storedEmail = localStorage.getItem('userEmail');
+            if(!storedEmail){
+                alert("Login before accessing Dashboard!")
+                window.location.href='login.html'
+            }
+
+            const storedRole = localStorage.getItem('userRole') || "agent";
 
             let extractedName = storedEmail.split('@')[0];
             extractedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
@@ -1124,6 +1129,10 @@
 
             initScrollAnimations();
         });
+
+        function logout(){
+            localStorage.removeItem('userEmail')
+        }
 
 
         function initScrollAnimations() {

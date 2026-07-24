@@ -1476,9 +1476,6 @@
             }
         });
 
-
-
-
         document.addEventListener("DOMContentLoaded", () => {
             const slider = document.getElementById('draggable-slider');
 
@@ -1527,8 +1524,6 @@
 
             slider.addEventListener('touchstart', () => { isAutoScrolling = false; });
             slider.addEventListener('touchend', () => { isAutoScrolling = true; });
-
-
             function autoScroll() {
                 if (isAutoScrolling) {
                     slider.scrollLeft += 1;
@@ -1540,7 +1535,6 @@
                 }
                 requestAnimationFrame(autoScroll);
             }
-
 
             requestAnimationFrame(autoScroll);
         });
@@ -1559,7 +1553,6 @@
                     const trackTop = trackRect.top;
                     const trackHeight = trackRect.height;
                     const windowHeight = window.innerHeight;
-
 
 
                     let progressPercentage = ((windowHeight / 2 - trackTop) / trackHeight) * 100;
